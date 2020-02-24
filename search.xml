@@ -1,10 +1,469 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux常用命令</title>
+    <url>/2020/02/24/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><ul>
+<li><p><strong>uname -a**</strong></p>
+<blockquote>
+<p>查看内核/操作系统/CPU信息</p>
+</blockquote>
+</li>
+<li><p><strong>head -n 1 /etc/issue</strong></p>
+<blockquote>
+<p>查看操作系统版本</p>
+</blockquote>
+</li>
+<li><p><strong>*cat /proc/cpuinfo</strong></p>
+<blockquote>
+<p>查看<code>CPU</code>信息</p>
+</blockquote>
+</li>
+<li><p><strong>hostname**</strong></p>
+<blockquote>
+<p>查看计算机名</p>
+</blockquote>
+<a id="more"></a></li>
+<li><p><strong>lspci -tv</strong></p>
+<blockquote>
+<p>列出所有<code>PCI</code>设备</p>
+</blockquote>
+</li>
+<li><p><strong>lsusb -tv</strong></p>
+<blockquote>
+<p>出所有USB设备</p>
+</blockquote>
+</li>
+<li><p><strong>lsmod</strong></p>
+<blockquote>
+<p>列出加载的内核模块</p>
+</blockquote>
+</li>
+<li><p><strong>env</strong></p>
+<blockquote>
+<p>查看环境变量</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<li><p><strong>free -m</strong></p>
+<blockquote>
+<p>查看内存使用量和交换区使用量</p>
+</blockquote>
+</li>
+<li><p><strong>df -h</strong></p>
+<blockquote>
+<p>查看各分区使用情况</p>
+</blockquote>
+</li>
+<li><p><strong>du -sh &lt;目录名&gt;</strong></p>
+<blockquote>
+<p>查看指定目录的大小</p>
+</blockquote>
+</li>
+<li><p><strong>grep MemTotal /proc/meminfo</strong></p>
+<blockquote>
+<p>查看内存总量</p>
+</blockquote>
+</li>
+<li><p><strong>grep MemFree /proc/meminfo</strong></p>
+<blockquote>
+<p>查看空闲内存量</p>
+</blockquote>
+</li>
+<li><p><strong>uptime</strong></p>
+<blockquote>
+<p>查看系统运行时间、用户数、负载</p>
+</blockquote>
+</li>
+<li><p><strong>cat /proc/loadavg</strong></p>
+<blockquote>
+<p>查看系统负载</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="磁盘和分区"><a href="#磁盘和分区" class="headerlink" title="磁盘和分区"></a>磁盘和分区</h2><ul>
+<li><p><strong>mount | column -t</strong></p>
+<blockquote>
+<p>查看挂接的分区状态</p>
+</blockquote>
+</li>
+<li><p><strong>fdisk -l</strong></p>
+<blockquote>
+<p>查看所有分区</p>
+</blockquote>
+</li>
+<li><p><strong>swapon -s</strong></p>
+<blockquote>
+<p>查看所有交换分区</p>
+</blockquote>
+</li>
+<li><p><strong>hdparm -i /dev/hda</strong></p>
+<blockquote>
+<p>查看磁盘参数(仅适用于IDE设备)</p>
+</blockquote>
+</li>
+<li><p><strong>dmesg | grep IDE</strong></p>
+<blockquote>
+<p>查看启动时IDE设备检测状况</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><ul>
+<li><p><strong>ifconfig</strong></p>
+<blockquote>
+<p>查看所有网络接口的属性</p>
+</blockquote>
+</li>
+<li><p><strong>iptables -L</strong></p>
+<blockquote>
+<p>查看防火墙设置</p>
+</blockquote>
+</li>
+<li><p><strong>route -n</strong></p>
+<blockquote>
+<p>查看路由表</p>
+</blockquote>
+</li>
+<li><p><strong>netstat -lntp</strong></p>
+<blockquote>
+<p>查看所有监听端口</p>
+</blockquote>
+</li>
+<li><p><strong>netstat -antp</strong></p>
+<blockquote>
+<p>查看所有已经建立的连接</p>
+</blockquote>
+</li>
+<li><p><strong>netstat -s</strong></p>
+<blockquote>
+<p>查看网络统计信息</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><ul>
+<li><p><strong>ps -ef</strong></p>
+<blockquote>
+<p>查看所有进程</p>
+</blockquote>
+</li>
+<li><p><strong>top</strong></p>
+<blockquote>
+<p>实时显示进程状态</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><ul>
+<li><p><strong>w</strong></p>
+<blockquote>
+<p>查看活动用户</p>
+</blockquote>
+</li>
+<li><p><strong>id &lt;用户名&gt;</strong></p>
+<blockquote>
+<p>查看指定用户信息</p>
+</blockquote>
+</li>
+<li><p><strong>last</strong></p>
+<blockquote>
+<p>查看用户登录日志</p>
+</blockquote>
+</li>
+<li><p><strong>cut -d: -f1 /etc/passwd</strong></p>
+<blockquote>
+<p>查看系统所有用户</p>
+</blockquote>
+</li>
+<li><p><strong>cut -d: -f1 /etc/group</strong></p>
+<blockquote>
+<p>查看系统所有组</p>
+</blockquote>
+</li>
+<li><p><strong>crontab -l</strong></p>
+<blockquote>
+<p>查看当前用户的计划任务</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h2><ul>
+<li><p><strong>chkconfig –list</strong></p>
+<blockquote>
+<p>列出所有系统服务</p>
+</blockquote>
+</li>
+<li><p><strong>chkconfig –list | grep on</strong></p>
+<blockquote>
+<p>列出所有启动的系统服务</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h2><ul>
+<li><p><strong>apt-get update</strong></p>
+<blockquote>
+<p>在修改<code>/etc/apt/sources.list</code>或者<code>/etc/apt/preferences</code>之后运行该命令。此外您需要定期运行这一命令以确保您的软件包列表是最新的。</p>
+</blockquote>
+</li>
+<li><p><strong>apt-get install packagename</strong></p>
+<blockquote>
+<p>安装一个新软件包（参见下文的aptitude）</p>
+</blockquote>
+</li>
+<li><p><strong>apt-get remove packagename</strong></p>
+<blockquote>
+<p>卸载一个已安装的软件包（保留配置文件）</p>
+</blockquote>
+</li>
+<li><p><strong>apt-get –purge remove packagename</strong></p>
+<blockquote>
+<p>卸载一个已安装的软件包（删除配置文件）</p>
+</blockquote>
+</li>
+<li><p><strong>dpkg –force-all –purge packagename</strong></p>
+<blockquote>
+<p>有些软件很难卸载，而且还阻止了别的软件的应用，就可以用这个，不过有点冒险。</p>
+</blockquote>
+</li>
+<li><p><strong>apt-get autoclean apt</strong></p>
+<blockquote>
+<p>会把已装或已卸的软件都备份在硬盘上，所以如果需要空间的话，可以让这个命令来删除你已经删掉的软件</p>
+</blockquote>
+</li>
+<li><p><strong>apt-get clean</strong></p>
+<blockquote>
+<p>这个命令会把安装的软件的备份也删除，不过这样不会影响软件的使用的。</p>
+</blockquote>
+</li>
+<li><p><strong>apt-get upgrade</strong></p>
+<blockquote>
+<p>更新所有已安装的软件包</p>
+</blockquote>
+</li>
+<li><p><strong>apt-get dist-upgrade</strong></p>
+<blockquote>
+<p>将系统升级到新版本</p>
+</blockquote>
+</li>
+<li><p><strong>apt-cache search string</strong></p>
+<blockquote>
+<p> 在软件包列表中搜索字符串</p>
+</blockquote>
+</li>
+<li><p>dpkg -l package-name-pattern</p>
+<blockquote>
+<p>列出所有与模式相匹配的软件包。如果您不知道软件包的全名，您可以使用“<strong><code>package-name-pattern</code></strong>”。</p>
+</blockquote>
+</li>
+<li><p><strong>aptitude</strong></p>
+<blockquote>
+<p>详细查看已安装或可用的软件包。与<code>apt-get</code>类似，<code>aptitude</code>可以通过命令行方式调用，但仅限于某些命令——最常见的有安装和卸载命令。由于<code>aptitude比apt-get</code>了解更多信息，可以说它更适合用来进行安装和卸载。</p>
+</blockquote>
+</li>
+<li><p><strong>apt-cache showpkg pkgs</strong></p>
+<blockquote>
+<p>显示软件包信息。</p>
+</blockquote>
+</li>
+<li><p><strong>apt-cache dumpavail</strong></p>
+<blockquote>
+<p>打印可用软件包列表。</p>
+</blockquote>
+</li>
+<li><p><strong>apt-cache show pkgs</strong></p>
+<blockquote>
+<p>显示软件包记录，类似于<code>dpkg –print-avail</code>。</p>
+</blockquote>
+</li>
+<li><p><strong>apt-cache pkgnames</strong></p>
+<blockquote>
+<p>打印软件包列表中所有软件包的名称。</p>
+</blockquote>
+</li>
+<li><p><strong>dpkg -S file</strong></p>
+<blockquote>
+<p>这个文件属于哪个已安装软件包。</p>
+</blockquote>
+</li>
+<li><p><strong>dpkg -L package</strong></p>
+<blockquote>
+<p>列出软件包中的所有文件。</p>
+</blockquote>
+</li>
+<li><p><strong>apt-file search filename</strong></p>
+<blockquote>
+<p>查找包含特定文件的软件包（不一定是已安装的），这些文件的文件名中含有指定的字符串。</p>
+</blockquote>
+</li>
+<li><p><strong>apt-file</strong></p>
+<blockquote>
+<p>是一个独立的软件包。您必须 先使用apt-get install来安装它，然后运行<code>apt-file update</code>。如果<code>apt-file search</code></p>
+</blockquote>
+</li>
+<li><p><strong>filename</strong></p>
+<blockquote>
+<p>输出的内容太多，您可以尝试使用<code>apt-file search</code></p>
+</blockquote>
+</li>
+<li><p><strong>sfilename | grep -w filename</strong></p>
+<blockquote>
+<p><code>s</code>（只显示指定字符串作为完整的单词出现在其中的那些文件名）或者类似方法，例如：<code>apt-file search filename | grep /bin/</code>（只显示位于诸如/bin或/usr/bin这些文件夹中的文件，如果您要查找的是某个特定的执行文件的话，这样做是有帮助的）。</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu root用户下java -version无法获取java环境变量解决办法</title>
+    <url>/2020/02/24/Ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="问题现象"><a href="#问题现象" class="headerlink" title="问题现象"></a>问题现象</h2><p>​    按照网上配置java环境变量的方法在/etc/profile文件中添加如下内容，配置之后，如果重启系统后切换到root用户无法获取已配置的java环境变量，在普通用户下可以获取到</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1.8.0_65</span><br><span class="line"></span><br><span class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</span><br><span class="line"></span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line"></span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ln -s /你的jdk路径/bin/jar /bin/jar </span><br><span class="line"></span><br><span class="line">sudo ln -s /你的jdk路径/bin/java /bin/java </span><br><span class="line"></span><br><span class="line">sudo ln -s /你的jdk路径/bin/javac /bin/javac </span><br><span class="line"></span><br><span class="line">sudo ln -s /你的jdk路径/bin/javah /bin/javah </span><br><span class="line"></span><br><span class="line">sudo ln -s /你的jdk路径/bin/javadoc /bin/javadoc</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>让其他用户使用oh-my-zsh</title>
+    <url>/2020/02/24/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>如果使用<code>wt</code>用户安装配置了<code>oh-my-zsh</code>，其他用户想要使用相同的主题和配置，可以参考<code>https://askubuntu.com/questions/521469/oh-my-zsh-for-the-root-and-for-all-user</code><br>这里介绍一种更简单的方法（亲测有效）：<br>比如让<code>root</code>用户使用和<code>wt</code>用户相同的配置：</p>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ln -s $HOME/.oh-my-zsh           /root/.oh-my-zsh</span><br><span class="line">sudo ln -s $HOME/.zshrc               /root/.zshrc</span><br></pre></td></tr></table></figure>
+<p>切换到<code>root</code>用户，命令<code>zsh</code>,即可看到<code>zsh</code>的主题和<code>wt</code>用户的一样了。如果提示</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/root/.zshrc:119: command not found: pyenv</span><br><span class="line">/root/.zshrc:120: command not found: pyenv</span><br></pre></td></tr></table></figure>
+<p>再创建<code>.pyenv</code>的软连接即可。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ln -s $HOME/.pyenv    /root/.pyenv</span><br></pre></td></tr></table></figure>
+<p>这样做的缺点是<code>root</code>用户的所有配置都和<code>wt</code>用户的一致，不能个性化。修改一个，其他用户的也会变。<br>如果要个性化，可以用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo cp -r /home/wt/.oh-my-zsh    /root</span><br><span class="line">sudo cp -r /home/wt/.zshrc    /root</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>oh-my-zsh</category>
+      </categories>
+      <tags>
+        <tag>oh-my-zsh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker-常用基础命令</title>
+    <url>/2020/02/24/Docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
+<li><p><strong>docker 服务重启，关闭，启动及版本查看</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost /] systemctl restart docker.service  #重启服务</span><br><span class="line">[root@localhost /] systemctl stop docker.service     #关闭服务</span><br><span class="line">[root@localhost /] systemctl start docker.service    #启动服务</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ /] docker -v #docker版本查看</span><br><span class="line">Docker version 18.06.1-ce, build e68fc7a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 搜索/下载/查看镜像</strong></p>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@localhost /] docker search centos|head -3 #搜索镜像</span><br><span class="line">NAME                               DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED</span><br><span class="line">centos                             The official build of CentOS.                   4754                [OK]                </span><br><span class="line">[root@localhost /] docker pull centos #下载镜像</span><br><span class="line">Using default tag: latest.............</span><br><span class="line">Digest: sha256:6f6d986d425aeabdc3a02cb61c02abb2e78e57357e92417d6d58332856024faf</span><br><span class="line">Status: Downloaded newer image for centos:latest</span><br><span class="line">[root@localhost /] docker images #查看镜像</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">centos              latest              5182e96772bf        7 weeks ago         200MB</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 创建一个容器（前台/后台并指定映射目录和端口）</strong></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">  -i：允许我们对容器内的 (STDIN) 进行交互</span><br><span class="line">-t：在新容器内指定一个伪终端或终端</span><br><span class="line">-v：是挂在宿机目录， /docker_test是宿机目录，/yufei是当前docker容器的目录，宿机目录必须是绝对的。</span><br><span class="line">--name：是给容器起一个名字，可省略，省略的话docker会随机产生一个名字</span><br><span class="line">-P 指定映射的端口</span><br><span class="line">--net #指定网络</span><br><span class="line">--link 链接到另一个容器</span><br><span class="line">--------------------------------------------------------------------------------------------------</span><br><span class="line">docker run -it -v /test:/test  --name centos /bin/bash #创建容器并进入（交互模式退出会后容器会自动关闭）</span><br><span class="line">docker run -d -v /test:/test centos tail -f /dev/null #创建容器并放入后台运行（退出容器不会关闭）</span><br><span class="line">docker run -dit -v /test:/test centos /bin/bash #创建容器并放入后台运行（进入后台和tty模式，退出容器不会关闭）</span><br><span class="line">docker run -d -v /test:/test -P 80:80 nginx:latest</span><br><span class="line"><span class="meta">#</span><span class="bash">后台启动并运名为nginx的容器，然后将容器的80端口映射到物理机的80端口.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看docker创建的所有容器</strong></p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ rc.d] docker ps -a #查看所有创建的容器包括已经停止的容器</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES</span><br><span class="line">70e151cd2766        centos              "/bin/bash"         7 seconds ago       Exited (0) 5 seconds ago                       zealous_mclean</span><br><span class="line">dfdf33852d47        centos              "/bin/bash"         20 seconds ago      Up 19 seconds                                  frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ rc.d] docker ps #查看所有运行的容器</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">dfdf33852d47        centos              "/bin/bash"         22 seconds ago      Up 21 seconds                           frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ rc.d] docker  ps -l #查看最新创建的容器</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES</span><br><span class="line">70e151cd2766        centos              "/bin/bash"         29 minutes ago      Exited (0) 29 minutes ago                       zealous_mclean</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 利用已存在的容器创建一个镜像（Dockerfile构建镜像略）</strong></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-a #提交的镜像作者</span><br><span class="line">-c #使用Dockerfile指令来创建镜像</span><br><span class="line">-m #提交时附上说明文字</span><br><span class="line">-p #在commit时，将容器暂停</span><br><span class="line">-------------------------------------------------------------------------------------------</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker commit -a "王云龙" -m "创建的新镜像" redis wyl5588redis-test</span><br><span class="line">sha256:9c2d2fc6e09cb35543fbb2467db90e741dc6b7daabab83924534bcfe6641bbe2</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">wyl5588redis-test   latest              9c2d2fc6e09c        3 seconds ago       83.4MB</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 修改镜像标签，并推送</strong></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ Dockerfile] docker tag centos 192.168.8.88:5000/centos:v1.0 #给centos镜像打一个行的tag</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ Dockerfile] docker images</span><br><span class="line">REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">192.168.8.88:5000/centos   v1.0                5182e96772bf        7 weeks ago         200MB</span><br><span class="line">centos                     latest              5182e96772bf        7 weeks ago         200MB</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ Dockerfile]docker push 192.168.8.88:5000/centos:v1.0 #将本地docker中的镜像推送到镜像仓库中</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker镜像的导入，导出，删除</strong></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker save 5588/mongo3.2 5588/redis 5588/nginx 5588/qiantai &gt;Qiantai_images.tar  #镜像导出</span><br><span class="line">docker load &lt;/Docker_Images/Qiantai.images.tar #镜像导入</span><br><span class="line">docker rmi centos #删除centos镜像</span><br><span class="line">docker rmi -f centos #强制删除</span><br><span class="line">docker images -q #获取进行的ID</span><br><span class="line">docker rmi -f $(docker images -q)#删除全部镜像</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker 容器与宿主机文件拷贝</strong></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] touch admin</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker cp ./admin nginx:/tmp/</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker exec -it nginx /bin/bash</span><br><span class="line">root@aaefa2aebc8b:/ ls /tmp</span><br><span class="line">admin</span><br><span class="line">root@aaefa2aebc8b:/ touch /tmp/wyltest</span><br><span class="line">exit</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker cp -a nginx:/tmp/wyltest ./</span><br><span class="line">Error: No such container:path: nginx:/tmp/*</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker cp -a nginx:/tmp/admin ./</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>查看docker 容器详情如：ip等</strong></p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ rc.d] docker inspect frosty_saha #查看容器详情如ip等frosty_saha为容器别名</span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        "Id": "dfdf33852d470d0cd8e70a4b9aad36a00585579952834471159100aacea885d9",</span><br><span class="line">        "Created": "2018-09-28T04:44:11.394993867Z",</span><br><span class="line">        "Path": "/bin/bash",</span><br><span class="line">        "Args": [],</span><br><span class="line">        "State": &#123;</span><br><span class="line">            "Status": "running",....</span><br><span class="line">)]</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker 关闭，启动，重启，删除容器</strong></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker start frosty_saha #启动容器</span><br><span class="line">frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker stop frosty_saha #关闭容器</span><br><span class="line">frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker restart frosty_saha #重启容器</span><br><span class="line">frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">dfdf33852d47        centos              "/bin/bash"         41 minutes ago      Up 13 seconds                           frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker rm -f frosty_saha #强制删除容器</span><br><span class="line">frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker rm -f $(docker ps -qa) #强制删除所有容器</span><br><span class="line">70e151cd2766</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker  进入某一容器</strong></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker ps </span><br><span class="line">CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES</span><br><span class="line">aaefa2aebc8b        5588/nginx          "nginx -g 'daemon of…"   51 seconds ago      Up 51 seconds       0.0.0.0:80-&gt;80/tcp        nginx</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker exec -it nginx /bin/bash #进入某一容器</span><br><span class="line">root@aaefa2aebc8b:/#</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker 容器外创建一个后台任务</strong></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@izm5e3hwzuo58e05kxjiifz ~] docker exec -d qiantai  python /mnt/log/tbxScripts.py</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 查看某一容器的 进程，日志，端口</strong></p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker top nginx #查看nginx容器进程</span><br><span class="line">UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD</span><br><span class="line">root                2018                1984                0                   13:35               ?                   00:00:00            nginx: master process nginx -g daemon off;</span><br><span class="line">101                 2094                2018                0                   13:35               ?                   00:00:00            nginx: worker process</span><br><span class="line">101                 2095                2018                0                   13:35               ?                   00:00:00            nginx: worker process</span><br><span class="line">101                 2096                2018                0                   13:35               ?                   00:00:00            nginx: worker process</span><br><span class="line">101                 2097                2018                0                   13:35               ?                   00:00:00            nginx: worker process</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker logs -tf nginx #查看容器日志</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker port nginx #查看容器映射的端口</span><br><span class="line">80/tcp -&gt; 0.0.0.0:80</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 容器监控</strong></p>
+  <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker stats #容器监控</span><br><span class="line">CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS</span><br><span class="line">aaefa2aebc8b        nginx               0.00%               3.145MiB / 15.51GiB   0.02%               17.7kB / 233kB      0B / 0B             5</span><br><span class="line">da5fc7ab052c        qiantai             0.78%               1.909GiB / 15.51GiB   12.31%              327MB / 367kB       0B / 8.19kB         11</span><br><span class="line">f4ce4818308c        mongodb3.2          0.03%               616MiB / 15.51GiB     3.88%               364kB / 327MB       0B / 1.05MB         24</span><br><span class="line">eb841f913814        redis               0.00%               6.312MiB / 15.51GiB   0.04%               2.78kB / 1.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>.vimrc-备份</title>
+    <url>/2020/02/24/vimrc-%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>自用的vimrc配置文件备份:</p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot; encoding dectection</span><br><span class="line">set fileencodings&#x3D;utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; Set vundle settings here</span><br><span class="line">&quot; git clone https:&#x2F;&#x2F;github.com&#x2F;VundleVim&#x2F;Vundle.vim.git ~&#x2F;.vim&#x2F;bundle&#x2F;Vundle.vim</span><br><span class="line">set nocompatible              &quot; be iMproved, required</span><br><span class="line">filetype off                  &quot; required</span><br><span class="line">&quot; set the runtime path to include Vundle and initialize</span><br><span class="line">set rtp+&#x3D;~&#x2F;.vim&#x2F;bundle&#x2F;Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">&quot; alternatively, pass a path where Vundle should install plugins</span><br><span class="line">&quot;call vundle#begin(&#39;~&#x2F;some&#x2F;path&#x2F;here&#39;)</span><br><span class="line"></span><br><span class="line">&quot; let Vundle manage Vundle, required</span><br><span class="line">&quot;Plugin &#39;VundleVim&#x2F;Vundle.vim&#39;        &quot;https:&#x2F;&#x2F;github.com&#x2F;VundleVim&#x2F;Vundle.vim</span><br><span class="line">Bundle &#39;Valloric&#x2F;YouCompleteMe&#39;</span><br><span class="line">Plugin &#39;gmarik&#x2F;Vundle.vim&#39;</span><br><span class="line">&quot; Custom plugins</span><br><span class="line">Plugin &#39;scrooloose&#x2F;nerdtree&#39;         &quot;https:&#x2F;&#x2F;github.com&#x2F;scrooloose&#x2F;nerdtree</span><br><span class="line">Plugin &#39;MattesGroeger&#x2F;vim-bookmarks&#39; &quot;https:&#x2F;&#x2F;github.com&#x2F;MattesGroeger&#x2F;vim-bookmarks</span><br><span class="line">Plugin &#39;maciakl&#x2F;vim-neatstatus&#39;      &quot;https:&#x2F;&#x2F;github.com&#x2F;maciakl&#x2F;vim-neatstatus</span><br><span class="line"></span><br><span class="line">&quot; All of your Plugins must be added before the following line</span><br><span class="line">call vundle#end()            &quot; required</span><br><span class="line">filetype plugin indent on    &quot; required</span><br><span class="line">&quot; To ignore plugin indent changes, instead use:</span><br><span class="line">&quot;filetype plugin on</span><br><span class="line">&quot;</span><br><span class="line">&quot; Brief help</span><br><span class="line">&quot; :PluginList       - lists configured plugins</span><br><span class="line">&quot; :PluginInstall    - installs plugins; append &#96;!&#96; to update or just :PluginUpdate</span><br><span class="line">&quot; :PluginSearch foo - searches for foo; append &#96;!&#96; to refresh local cache</span><br><span class="line">&quot; :PluginClean      - confirms removal of unused plugins; append &#96;!&#96; to auto-approve removal</span><br><span class="line">&quot;</span><br><span class="line">&quot; see :h vundle for more details or wiki for FAQ</span><br><span class="line">&quot; Put your non-Plugin stuff after this line</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; Vim5 and later versions support syntax highlighting. Uncommenting the</span><br><span class="line">&quot; following enables syntax highlighting by default.</span><br><span class="line">if has(&quot;syntax&quot;)</span><br><span class="line">    syntax on   &quot; 语法高亮</span><br><span class="line">endif</span><br><span class="line">&quot; Uncomment the following to have Vim jump to the last position when</span><br><span class="line">&quot; reopening a file</span><br><span class="line">if has(&quot;autocmd&quot;)</span><br><span class="line">    au BufReadPost * if line(&quot;&#39;\&quot;&quot;) &gt; 1 &amp;&amp; line(&quot;&#39;\&quot;&quot;) &lt;&#x3D; line(&quot;$&quot;) | exe &quot;normal! g&#39;\&quot;&quot; | endif</span><br><span class="line">&quot;have Vim load indentation rules and plugins according to the detected</span><br><span class="line">&quot;filetype on</span><br><span class="line">&quot;filetype plugin indent on</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">set number</span><br><span class="line">set autoindent</span><br><span class="line">set softtabstop&#x3D;4    &quot; 设置软制表符的宽度</span><br><span class="line">set shiftwidth&#x3D;4     &quot; (自动) 缩进使用的4个空格</span><br><span class="line">set tabstop&#x3D;4        &quot; 设置制表符(tab键)的宽度</span><br><span class="line">set expandtab        &quot; 行首tab转换为4个空格</span><br><span class="line">set cindent          &quot; 使用 C&#x2F;C++ 语言的自动缩进方式</span><br><span class="line">set cinoptions&#x3D;&#123;0,1s,t0,n-2,p2s,(03s,&#x3D;.5s,&gt;1s,&#x3D;1s,:1s     &quot;设置C&#x2F;C++语言的具体缩进方式</span><br><span class="line">set showmatch        &quot; 设置匹配模式，显示匹配的括号</span><br><span class="line">set linebreak        &quot; 整词换行</span><br><span class="line">set whichwrap&#x3D;b,s,&lt;,&gt;,[,] &quot; 光标从行首和行末时可以跳到另一行去</span><br><span class="line">set ruler            &quot; 标尺，用于显示光标位置的行号和列号，逗号分隔。每个窗口都有自己的标尺。如果窗口有状态行，标尺在那里显示。否则，它显示在屏幕的最后一行上</span><br><span class="line">set showcmd          &quot; 命令行显示输入的命令</span><br><span class="line">set showmode         &quot; 命令行显示vim当前模式</span><br><span class="line">set incsearch        &quot; 输入字符串就显示匹配点</span><br><span class="line">set hlsearch</span><br><span class="line">set enc&#x3D;utf-8        &quot; 文件编码</span><br><span class="line">set cursorline</span><br><span class="line">set cursorcolumn</span><br><span class="line">highlight CursorLine   cterm&#x3D;NONE ctermbg&#x3D;blue ctermfg&#x3D;white guibg&#x3D;NONE guifg&#x3D;NONE</span><br><span class="line">&quot;highlight CursorColumn cterm&#x3D;NONE ctermbg&#x3D;green ctermfg&#x3D;NONE guibg&#x3D;NONE guifg&#x3D;NONE</span><br><span class="line">highlight  CursorColumn cterm&#x3D;NONE ctermbg&#x3D;darkred ctermfg&#x3D;white guibg&#x3D;darkred guifg&#x3D;white</span><br><span class="line">&quot; NERDTree settings</span><br><span class="line">autocmd StdinReadPre * let s:std_in&#x3D;1</span><br><span class="line">autocmd VimEnter * if argc() &#x3D;&#x3D; 0 &amp;&amp; !exists(&quot;s:std_in&quot;) | NERDTree | endif</span><br><span class="line"></span><br><span class="line">&quot; vim-bookmarks settings</span><br><span class="line">let g:bookmark_auto_close &#x3D; 1</span><br><span class="line">let g:bookmark_save_per_working_dir &#x3D; 1</span><br><span class="line">let g:bookmark_highlight_lines &#x3D; 1</span><br><span class="line">let g:bookmark_center &#x3D; 1</span><br><span class="line">let g:bookmark_location_list &#x3D; 1</span><br><span class="line"></span><br><span class="line">&quot; key mapping</span><br><span class="line">:inoremap &#123; &#123;&#125;&lt;ESC&gt;i</span><br><span class="line">:map &lt;f2&gt; :NERDTreeToggle&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>vim</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
-    <url>/2020/02/21/hello-world/</url>
+    <url>/2020/02/24/hello-world/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>

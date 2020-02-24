@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.simpletodo.fun","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","width":260,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="docker 服务重启，关闭，启动及版本查看 12345[root@localhost &#x2F;] systemctl restart docker.service  #重启服务[root@localhost &#x2F;] systemctl stop docker.service     #关闭服务[root@localhost &#x2F;] systemctl start docker.service    #启">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker-常用基础命令">
+<meta property="og:url" content="http://www.simpletodo.fun/2020/02/24/Docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Simple Life">
+<meta property="og:description" content="docker 服务重启，关闭，启动及版本查看 12345[root@localhost &#x2F;] systemctl restart docker.service  #重启服务[root@localhost &#x2F;] systemctl stop docker.service     #关闭服务[root@localhost &#x2F;] systemctl start docker.service    #启">
+<meta property="article:published_time" content="2020-02-24T14:43:34.000Z">
+<meta property="article:modified_time" content="2020-02-24T14:45:16.782Z">
+<meta property="article:author" content="Alex Wu (Yinghao)">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://www.simpletodo.fun/2020/02/24/Docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Docker-常用基础命令 | Simple Life</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Simple Life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Alex's Blog</p>
+  </div>
+
+  <div class="site-nav-right"></div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>Commonweal 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://www.simpletodo.fun/2020/02/24/Docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://upyun.oneone.life/uPic/nCsOY9.jpg">
+      <meta itemprop="name" content="Alex Wu (Yinghao)">
+      <meta itemprop="description" content="😻一一是个小天使~😚">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Simple Life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Docker-常用基础命令
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-02-24 22:43:34 / Modified: 22:45:16" itemprop="dateCreated datePublished" datetime="2020-02-24T22:43:34+08:00">2020-02-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/Docker/" itemprop="url" rel="index">
+                    <span itemprop="name">Docker</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/02/24/Docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="post-meta-item leancloud_visitors" data-flag-title="Docker-常用基础命令" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/02/24/Docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/24/Docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
+<li><p><strong>docker 服务重启，关闭，启动及版本查看</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /] systemctl restart docker.service  #重启服务</span><br><span class="line">[root@localhost /] systemctl stop docker.service     #关闭服务</span><br><span class="line">[root@localhost /] systemctl start docker.service    #启动服务</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ /] docker -v #docker版本查看</span><br><span class="line">Docker version 18.06.1-ce, build e68fc7a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 搜索/下载/查看镜像</strong></p>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /] docker search centos|head -3 #搜索镜像</span><br><span class="line">NAME                               DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED</span><br><span class="line">centos                             The official build of CentOS.                   4754                [OK]                </span><br><span class="line">[root@localhost /] docker pull centos #下载镜像</span><br><span class="line">Using default tag: latest.............</span><br><span class="line">Digest: sha256:6f6d986d425aeabdc3a02cb61c02abb2e78e57357e92417d6d58332856024faf</span><br><span class="line">Status: Downloaded newer image for centos:latest</span><br><span class="line">[root@localhost /] docker images #查看镜像</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">centos              latest              5182e96772bf        7 weeks ago         200MB</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 创建一个容器（前台/后台并指定映射目录和端口）</strong></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  -i：允许我们对容器内的 (STDIN) 进行交互</span><br><span class="line">-t：在新容器内指定一个伪终端或终端</span><br><span class="line">-v：是挂在宿机目录， /docker_test是宿机目录，/yufei是当前docker容器的目录，宿机目录必须是绝对的。</span><br><span class="line">--name：是给容器起一个名字，可省略，省略的话docker会随机产生一个名字</span><br><span class="line">-P 指定映射的端口</span><br><span class="line">--net #指定网络</span><br><span class="line">--link 链接到另一个容器</span><br><span class="line">--------------------------------------------------------------------------------------------------</span><br><span class="line">docker run -it -v /test:/test  --name centos /bin/bash #创建容器并进入（交互模式退出会后容器会自动关闭）</span><br><span class="line">docker run -d -v /test:/test centos tail -f /dev/null #创建容器并放入后台运行（退出容器不会关闭）</span><br><span class="line">docker run -dit -v /test:/test centos /bin/bash #创建容器并放入后台运行（进入后台和tty模式，退出容器不会关闭）</span><br><span class="line">docker run -d -v /test:/test -P 80:80 nginx:latest</span><br><span class="line"><span class="meta">#</span><span class="bash">后台启动并运名为nginx的容器，然后将容器的80端口映射到物理机的80端口.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看docker创建的所有容器</strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ rc.d] docker ps -a #查看所有创建的容器包括已经停止的容器</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES</span><br><span class="line">70e151cd2766        centos              "/bin/bash"         7 seconds ago       Exited (0) 5 seconds ago                       zealous_mclean</span><br><span class="line">dfdf33852d47        centos              "/bin/bash"         20 seconds ago      Up 19 seconds                                  frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ rc.d] docker ps #查看所有运行的容器</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">dfdf33852d47        centos              "/bin/bash"         22 seconds ago      Up 21 seconds                           frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ rc.d] docker  ps -l #查看最新创建的容器</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES</span><br><span class="line">70e151cd2766        centos              "/bin/bash"         29 minutes ago      Exited (0) 29 minutes ago                       zealous_mclean</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 利用已存在的容器创建一个镜像（Dockerfile构建镜像略）</strong></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-a #提交的镜像作者</span><br><span class="line">-c #使用Dockerfile指令来创建镜像</span><br><span class="line">-m #提交时附上说明文字</span><br><span class="line">-p #在commit时，将容器暂停</span><br><span class="line">-------------------------------------------------------------------------------------------</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker commit -a "王云龙" -m "创建的新镜像" redis wyl5588redis-test</span><br><span class="line">sha256:9c2d2fc6e09cb35543fbb2467db90e741dc6b7daabab83924534bcfe6641bbe2</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker images</span><br><span class="line">REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">wyl5588redis-test   latest              9c2d2fc6e09c        3 seconds ago       83.4MB</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 修改镜像标签，并推送</strong></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ Dockerfile] docker tag centos 192.168.8.88:5000/centos:v1.0 #给centos镜像打一个行的tag</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ Dockerfile] docker images</span><br><span class="line">REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">192.168.8.88:5000/centos   v1.0                5182e96772bf        7 weeks ago         200MB</span><br><span class="line">centos                     latest              5182e96772bf        7 weeks ago         200MB</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ Dockerfile]docker push 192.168.8.88:5000/centos:v1.0 #将本地docker中的镜像推送到镜像仓库中</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker镜像的导入，导出，删除</strong></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker save 5588/mongo3.2 5588/redis 5588/nginx 5588/qiantai &gt;Qiantai_images.tar  #镜像导出</span><br><span class="line">docker load &lt;/Docker_Images/Qiantai.images.tar #镜像导入</span><br><span class="line">docker rmi centos #删除centos镜像</span><br><span class="line">docker rmi -f centos #强制删除</span><br><span class="line">docker images -q #获取进行的ID</span><br><span class="line">docker rmi -f $(docker images -q)#删除全部镜像</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker 容器与宿主机文件拷贝</strong></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] touch admin</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker cp ./admin nginx:/tmp/</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker exec -it nginx /bin/bash</span><br><span class="line">root@aaefa2aebc8b:/ ls /tmp</span><br><span class="line">admin</span><br><span class="line">root@aaefa2aebc8b:/ touch /tmp/wyltest</span><br><span class="line">exit</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker cp -a nginx:/tmp/wyltest ./</span><br><span class="line">Error: No such container:path: nginx:/tmp/*</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker cp -a nginx:/tmp/admin ./</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>查看docker 容器详情如：ip等</strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ rc.d] docker inspect frosty_saha #查看容器详情如ip等frosty_saha为容器别名</span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        "Id": "dfdf33852d470d0cd8e70a4b9aad36a00585579952834471159100aacea885d9",</span><br><span class="line">        "Created": "2018-09-28T04:44:11.394993867Z",</span><br><span class="line">        "Path": "/bin/bash",</span><br><span class="line">        "Args": [],</span><br><span class="line">        "State": &#123;</span><br><span class="line">            "Status": "running",....</span><br><span class="line">)]</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker 关闭，启动，重启，删除容器</strong></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker start frosty_saha #启动容器</span><br><span class="line">frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker stop frosty_saha #关闭容器</span><br><span class="line">frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker restart frosty_saha #重启容器</span><br><span class="line">frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker ps</span><br><span class="line">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span><br><span class="line">dfdf33852d47        centos              "/bin/bash"         41 minutes ago      Up 13 seconds                           frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker rm -f frosty_saha #强制删除容器</span><br><span class="line">frosty_saha</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker rm -f $(docker ps -qa) #强制删除所有容器</span><br><span class="line">70e151cd2766</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker  进入某一容器</strong></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker ps </span><br><span class="line">CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES</span><br><span class="line">aaefa2aebc8b        5588/nginx          "nginx -g 'daemon of…"   51 seconds ago      Up 51 seconds       0.0.0.0:80-&gt;80/tcp        nginx</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker exec -it nginx /bin/bash #进入某一容器</span><br><span class="line">root@aaefa2aebc8b:/#</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p><strong>docker 容器外创建一个后台任务</strong></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@izm5e3hwzuo58e05kxjiifz ~] docker exec -d qiantai  python /mnt/log/tbxScripts.py</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 查看某一容器的 进程，日志，端口</strong></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker top nginx #查看nginx容器进程</span><br><span class="line">UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD</span><br><span class="line">root                2018                1984                0                   13:35               ?                   00:00:00            nginx: master process nginx -g daemon off;</span><br><span class="line">101                 2094                2018                0                   13:35               ?                   00:00:00            nginx: worker process</span><br><span class="line">101                 2095                2018                0                   13:35               ?                   00:00:00            nginx: worker process</span><br><span class="line">101                 2096                2018                0                   13:35               ?                   00:00:00            nginx: worker process</span><br><span class="line">101                 2097                2018                0                   13:35               ?                   00:00:00            nginx: worker process</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker logs -tf nginx #查看容器日志</span><br><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker port nginx #查看容器映射的端口</span><br><span class="line">80/tcp -&gt; 0.0.0.0:80</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>docker 容器监控</strong></p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@iZm5e3hwzuo58e05kxjiifZ ~] docker stats #容器监控</span><br><span class="line">CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS</span><br><span class="line">aaefa2aebc8b        nginx               0.00%               3.145MiB / 15.51GiB   0.02%               17.7kB / 233kB      0B / 0B             5</span><br><span class="line">da5fc7ab052c        qiantai             0.78%               1.909GiB / 15.51GiB   12.31%              327MB / 367kB       0B / 8.19kB         11</span><br><span class="line">f4ce4818308c        mongodb3.2          0.03%               616MiB / 15.51GiB     3.88%               364kB / 327MB       0B / 1.05MB         24</span><br><span class="line">eb841f913814        redis               0.00%               6.312MiB / 15.51GiB   0.04%               2.78kB / 1.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Alex Wu (Yinghao)
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://www.simpletodo.fun/2020/02/24/Docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Docker-常用基础命令">http://www.simpletodo.fun/2020/02/24/Docker-常用基础命令/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/24/vimrc-%E5%A4%87%E4%BB%BD/" rel="prev" title=".vimrc-备份">
+      <i class="fa fa-chevron-left"></i> .vimrc-备份
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/24/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/" rel="next" title="让其他用户使用oh-my-zsh">
+      让其他用户使用oh-my-zsh <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alex Wu (Yinghao)"
+      src="https://upyun.oneone.life/uPic/nCsOY9.jpg">
+  <p class="site-author-name" itemprop="name">Alex Wu (Yinghao)</p>
+  <div class="site-description" itemprop="description">😻一一是个小天使~😚</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/AlexWuYh" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;AlexWuYh" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Alex_WuYh" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Alex_WuYh" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/alex_wuyinghao" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;alex_wuyinghao" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Wu (Yinghao)</span>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共3.6k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'o5gq6eLbupSlKq678zx1aKcd-gzGzoHsz',
+      appKey     : 'S2CU3haJIhCbfVoIxhtrIzNp',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
