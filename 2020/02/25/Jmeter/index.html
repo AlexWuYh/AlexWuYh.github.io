@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"www.simpletodo.fun","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","width":260,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="脚本规范：  目录结构按系统级别区分不同的jmx文件，每个系统一个jmx文件进行管理  线程组作为模块级别，命名格式为模块名称  接口作为用例级别，命名格式类似为 ：  【编号】 【正例&#x2F;反例】用例名称   使用用户定义的变量将系统中使用到的全局变量抽取到全局自定义变量中，只支持抽取整个系统公用变量  使用用户定义的变量将模块中使用到的测试数据抽取到局部自定义变量中  每个接口都需要增加断言，保证">
+  <meta name="description" content="脚本规范：  目录结构按系统级别区分不同的jmx文件，每个系统一个jmx文件进行管理  线程组作为模块级别，命名格式为模块名称  接口作为用例级别，命名格式类似为 ：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jmeter">
 <meta property="og:url" content="http://www.simpletodo.fun/2020/02/25/Jmeter/index.html">
 <meta property="og:site_name" content="Simple Life">
-<meta property="og:description" content="脚本规范：  目录结构按系统级别区分不同的jmx文件，每个系统一个jmx文件进行管理  线程组作为模块级别，命名格式为模块名称  接口作为用例级别，命名格式类似为 ：  【编号】 【正例&#x2F;反例】用例名称   使用用户定义的变量将系统中使用到的全局变量抽取到全局自定义变量中，只支持抽取整个系统公用变量  使用用户定义的变量将模块中使用到的测试数据抽取到局部自定义变量中  每个接口都需要增加断言，保证">
+<meta property="og:description" content="脚本规范：  目录结构按系统级别区分不同的jmx文件，每个系统一个jmx文件进行管理  线程组作为模块级别，命名格式为模块名称  接口作为用例级别，命名格式类似为 ：">
 <meta property="og:image" content="https://upyun.oneone.life/uPic/EE3px4.jpg">
 <meta property="article:published_time" content="2020-02-25T06:32:24.000Z">
-<meta property="article:modified_time" content="2020-02-25T06:36:13.663Z">
+<meta property="article:modified_time" content="2020-02-25T06:39:15.153Z">
 <meta property="article:author" content="Alex Wu (Yinghao)">
 <meta property="article:tag" content="Jmeter">
 <meta name="twitter:card" content="summary">
@@ -213,7 +213,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-02-25 14:32:24 / Modified: 14:36:13" itemprop="dateCreated datePublished" datetime="2020-02-25T14:32:24+08:00">2020-02-25</time>
+              <time title="Created: 2020-02-25 14:32:24 / Modified: 14:39:15" itemprop="dateCreated datePublished" datetime="2020-02-25T14:32:24+08:00">2020-02-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,6 +272,7 @@
 <li><p>线程组作为模块级别，命名格式为模块名称</p>
 </li>
 <li><p>接口作为用例级别，命名格式类似为 ：</p>
+<a id="more"></a>
 <blockquote>
 <p>【编号】 【正例/反例】用例名称</p>
 </blockquote>

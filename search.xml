@@ -9,6 +9,7 @@
     <title>Vim权限不足时强制保存只读类型文件的方法</title>
     <url>/2020/02/25/Vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在使用<code>vim</code>时，当我们以普通用户去打开一个只有<code>root</code>用户才有权限操作的文件时，我们编辑完成之后，正要保存，却发现，这个文件我们没有权限修改。<br>经过查找，发现一个命令可以解决这个问题<br>命令：</p>
+<a id="more"></a>
 <p><code>:w !sudo tee %</code></p>
 <blockquote>
 <p>w： 表示保存文件<br>！： 表示执行外部命令<br>tee： linux命令，这个有点复杂，可以查看linux命令帮助<br>%： 在执行外部命令时，%会扩展成当前文件名；这个%区别于替换时的%，替换时%的意义是代表整个文件，而不是文件名</p>
@@ -35,6 +36,7 @@
 <li><p>线程组作为模块级别，命名格式为模块名称</p>
 </li>
 <li><p>接口作为用例级别，命名格式类似为 ：</p>
+<a id="more"></a>
 <blockquote>
 <p>【编号】 【正例/反例】用例名称</p>
 </blockquote>

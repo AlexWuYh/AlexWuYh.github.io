@@ -287,7 +287,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-02-25 14:35:25 / Modified: 14:36:06" itemprop="dateCreated datePublished" datetime="2020-02-25T14:35:25+08:00">2020-02-25</time>
+              <time title="Created: 2020-02-25 14:35:25 / Modified: 14:39:04" itemprop="dateCreated datePublished" datetime="2020-02-25T14:35:25+08:00">2020-02-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -339,15 +339,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在使用<code>vim</code>时，当我们以普通用户去打开一个只有<code>root</code>用户才有权限操作的文件时，我们编辑完成之后，正要保存，却发现，这个文件我们没有权限修改。<br>经过查找，发现一个命令可以解决这个问题<br>命令：</p>
-<p><code>:w !sudo tee %</code></p>
-<blockquote>
-<p>w： 表示保存文件<br>！： 表示执行外部命令<br>tee： linux命令，这个有点复杂，可以查看linux命令帮助<br>%： 在执行外部命令时，%会扩展成当前文件名；这个%区别于替换时的%，替换时%的意义是代表整个文件，而不是文件名</p>
-</blockquote>
-<p>此命令是把当前文件（即<code>%</code>）作为<code>stdin</code>传给<code>sudo tee</code>命令来执行。说起来挺绕口，其实就是：用<code>sudo</code>强制保存。<br>这行命令解决了不能保存只读文件的问题，但毕竟命令还是有些长，为了避免每次输入一长串的命令，可以将它映射为一个简单的命令加到 <code>.vimrc</code> 中：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">" Allow saving of files as sudo when I forgot to start vim using sudo.</span><br><span class="line">cmap w!! w !sudo tee &gt; /dev/null %</span><br></pre></td></tr></table></figure>
-<p>这样，简单的运行<code>:w!!</code>即可。命令后半部分<code>&gt; /dev/null</code>作用为显式的丢掉标准输出的内容。</p>
-
+          <p>在使用<code>vim</code>时，当我们以普通用户去打开一个只有<code>root</code>用户才有权限操作的文件时，我们编辑完成之后，正要保存，却发现，这个文件我们没有权限修改。<br>经过查找，发现一个命令可以解决这个问题<br>命令：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/25/Vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -391,7 +391,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-02-25 14:32:24 / Modified: 14:36:13" itemprop="dateCreated datePublished" datetime="2020-02-25T14:32:24+08:00">2020-02-25</time>
+              <time title="Created: 2020-02-25 14:32:24 / Modified: 14:39:15" itemprop="dateCreated datePublished" datetime="2020-02-25T14:32:24+08:00">2020-02-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -443,30 +443,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>脚本规范：</p>
+          <p>脚本规范：</p>
 <ul>
 <li><p>目录结构按系统级别区分不同的jmx文件，每个系统一个jmx文件进行管理</p>
 </li>
 <li><p>线程组作为模块级别，命名格式为模块名称</p>
 </li>
 <li><p>接口作为用例级别，命名格式类似为 ：</p>
-<blockquote>
-<p>【编号】 【正例/反例】用例名称</p>
-</blockquote>
-</li>
-<li><p>使用用户定义的变量将系统中使用到的全局变量抽取到全局自定义变量中，只支持抽取整个系统公用变量</p>
-</li>
-<li><p>使用用户定义的变量将模块中使用到的测试数据抽取到局部自定义变量中</p>
-</li>
-<li><p>每个接口都需要增加断言，保证脚本的结果的正确性</p>
-</li>
-<li><p>尽量将环境变量抽取到全局中，方便环境切换</p>
-</li>
-<li><p>提交测试脚本时尽量删除自己创建的垃圾数据</p>
-</li>
-</ul>
-<p><img src="https://upyun.oneone.life/uPic/EE3px4.jpg" alt="EE3px4"></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/25/Jmeter/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
