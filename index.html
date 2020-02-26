@@ -184,6 +184,114 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://www.simpletodo.fun/2020/02/26/grep/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://upyun.oneone.life/uPic/nCsOY9.jpg">
+      <meta itemprop="name" content="Alex Wu (Yinghao)">
+      <meta itemprop="description" content="😻一一是个小天使~😚">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Simple Life">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/26/grep/" class="post-title-link" itemprop="url">grep</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-02-26 22:39:36 / Modified: 22:40:06" itemprop="dateCreated datePublished" datetime="2020-02-26T22:39:36+08:00">2020-02-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/02/26/grep/" class="post-meta-item leancloud_visitors" data-flag-title="grep" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/02/26/grep/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/26/grep/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>用法: grep [选项]… PATTERN [FILE]…<br>在每个 FILE 或是标准输入中查找 PATTERN。<br>默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。<br>例如: <code>grep -i &#39;hello world&#39; menu.h main.c</code></p>
+<ul>
+<li><p>正则表达式选择与解释:</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-E, --extended-regexp     PATTERN 是一个可扩展的正则表达式(缩写为 ERE)</span><br><span class="line">-F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。</span><br><span class="line">-G, --basic-regexp        PATTERN 是一个基本正则表达式(缩写为 BRE)</span><br><span class="line">-P, --perl-regexp         PATTERN 是一个 Perl 正则表达式</span><br><span class="line">-e, --regexp=PATTERN      用 PATTERN 来进行匹配操作</span><br><span class="line">-f, --file=FILE           从 FILE 中取得 PATTERN</span><br><span class="line">-i, --ignore-case         忽略大小写</span><br><span class="line">-w, --word-regexp         强制 PATTERN 仅完全匹配字词</span><br><span class="line">-x, --line-regexp         强制 PATTERN 仅完全匹配一行</span><br><span class="line">-z, --null-data           一个 0 字节的数据行，但不是空行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>杂项:</p>
+   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-s, --no-messages         不显示错误信息</span><br><span class="line">-v, --invert-match        选中不匹配的行</span><br><span class="line">-V, --version             显示版本信息并退出</span><br><span class="line">    --help                显示此帮助并退出</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输出控制:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">-m, --max-count=NUM       NUM 次匹配后停止</span><br><span class="line">-b, --byte-offset         输出的同时打印字节偏移</span><br><span class="line">-n, --line-number         输出的同时打印行号</span><br><span class="line">    --line-buffered       每行输出清空</span><br><span class="line">-H, --with-filename       为每一匹配项打印文件名</span><br><span class="line">-h, --no-filename         输出时不显示文件名前缀</span><br><span class="line">    --label=LABEL         将LABEL 作为标准输入文件名前缀</span><br><span class="line">-o, --only-matching       只显示匹配PATTERN 部分的行</span><br><span class="line">-q, --quiet, --silent     不显示所有常规输出</span><br><span class="line">    --binary-files=TYPE   设定二进制文件的TYPE 类型；</span><br><span class="line">                          TYPE 可以是`binary', `text', 或`without-match'</span><br><span class="line">-a, --text                等同于 --binary-files=text</span><br><span class="line">-I                        等同于 --binary-files=without-match</span><br><span class="line">-d, --directories=ACTION  读取目录的方式；</span><br><span class="line">                          ACTION 可以是`read', `recurse',或`skip'</span><br><span class="line">-D, --devices=ACTION      读取设备、先入先出队列、套接字的方式；</span><br><span class="line">                          ACTION 可以是`read'或`skip'</span><br><span class="line">-r, --recursive           等同于--directories=recurse</span><br><span class="line">-R, --dereference-recursive       同上，但遍历所有符号链接</span><br><span class="line">    --include=FILE_PATTERN  只查找匹配FILE_PATTERN 的文件</span><br><span class="line">    --exclude=FILE_PATTERN  跳过匹配FILE_PATTERN 的文件和目录</span><br><span class="line">    --exclude-from=FILE   跳过所有除FILE 以外的文件</span><br><span class="line">    --exclude-dir=PATTERN  跳过所有匹配PATTERN 的目录。</span><br><span class="line">-L, --files-without-match  只打印不匹配FILEs 的文件名</span><br><span class="line">-l, --files-with-matches  只打印匹配FILES 的文件名</span><br><span class="line">-c, --count               只打印每个FILE 中的匹配行数目</span><br><span class="line">-T, --initial-tab         行首tabs 分隔（如有必要）</span><br><span class="line">-Z, --null                在FILE 文件最后打印空字符</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文件控制:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-B, --before-context=NUM  打印文本及其前面NUM 行</span><br><span class="line">-A, --after-context=NUM   打印文本及其后面NUM 行</span><br><span class="line">-C, --context=NUM         打印NUM 行输出文本</span><br><span class="line">-NUM                      等同于 --context=NUM</span><br><span class="line">    --color[=WHEN],</span><br><span class="line">    --colour[=WHEN]       使用标记高亮匹配字串；</span><br><span class="line">                          WHEN 可以是`always', `never'或`auto'</span><br><span class="line">-U, --binary              不要清除行尾的CR 字符(MSDOS/Windows)</span><br><span class="line">-u, --unix-byte-offsets   忽略CR 字符，报告字节偏移</span><br><span class="line">                        (MSDOS/Windows)</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<p><code>egrep</code> 即<code>grep -E</code>。<code>fgrep</code> 即<code>grep -F</code>。<br>直接调用<code>egrep</code> 或是<code>fgrep</code> 均已被废弃。<br>若FILE 为 -，将读取标准输入。不带FILE，读取当前目录，除非命令行中指定了-r 选项。<br>如果少于两个FILE 参数，就要默认使用-h 参数。<br>如果有任意行被匹配，那退出状态为 0，否则为 1；<br>如果有错误产生，且未指定 -q 参数，那退出状态为 2。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="http://www.simpletodo.fun/2020/02/25/Linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1161,7 +1269,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1217,7 +1325,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.2k字</span>
+  <span class="post-count">博客全站共5k字</span>
 </div>
 
         
