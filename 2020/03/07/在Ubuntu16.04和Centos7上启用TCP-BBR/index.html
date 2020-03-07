@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="Simple Life">
 <meta property="og:description" content="新增atrandys大佬的一键安装脚本，支持centos7+&#x2F;debian9+&#x2F;ubuntu16+: 123wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;cx9208&#x2F;Linux-NetSpeed&#x2F;master&#x2F;tcp.shchmod +x tcp.sh.&#x2F;tcp.sh  BBR简介BBR 是 Google 推出的一个">
 <meta property="article:published_time" content="2020-03-07T14:02:34.000Z">
-<meta property="article:modified_time" content="2020-03-07T14:04:55.535Z">
+<meta property="article:modified_time" content="2020-03-07T14:07:10.245Z">
 <meta property="article:author" content="Alex Wu (Yinghao)">
 <meta property="article:tag" content="科学上网">
 <meta name="twitter:card" content="summary">
@@ -211,7 +211,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-03-07 22:02:34 / Modified: 22:04:55" itemprop="dateCreated datePublished" datetime="2020-03-07T22:02:34+08:00">2020-03-07</time>
+              <time title="Created: 2020-03-07 22:02:34 / Modified: 22:07:10" itemprop="dateCreated datePublished" datetime="2020-03-07T22:02:34+08:00">2020-03-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,6 +265,7 @@
 <p>简单地说，开启 <code>BBR</code> 的 Linux Server 和不开启 <code>BBR</code> 的 Linux Server，在持续传输数据方面可以有非常大的不同。</p>
 <p><code>BBR</code> 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。</p>
 <h2 id="检测-BBR-是否开启"><a href="#检测-BBR-是否开启" class="headerlink" title="检测 BBR 是否开启"></a>检测 BBR 是否开启</h2><p>在开始之前，先看看 <code>BBR</code> 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：</p>
+<a id="more"></a>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl net.ipv4.tcp_available_congestion_control</span><br></pre></td></tr></table></figure>
 
 <p>例如，在我的Server上返回了如下内容：</p>
