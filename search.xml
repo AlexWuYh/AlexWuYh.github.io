@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Shadowsocks-Kcptun</title>
+    <url>/2020/03/08/Shadowsocks-Kcptun/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><h3 id="Step-1、安装Docker"><a href="#Step-1、安装Docker" class="headerlink" title="Step 1、安装Docker"></a>Step 1、安装Docker</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl https://get.docker.com &gt; docker_install.sh</span><br><span class="line">bash docker_install.sh</span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="Step-2、-运行科学容器"><a href="#Step-2、-运行科学容器" class="headerlink" title="Step 2、 运行科学容器"></a>Step 2、 运行科学容器</h3><a id="more"></a>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -dt --restart=always --name $name -p 10001:6443 -p10001:6443/udp -p 20001:6500/udp mritd/shadowsocks -m "ss-server" -s "-s 0.0.0.0 -p 6443 -m aes-256-cfb -k $password --fast-open -u" -x -e "kcpserver" -k "-t 127.0.0.1:6443 -l :6500 -mode fast2 --key $kcpPassword"</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>$</code>开头的为自定义信息</p>
+</blockquote>
+<h2 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h2><h3 id="Win"><a href="#Win" class="headerlink" title="Win"></a>Win</h3><ul>
+<li><p><strong>shadowsocks-windows</strong></p>
+<ul>
+<li><code>https://github.com/shadowsocks/shadowsocks-windows</code></li>
+<li>如何使用：<ul>
+<li><code>https://github.com/shadowsocks/shadowsocks-windows/issues/1847</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>kcptun插件</strong></p>
+<ul>
+<li><code>https://github.com/shadowsocks/kcptun</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>参数设置：</strong></p>
+<p><img src="https://upyun.oneone.life/uPic/YDVI1H.png" alt="YDVI1H"></p>
+</li>
+</ul>
+<ul>
+<li><p>插件程序：</p>
+<ul>
+<li>插件选项中输入 <code>client_windows_amd64</code> 的全路径<blockquote>
+<p>Win系统</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>插件选项：</p>
+<ul>
+<li><code>dscp=20001;mode=fast2;key=$key;mtu=1350</code><blockquote>
+<p><code>$key</code>，替换为容器中配置的密码</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><ul>
+<li><p><strong>shadowsocks-MacOS</strong></p>
+<ul>
+<li><code>https://github.com/yangfeicheung/Shadowsocks-X/releases</code></li>
+</ul>
+</li>
+<li><p>kcptun &amp; 参数配置参考<code>Win</code>配置</p>
+</li>
+</ul>
+<h3 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h3><ul>
+<li><p><strong>shadowsocks-android</strong></p>
+<ul>
+<li><code>https://github.com/shadowsocks/shadowsocks-android</code></li>
+</ul>
+</li>
+<li><p><strong>kcptun-android</strong></p>
+<ul>
+<li><code>https://github.com/shadowsocks/kcptun-android</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>参数配置：</strong><ul>
+<li>参考win配置</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>科学上网</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在Ubuntu16.04和Centos7上启用TCP-BBR</title>
     <url>/2020/03/07/%E5%9C%A8Ubuntu16.04%E5%92%8CCentos7%E4%B8%8A%E5%90%AF%E7%94%A8TCP-BBR/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
