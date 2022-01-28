@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Docker - 标签 - Simple Life</title>
-        <link>http://example.org/tags/docker/</link>
+        <link>https://oneone.life/tags/docker/</link>
         <description>Docker - 标签 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Mon, 24 Feb 2020 22:43:34 &#43;0000</lastBuildDate><atom:link href="http://example.org/tags/docker/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Mon, 24 Feb 2020 22:43:34 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/docker/" rel="self" type="application/rss+xml" /><item>
     <title>Docker-常用基础命令</title>
-    <link>http://example.org/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
+    <link>https://oneone.life/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
     <pubDate>Mon, 24 Feb 2020 22:43:34 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>http://example.org/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
+    <guid>https://oneone.life/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
     <description><![CDATA[<ul>
 <li><strong>docker 服务重启，关闭，启动及版本查看</strong></li>
 </ul>
