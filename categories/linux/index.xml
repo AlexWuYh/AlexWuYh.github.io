@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Linux - 分类 - 我的全新 Hugo 网站</title>
+        <title>Linux - 分类 - Simple Life</title>
         <link>http://example.org/categories/linux/</link>
-        <description>Linux - 分类 - 我的全新 Hugo 网站</description>
+        <description>Linux - 分类 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
             <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Sat, 07 Mar 2020 22:02:34 &#43;0000</lastBuildDate><atom:link href="http://example.org/categories/linux/" rel="self" type="application/rss+xml" /><item>
     <title>在Ubuntu16.04和Centos7上启用TCP-BBR</title>

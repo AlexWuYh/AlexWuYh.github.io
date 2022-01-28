@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>PinPoint - 标签 - 我的全新 Hugo 网站</title>
+        <title>PinPoint - 标签 - Simple Life</title>
         <link>http://example.org/tags/pinpoint/</link>
-        <description>PinPoint - 标签 - 我的全新 Hugo 网站</description>
+        <description>PinPoint - 标签 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
             <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Fri, 07 Jan 2022 18:56:00 &#43;0000</lastBuildDate><atom:link href="http://example.org/tags/pinpoint/" rel="self" type="application/rss+xml" /><item>
     <title>PinPoint安装配置</title>
