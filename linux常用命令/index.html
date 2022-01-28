@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Linux常用命令 - 我的全新 Hugo 网站</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="Linux常用命令" />
+<meta property="og:description" content="系统
+
+
+uname -a**
+
+查看内核/操作系统/CPU信息
+
+
+
+head -n 1 /etc/issue
+
+查看操作系统版本
+
+
+
+*cat /proc/cpuinfo
+
+查看CPU信息
+
+
+
+hostname**
+
+查看计算机名
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-02-24T22:51:36+00:00" />
+<meta property="article:modified_time" content="2020-02-24T22:51:36+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="Linux常用命令"/>
+<meta name="twitter:description" content="系统
+
+
+uname -a**
+
+查看内核/操作系统/CPU信息
+
+
+
+head -n 1 /etc/issue
+
+查看操作系统版本
+
+
+
+*cat /proc/cpuinfo
+
+查看CPU信息
+
+
+
+hostname**
+
+查看计算机名
+
+
+"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" /><link rel="prev" href="http://example.org/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" /><link rel="next" href="http://example.org/jmeter/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Linux常用命令",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/"
+        },"genre": "posts","keywords": "Linux","wordcount":  1293 ,
+        "url": "http:\/\/example.org\/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/","datePublished": "2020-02-24T22:51:36+00:00","dateModified": "2020-02-24T22:51:36+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Alex Wu"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的全新 Hugo 网站"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的全新 Hugo 网站"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Linux常用命令</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-24">2020-02-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1293 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#系统">系统</a></li>
+    <li><a href="#资源">资源</a></li>
+    <li><a href="#磁盘和分区">磁盘和分区</a></li>
+    <li><a href="#网络">网络</a></li>
+    <li><a href="#进程">进程</a></li>
+    <li><a href="#用户">用户</a></li>
+    <li><a href="#服务">服务</a></li>
+    <li><a href="#程序">程序</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="系统">系统</h2>
+<ul>
+<li>
+<p><strong>uname -a</strong>**</p>
+<blockquote>
+<p>查看内核/操作系统/CPU信息</p>
+</blockquote>
+</li>
+<li>
+<p><strong>head -n 1 /etc/issue</strong></p>
+<blockquote>
+<p>查看操作系统版本</p>
+</blockquote>
+</li>
+<li>
+<p>*<strong>cat /proc/cpuinfo</strong></p>
+<blockquote>
+<p>查看<code>CPU</code>信息</p>
+</blockquote>
+</li>
+<li>
+<p><strong>hostname</strong>**</p>
+<blockquote>
+<p>查看计算机名</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>
+<p><strong>lspci -tv</strong></p>
+<blockquote>
+<p>列出所有<code>PCI</code>设备</p>
+</blockquote>
+</li>
+<li>
+<p><strong>lsusb -tv</strong></p>
+<blockquote>
+<p>出所有USB设备</p>
+</blockquote>
+</li>
+<li>
+<p><strong>lsmod</strong></p>
+<blockquote>
+<p>列出加载的内核模块</p>
+</blockquote>
+</li>
+<li>
+<p><strong>env</strong></p>
+<blockquote>
+<p>查看环境变量</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="资源">资源</h2>
+<ul>
+<li>
+<p><strong>free -m</strong></p>
+<blockquote>
+<p>查看内存使用量和交换区使用量</p>
+</blockquote>
+</li>
+<li>
+<p><strong>df -h</strong></p>
+<blockquote>
+<p>查看各分区使用情况</p>
+</blockquote>
+</li>
+<li>
+<p><strong>du -sh &lt;目录名&gt;</strong></p>
+<blockquote>
+<p>查看指定目录的大小</p>
+</blockquote>
+</li>
+<li>
+<p><strong>grep MemTotal /proc/meminfo</strong></p>
+<blockquote>
+<p>查看内存总量</p>
+</blockquote>
+</li>
+<li>
+<p><strong>grep MemFree /proc/meminfo</strong></p>
+<blockquote>
+<p>查看空闲内存量</p>
+</blockquote>
+</li>
+<li>
+<p><strong>uptime</strong></p>
+<blockquote>
+<p>查看系统运行时间、用户数、负载</p>
+</blockquote>
+</li>
+<li>
+<p><strong>cat /proc/loadavg</strong></p>
+<blockquote>
+<p>查看系统负载</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="磁盘和分区">磁盘和分区</h2>
+<ul>
+<li>
+<p><strong>mount | column -t</strong></p>
+<blockquote>
+<p>查看挂接的分区状态</p>
+</blockquote>
+</li>
+<li>
+<p><strong>fdisk -l</strong></p>
+<blockquote>
+<p>查看所有分区</p>
+</blockquote>
+</li>
+<li>
+<p><strong>swapon -s</strong></p>
+<blockquote>
+<p>查看所有交换分区</p>
+</blockquote>
+</li>
+<li>
+<p><strong>hdparm -i /dev/hda</strong></p>
+<blockquote>
+<p>查看磁盘参数(仅适用于IDE设备)</p>
+</blockquote>
+</li>
+<li>
+<p><strong>dmesg | grep IDE</strong></p>
+<blockquote>
+<p>查看启动时IDE设备检测状况</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="网络">网络</h2>
+<ul>
+<li>
+<p><strong>ifconfig</strong></p>
+<blockquote>
+<p>查看所有网络接口的属性</p>
+</blockquote>
+</li>
+<li>
+<p><strong>iptables -L</strong></p>
+<blockquote>
+<p>查看防火墙设置</p>
+</blockquote>
+</li>
+<li>
+<p><strong>route -n</strong></p>
+<blockquote>
+<p>查看路由表</p>
+</blockquote>
+</li>
+<li>
+<p><strong>netstat -lntp</strong></p>
+<blockquote>
+<p>查看所有监听端口</p>
+</blockquote>
+</li>
+<li>
+<p><strong>netstat -antp</strong></p>
+<blockquote>
+<p>查看所有已经建立的连接</p>
+</blockquote>
+</li>
+<li>
+<p><strong>netstat -s</strong></p>
+<blockquote>
+<p>查看网络统计信息</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="进程">进程</h2>
+<ul>
+<li>
+<p><strong>ps -ef</strong></p>
+<blockquote>
+<p>查看所有进程</p>
+</blockquote>
+</li>
+<li>
+<p><strong>top</strong></p>
+<blockquote>
+<p>实时显示进程状态</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="用户">用户</h2>
+<ul>
+<li>
+<p><strong>w</strong></p>
+<blockquote>
+<p>查看活动用户</p>
+</blockquote>
+</li>
+<li>
+<p><strong>id &lt;用户名&gt;</strong></p>
+<blockquote>
+<p>查看指定用户信息</p>
+</blockquote>
+</li>
+<li>
+<p><strong>last</strong></p>
+<blockquote>
+<p>查看用户登录日志</p>
+</blockquote>
+</li>
+<li>
+<p><strong>cut -d: -f1 /etc/passwd</strong></p>
+<blockquote>
+<p>查看系统所有用户</p>
+</blockquote>
+</li>
+<li>
+<p><strong>cut -d: -f1 /etc/group</strong></p>
+<blockquote>
+<p>查看系统所有组</p>
+</blockquote>
+</li>
+<li>
+<p><strong>crontab -l</strong></p>
+<blockquote>
+<p>查看当前用户的计划任务</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="服务">服务</h2>
+<ul>
+<li>
+<p><strong>chkconfig &ndash;list</strong></p>
+<blockquote>
+<p>列出所有系统服务</p>
+</blockquote>
+</li>
+<li>
+<p><strong>chkconfig &ndash;list | grep on</strong></p>
+<blockquote>
+<p>列出所有启动的系统服务</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="程序">程序</h2>
+<ul>
+<li>
+<p><strong>apt-get update</strong></p>
+<blockquote>
+<p>在修改<code>/etc/apt/sources.list</code>或者<code>/etc/apt/preferences</code>之后运行该命令。此外您需要定期运行这一命令以确保您的软件包列表是最新的。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-get install packagename</strong></p>
+<blockquote>
+<p>安装一个新软件包（参见下文的aptitude）</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-get remove packagename</strong></p>
+<blockquote>
+<p>卸载一个已安装的软件包（保留配置文件）</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-get &ndash;purge remove packagename</strong></p>
+<blockquote>
+<p>卸载一个已安装的软件包（删除配置文件）</p>
+</blockquote>
+</li>
+<li>
+<p><strong>dpkg &ndash;force-all &ndash;purge packagename</strong></p>
+<blockquote>
+<p>有些软件很难卸载，而且还阻止了别的软件的应用，就可以用这个，不过有点冒险。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-get autoclean apt</strong></p>
+<blockquote>
+<p>会把已装或已卸的软件都备份在硬盘上，所以如果需要空间的话，可以让这个命令来删除你已经删掉的软件</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-get clean</strong></p>
+<blockquote>
+<p>这个命令会把安装的软件的备份也删除，不过这样不会影响软件的使用的。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-get upgrade</strong></p>
+<blockquote>
+<p>更新所有已安装的软件包</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-get dist-upgrade</strong></p>
+<blockquote>
+<p>将系统升级到新版本</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-cache search string</strong></p>
+<blockquote>
+<p>在软件包列表中搜索字符串</p>
+</blockquote>
+</li>
+<li>
+<p>dpkg -l package-name-pattern</p>
+<blockquote>
+<p>列出所有与模式相匹配的软件包。如果您不知道软件包的全名，您可以使用“<strong><code>package-name-pattern</code></strong>”。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>aptitude</strong></p>
+<blockquote>
+<p>详细查看已安装或可用的软件包。与<code>apt-get</code>类似，<code>aptitude</code>可以通过命令行方式调用，但仅限于某些命令——最常见的有安装和卸载命令。由于<code>aptitude比apt-get</code>了解更多信息，可以说它更适合用来进行安装和卸载。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-cache showpkg pkgs</strong></p>
+<blockquote>
+<p>显示软件包信息。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-cache dumpavail</strong></p>
+<blockquote>
+<p>打印可用软件包列表。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-cache show pkgs</strong></p>
+<blockquote>
+<p>显示软件包记录，类似于<code>dpkg –print-avail</code>。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-cache pkgnames</strong></p>
+<blockquote>
+<p>打印软件包列表中所有软件包的名称。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>dpkg -S file</strong></p>
+<blockquote>
+<p>这个文件属于哪个已安装软件包。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>dpkg -L package</strong></p>
+<blockquote>
+<p>列出软件包中的所有文件。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-file search filename</strong></p>
+<blockquote>
+<p>查找包含特定文件的软件包（不一定是已安装的），这些文件的文件名中含有指定的字符串。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>apt-file</strong></p>
+<blockquote>
+<p>是一个独立的软件包。您必须 先使用apt-get install来安装它，然后运行<code>apt-file update</code>。如果<code>apt-file search</code></p>
+</blockquote>
+</li>
+<li>
+<p><strong>filename</strong></p>
+<blockquote>
+<p>输出的内容太多，您可以尝试使用<code>apt-file search</code></p>
+</blockquote>
+</li>
+<li>
+<p><strong>sfilename | grep -w filename</strong></p>
+<blockquote>
+<p><code>s</code>（只显示指定字符串作为完整的单词出现在其中的那些文件名）或者类似方法，例如：<code>apt-file search filename | grep /bin/</code>（只显示位于诸如/bin或/usr/bin这些文件夹中的文件，如果您要查找的是某个特定的执行文件的话，这样做是有帮助的）。</p>
+</blockquote>
+</li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-02-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-title="Linux常用命令" data-via="Alex_WuYh" data-hashtags="Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-title="Linux常用命令" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-title="Linux常用命令"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-title="Linux常用命令" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-title="Linux常用命令" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-title="Linux常用命令" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-title="Linux常用命令"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="prev" rel="prev" title="Ubuntu root用户下java -version无法获取java环境变量解决办法"><i class="fas fa-angle-left fa-fw"></i>Ubuntu root用户下java -version无法获取java环境变量解决办法</a>
+            <a href="/jmeter/" class="next" rel="next" title="Jmeter">Jmeter<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp">蜀ICP备20004229号-1</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Simple Life","id-2":"Simple Life"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

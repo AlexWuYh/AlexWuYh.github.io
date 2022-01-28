@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>在Ubuntu16.04和Centos7上启用TCP-BBR - 我的全新 Hugo 网站</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="在Ubuntu16.04和Centos7上启用TCP-BBR" />
+<meta property="og:description" content="
+
+新增atrandys大佬的一键安装脚本，支持centos7&#43;/debian9&#43;/ubuntu16&#43;:
+
+
+
+1
+2
+3
+
+
+wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh
+chmod &#43;x tcp.sh
+./tcp.sh
+
+
+
+新增Google原版BBR一键安装脚本：
+
+
+
+1
+2
+3
+
+
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+chmod &#43;x bbr.sh
+./bbr.sh
+
+
+
+BBR简介
+BBR 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。
+简单地说，开启 BBR 的 Linux Server 和不开启 BBR 的 Linux Server，在持续传输数据方面可以有非常大的不同。
+BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。
+检测 BBR 是否开启
+在开始之前，先看看 BBR 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-03-07T22:02:34+00:00" />
+<meta property="article:modified_time" content="2020-03-07T22:02:34+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="在Ubuntu16.04和Centos7上启用TCP-BBR"/>
+<meta name="twitter:description" content="
+
+新增atrandys大佬的一键安装脚本，支持centos7&#43;/debian9&#43;/ubuntu16&#43;:
+
+
+
+1
+2
+3
+
+
+wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh
+chmod &#43;x tcp.sh
+./tcp.sh
+
+
+
+新增Google原版BBR一键安装脚本：
+
+
+
+1
+2
+3
+
+
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+chmod &#43;x bbr.sh
+./bbr.sh
+
+
+
+BBR简介
+BBR 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。
+简单地说，开启 BBR 的 Linux Server 和不开启 BBR 的 Linux Server，在持续传输数据方面可以有非常大的不同。
+BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。
+检测 BBR 是否开启
+在开始之前，先看看 BBR 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法："/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" /><link rel="prev" href="http://example.org/grep/" /><link rel="next" href="http://example.org/pinpoint%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "在Ubuntu16.04和Centos7上启用TCP-BBR",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr\/"
+        },"genre": "posts","keywords": "科学上网","wordcount":  1403 ,
+        "url": "http:\/\/example.org\/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr\/","datePublished": "2020-03-07T22:02:34+00:00","dateModified": "2020-03-07T22:02:34+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Alex Wu"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的全新 Hugo 网站"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的全新 Hugo 网站"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">在Ubuntu16.04和Centos7上启用TCP-BBR</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-07">2020-03-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1403 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#bbr简介">BBR简介</a></li>
+    <li><a href="#检测-bbr-是否开启">检测 BBR 是否开启</a></li>
+    <li><a href="#为ubuntu-1604-安装启用-bbr">为Ubuntu 16.04 安装/启用 BBR</a>
+      <ul>
+        <li><a href="#安装-410-新内核">安装 4.10+ 新内核</a></li>
+        <li><a href="#启用-bbr">启用 BBR</a></li>
+      </ul>
+    </li>
+    <li><a href="#为centos7-安装启用-bbr">为Centos7 安装/启用 BBR</a>
+      <ul>
+        <li><a href="#安装-410-新内核-1">安装 4.10+ 新内核</a></li>
+        <li><a href="#启用-bbr-1">启用 BBR</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<ol>
+<li>新增atrandys大佬的一键安装脚本，支持<code>centos7+</code>/<code>debian9+</code>/<code>ubuntu16+</code>:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh
+chmod +x tcp.sh
+./tcp.sh
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>新增Google原版BBR一键安装脚本：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+chmod +x bbr.sh
+./bbr.sh
+</code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h2 id="bbr简介">BBR简介</h2>
+<p><code>BBR</code> 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。</p>
+<p>简单地说，开启 <code>BBR</code> 的 Linux Server 和不开启 <code>BBR</code> 的 Linux Server，在持续传输数据方面可以有非常大的不同。</p>
+<p><code>BBR</code> 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。</p>
+<h2 id="检测-bbr-是否开启">检测 BBR 是否开启</h2>
+<p>在开始之前，先看看 <code>BBR</code> 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sysctl net.ipv4.tcp_available_congestion_control
+</code></pre></td></tr></table>
+</div>
+</div><p>例如，在我的Server上返回了如下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">net.ipv4.tcp_available_congestion_control <span class="o">=</span> cubic reno
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看到是没有BBR的，因为默认的 Ubuntu 16.04 用的是 <code>Linux 4.4.0</code> 内核，所以自然是看不到 <code>BBR</code> 的。</p>
+<p>我们再次确认下系统当前启用的拥塞算法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sysctl net.ipv4.tcp_congestion_control
+</code></pre></td></tr></table>
+</div>
+</div><p>返回的内容是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">net.ipv4.tcp_congestion_control <span class="o">=</span> cubic
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看到系统使用的是 <code>cubic</code> 这个默认的算法。接下去我们通过最标准的模式来为这台 Ubuntu 16.04 启用 <code>BBR</code></p>
+<h2 id="为ubuntu-1604-安装启用-bbr">为Ubuntu 16.04 安装/启用 BBR</h2>
+<h3 id="安装-410-新内核">安装 4.10+ 新内核</h3>
+<p><code>BBR</code> 只能配合 Linux Kernel 4.10 以上内核才能使用。但是在 Ubuntu 16.04 上怎么使用 4.10 呢？难道要手动下载和安装吗？</p>
+<p>不能！这会有一个安全隐患，手动下载安装的新内核，无法保证后续能得到及时的安全更新。那么怎么办？这里推荐使用 <code>HWE</code> 版本的内核，它就在官方源里。</p>
+<p>HWE，即：<code>HareWare Enablement</code>，是专门为在老的系统上支持新的硬件而推出的内核。你可以像安装其他软件包一样在 Ubuntu 16.04 里非常容易的安装它，只需要执行下面的命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get install linux-generic-hwe-16.04
+</code></pre></td></tr></table>
+</div>
+</div><p>对！只需要这样就OK了！</p>
+<p>安装好以后<strong>重启系统</strong>，然后输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">uname -a
+</code></pre></td></tr></table>
+</div>
+</div><p>我的Server输出如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">Linux oneone 4.15.0-74-generic <span class="c1">#83~16.04.1-Ubuntu SMP Wed Dec 18 04:56:23 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看到系统内核已经升级到<code>4.15.0</code>了。</p>
+<h3 id="启用-bbr">启用 BBR</h3>
+<p>接下来就可以为新内核装载 BBR 模块了，分别执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sudo modprobe tcp_bbr
+
+<span class="nb">echo</span> <span class="s2">&#34;tcp_bbr&#34;</span> <span class="p">|</span> sudo tee -a /etc/modules-load.d/modules.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>接下来我们再来查看系统支持的拥塞算法，可以看到<code>BBR</code>已经在里面了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">root@oneone:~# sysctl net.ipv4.tcp_available_congestion_control
+
+net.ipv4.tcp_available_congestion_control <span class="o">=</span> reno cubic bbr
+</code></pre></td></tr></table>
+</div>
+</div><p>接下来就正式启用BBR，把它设为系统的默认拥塞算法，分别执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">echo</span> <span class="s2">&#34;net.core.default_qdisc=fq&#34;</span> <span class="p">|</span> sudo tee -a /etc/sysctl.conf
+
+<span class="nb">echo</span> <span class="s2">&#34;net.ipv4.tcp_congestion_control=bbr&#34;</span> <span class="p">|</span> sudo tee -a /etc/sysctl.conf
+
+sudo sysctl -p
+</code></pre></td></tr></table>
+</div>
+</div><p>最后，再来验证一下是否设置成功，可以看到<code>BBR</code>已经是默认算法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">root@oneone:~# sysctl net.ipv4.tcp_congestion_control
+
+net.ipv4.tcp_congestion_control <span class="o">=</span> bbr
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="为centos7-安装启用-bbr">为Centos7 安装/启用 BBR</h2>
+<h3 id="安装-410-新内核-1">安装 4.10+ 新内核</h3>
+<p>先查看系统版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">cat /etc/redhat-release
+<span class="c1">#例如我的系统版本是7.6，输出如下:</span>
+CentOS Linux release 7.6.1810 <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>添加elrepo源，然后升级内核，操作命令如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#添加、更新源</span>
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+
+<span class="c1">#安装内核</span>
+yum --enablerepo<span class="o">=</span>elrepo-kernel install kernel-ml -y
+</code></pre></td></tr></table>
+</div>
+</div><p>安装完成后，可以使用下方的命令查看系统已经安装了内核</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">awk -F<span class="se">\&#39;</span> <span class="s1">&#39;$1==&#34;menuentry &#34; {print i++ &#34; : &#34; $2}&#39;</span> /etc/grub2.cfg
+
+<span class="c1">#例如我的系统查询结果如下，其中‘5.5.8’版本的内核是刚刚安装的：</span>
+<span class="m">0</span> : CentOS Linux <span class="o">(</span>5.5.8-1.el7.elrepo.x86_64<span class="o">)</span> <span class="m">7</span> <span class="o">(</span>Core<span class="o">)</span>
+<span class="m">1</span> : CentOS Linux <span class="o">(</span>4.14.129-bbrplus<span class="o">)</span> <span class="m">7</span> <span class="o">(</span>Core<span class="o">)</span>
+<span class="m">2</span> : CentOS Linux <span class="o">(</span>0-rescue-05cb8c7b39fe0f70e3ce97e5beab809d<span class="o">)</span> <span class="m">7</span> <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>接着我们就把刚安装的<code>CentOS Linux (5.5.8-1.el7.elrepo.x86_64) 7 (Core)</code>内核设置为默认：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">grub2-set-default <span class="m">0</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>设置完默认内核之后，使用<code>uname -a</code>查看时发现当前使用的内核还是之前的版本，这是因为切换内核后需要重启系统才能生效：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">#查看还是之前的版本：</span>
+<span class="o">[</span>root~<span class="o">]</span><span class="c1"># uname -a</span>
+Linux ip-172-31-21-55.ap-southeast-1.compute.internal 4.14.129-bbrplus <span class="c1">#1 SMP Tue Jun 25 12:23:41 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux</span>
+
+<span class="c1">#重启系统即可生效</span>
+<span class="o">[</span>root@~<span class="o">]</span><span class="c1"># reboot</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="启用-bbr-1">启用 BBR</h3>
+<p>编辑<code>sysctl.conf</code>文件，并添加如下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 使用vim编辑文件</span>
+vim /etc/sysctl.conf
+
+<span class="c1">#在文件中添加如下内容并保存：</span>
+net.core.default_qdisc <span class="o">=</span> fq
+net.ipv4.tcp_congestion_control <span class="o">=</span> bbr
+</code></pre></td></tr></table>
+</div>
+</div><p>加载系统参数，并确认配置是否生效，如果生效会打印上方刚刚新增的内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">sysctl -p 
+</code></pre></td></tr></table>
+</div>
+</div><p>最后，再次验证一下是否设置成功：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@~<span class="o">]</span><span class="c1"># sysctl net.ipv4.tcp_congestion_control</span>
+
+<span class="c1">#输出如下，则表示默认加速算法已经是bbr</span>
+net.ipv4.tcp_congestion_control <span class="o">=</span> bbr
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-03-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-via="Alex_WuYh" data-hashtags="科学上网"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-hashtag="科学上网"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/grep/" class="prev" rel="prev" title="grep"><i class="fas fa-angle-left fa-fw"></i>grep</a>
+            <a href="/pinpoint%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="next" rel="next" title="PinPoint安装配置">PinPoint安装配置<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp">蜀ICP备20004229号-1</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Simple Life","id-2":"Simple Life"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

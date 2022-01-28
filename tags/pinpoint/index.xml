@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>PinPoint - 标签 - 我的全新 Hugo 网站</title>
+        <link>http://example.org/tags/pinpoint/</link>
+        <description>PinPoint - 标签 - 我的全新 Hugo 网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Fri, 07 Jan 2022 18:56:00 &#43;0000</lastBuildDate><atom:link href="http://example.org/tags/pinpoint/" rel="self" type="application/rss+xml" /><item>
+    <title>PinPoint安装配置</title>
+    <link>http://example.org/pinpoint%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+    <pubDate>Fri, 07 Jan 2022 18:56:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/pinpoint%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+    <description><![CDATA[<h2 id="简介">简介</h2>
+<p></p>
+<p><br />pinpoint是开源在github上的一款全链路APM监控工具，提供了无侵入式的调用链监控、方法执行详情查看、应用状态信息监控等功能。基于GoogleDapper论文进行的实现，与另一款开源的全链路分析工具Zipkin类似，但相比Zipkin提供了无侵入式、代码维度的监控等更多的特性。 Pinpoint支持的功能比较丰富，可以支持如下几种功能：</p>]]></description>
+</item></channel>
+</rss>

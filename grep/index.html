@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>grep - 我的全新 Hugo 网站</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="grep" />
+<meta property="og:description" content="用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
+在每个 FILE 或是标准输入中查找 PATTERN。
+默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。
+例如: grep -i &#39;hello world&#39; menu.h main.c
+
+
+正则表达式选择与解释:
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+
+
+  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式(缩写为 ERE)
+  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
+  -G, --basic-regexp        PATTERN 是一个基本正则表达式(缩写为 BRE)
+  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
+  -e, --regexp=PATTERN      用 PATTERN 来进行匹配操作
+  -f, --file=FILE           从 FILE 中取得 PATTERN
+  -i, --ignore-case         忽略大小写
+  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
+  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
+  -z, --null-data           一个 0 字节的数据行，但不是空行
+
+
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/grep/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-02-26T22:39:36+00:00" />
+<meta property="article:modified_time" content="2020-02-26T22:39:36+00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="grep"/>
+<meta name="twitter:description" content="用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
+在每个 FILE 或是标准输入中查找 PATTERN。
+默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。
+例如: grep -i &#39;hello world&#39; menu.h main.c
+
+
+正则表达式选择与解释:
+
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+
+
+  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式(缩写为 ERE)
+  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
+  -G, --basic-regexp        PATTERN 是一个基本正则表达式(缩写为 BRE)
+  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
+  -e, --regexp=PATTERN      用 PATTERN 来进行匹配操作
+  -f, --file=FILE           从 FILE 中取得 PATTERN
+  -i, --ignore-case         忽略大小写
+  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
+  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
+  -z, --null-data           一个 0 字节的数据行，但不是空行
+
+
+
+"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/grep/" /><link rel="prev" href="http://example.org/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/" /><link rel="next" href="http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "grep",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/grep\/"
+        },"genre": "posts","keywords": "Linux","wordcount":  1094 ,
+        "url": "http:\/\/example.org\/grep\/","datePublished": "2020-02-26T22:39:36+00:00","dateModified": "2020-02-26T22:39:36+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Alex Wu"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的全新 Hugo 网站"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的全新 Hugo 网站"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">grep</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-26">2020-02-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1094 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
+在每个 FILE 或是标准输入中查找 PATTERN。
+默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。
+例如: <code>grep -i 'hello world' menu.h main.c</code></p>
+<ul>
+<li>
+<p>正则表达式选择与解释:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式<span class="o">(</span>缩写为 ERE<span class="o">)</span>
+  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
+  -G, --basic-regexp        PATTERN 是一个基本正则表达式<span class="o">(</span>缩写为 BRE<span class="o">)</span>
+  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
+  -e, --regexp<span class="o">=</span>PATTERN      用 PATTERN 来进行匹配操作
+  -f, --file<span class="o">=</span>FILE           从 FILE 中取得 PATTERN
+  -i, --ignore-case         忽略大小写
+  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
+  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
+  -z, --null-data           一个 <span class="m">0</span> 字节的数据行，但不是空行
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<ul>
+<li>
+<p>杂项:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"> -s, --no-messages         不显示错误信息
+ -v, --invert-match        选中不匹配的行
+ -V, --version             显示版本信息并退出
+     --help                显示此帮助并退出
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>输出控制:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">-m, --max-count<span class="o">=</span>NUM       NUM 次匹配后停止
+-b, --byte-offset         输出的同时打印字节偏移
+-n, --line-number         输出的同时打印行号
+    --line-buffered       每行输出清空
+-H, --with-filename       为每一匹配项打印文件名
+-h, --no-filename         输出时不显示文件名前缀
+    --label<span class="o">=</span>LABEL         将LABEL 作为标准输入文件名前缀
+-o, --only-matching       只显示匹配PATTERN 部分的行
+-q, --quiet, --silent     不显示所有常规输出
+    --binary-files<span class="o">=</span>TYPE   设定二进制文件的TYPE 类型；
+                          TYPE 可以是<span class="sb">`</span>binary<span class="s1">&#39;, `text&#39;</span>, 或<span class="sb">`</span>without-match<span class="s1">&#39;
+</span><span class="s1">-a, --text                等同于 --binary-files=text
+</span><span class="s1">-I                        等同于 --binary-files=without-match
+</span><span class="s1">-d, --directories=ACTION  读取目录的方式；
+</span><span class="s1">                          ACTION 可以是`read&#39;</span>, <span class="sb">`</span>recurse<span class="s1">&#39;,或`skip&#39;</span>
+-D, --devices<span class="o">=</span>ACTION      读取设备、先入先出队列、套接字的方式；
+                          ACTION 可以是<span class="sb">`</span>read<span class="s1">&#39;或`skip&#39;</span>
+-r, --recursive           等同于--directories<span class="o">=</span>recurse
+-R, --dereference-recursive       同上，但遍历所有符号链接
+    --include<span class="o">=</span>FILE_PATTERN  只查找匹配FILE_PATTERN 的文件
+    --exclude<span class="o">=</span>FILE_PATTERN  跳过匹配FILE_PATTERN 的文件和目录
+    --exclude-from<span class="o">=</span>FILE   跳过所有除FILE 以外的文件
+    --exclude-dir<span class="o">=</span>PATTERN  跳过所有匹配PATTERN 的目录。
+-L, --files-without-match  只打印不匹配FILEs 的文件名
+-l, --files-with-matches  只打印匹配FILES 的文件名
+-c, --count               只打印每个FILE 中的匹配行数目
+-T, --initial-tab         行首tabs 分隔（如有必要）
+-Z, --null                在FILE 文件最后打印空字符
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>文件控制:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">-B, --before-context<span class="o">=</span>NUM  打印文本及其前面NUM 行
+-A, --after-context<span class="o">=</span>NUM   打印文本及其后面NUM 行
+-C, --context<span class="o">=</span>NUM         打印NUM 行输出文本
+-NUM                      等同于 --context<span class="o">=</span>NUM
+    --color<span class="o">[=</span>WHEN<span class="o">]</span>,
+    --colour<span class="o">[=</span>WHEN<span class="o">]</span>       使用标记高亮匹配字串；
+                          WHEN 可以是<span class="sb">`</span>always<span class="s1">&#39;, `never&#39;</span>或<span class="sb">`</span>auto<span class="err">&#39;</span>
+-U, --binary              不要清除行尾的CR 字符<span class="o">(</span>MSDOS/Windows<span class="o">)</span>
+-u, --unix-byte-offsets   忽略CR 字符，报告字节偏移
+                        <span class="o">(</span>MSDOS/Windows<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p><code>egrep</code> 即<code>grep -E</code>。<code>fgrep</code> 即<code>grep -F</code>。
+直接调用<code>egrep</code> 或是<code>fgrep</code> 均已被废弃。
+若FILE 为 -，将读取标准输入。不带FILE，读取当前目录，除非命令行中指定了-r 选项。
+如果少于两个FILE 参数，就要默认使用-h 参数。
+如果有任意行被匹配，那退出状态为 0，否则为 1；
+如果有错误产生，且未指定 -q 参数，那退出状态为 2。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-02-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/grep/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/grep/" data-title="grep" data-via="Alex_WuYh" data-hashtags="Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/grep/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="http://example.org/grep/" data-title="grep" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="http://example.org/grep/" data-title="grep"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/grep/" data-title="grep" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="http://example.org/grep/" data-title="grep" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="http://example.org/grep/" data-title="grep" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://example.org/grep/" data-title="grep"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/" class="prev" rel="prev" title="Linux下各文件夹的作用"><i class="fas fa-angle-left fa-fw"></i>Linux下各文件夹的作用</a>
+            <a href="/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" class="next" rel="next" title="在Ubuntu16.04和Centos7上启用TCP-BBR">在Ubuntu16.04和Centos7上启用TCP-BBR<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp">蜀ICP备20004229号-1</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Simple Life","id-2":"Simple Life"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,208 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Linux - 分类 - 我的全新 Hugo 网站</title>
+        <link>http://example.org/categories/linux/</link>
+        <description>Linux - 分类 - 我的全新 Hugo 网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Sat, 07 Mar 2020 22:02:34 &#43;0000</lastBuildDate><atom:link href="http://example.org/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>在Ubuntu16.04和Centos7上启用TCP-BBR</title>
+    <link>http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</link>
+    <pubDate>Sat, 07 Mar 2020 22:02:34 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</guid>
+    <description><![CDATA[<blockquote>
+<ol>
+<li>新增atrandys大佬的一键安装脚本，支持<code>centos7+</code>/<code>debian9+</code>/<code>ubuntu16+</code>:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh
+chmod +x tcp.sh
+./tcp.sh
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>新增Google原版BBR一键安装脚本：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+chmod +x bbr.sh
+./bbr.sh
+</code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h2 id="bbr简介">BBR简介</h2>
+<p><code>BBR</code> 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。</p>
+<p>简单地说，开启 <code>BBR</code> 的 Linux Server 和不开启 <code>BBR</code> 的 Linux Server，在持续传输数据方面可以有非常大的不同。</p>
+<p><code>BBR</code> 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。</p>
+<h2 id="检测-bbr-是否开启">检测 BBR 是否开启</h2>
+<p>在开始之前，先看看 <code>BBR</code> 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：</p>]]></description>
+</item><item>
+    <title>grep</title>
+    <link>http://example.org/grep/</link>
+    <pubDate>Wed, 26 Feb 2020 22:39:36 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/grep/</guid>
+    <description><![CDATA[<p>用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
+在每个 FILE 或是标准输入中查找 PATTERN。
+默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。
+例如: <code>grep -i 'hello world' menu.h main.c</code></p>
+<ul>
+<li>
+<p>正则表达式选择与解释:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式<span class="o">(</span>缩写为 ERE<span class="o">)</span>
+  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
+  -G, --basic-regexp        PATTERN 是一个基本正则表达式<span class="o">(</span>缩写为 BRE<span class="o">)</span>
+  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
+  -e, --regexp<span class="o">=</span>PATTERN      用 PATTERN 来进行匹配操作
+  -f, --file<span class="o">=</span>FILE           从 FILE 中取得 PATTERN
+  -i, --ignore-case         忽略大小写
+  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
+  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
+  -z, --null-data           一个 <span class="m">0</span> 字节的数据行，但不是空行
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>]]></description>
+</item><item>
+    <title>Vim权限不足时强制保存只读类型文件的方法</title>
+    <link>http://example.org/vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+    <pubDate>Tue, 25 Feb 2020 14:35:25 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+    <description><![CDATA[<p>在使用<code>vim</code>时，当我们以普通用户去打开一个只有<code>root</code>用户才有权限操作的文件时，我们编辑完成之后，正要保存，却发现，这个文件我们没有权限修改。
+经过查找，发现一个命令可以解决这个问题
+命令：</p>]]></description>
+</item><item>
+    <title>Linux常用命令</title>
+    <link>http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+    <pubDate>Mon, 24 Feb 2020 22:51:36 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+    <description><![CDATA[<h2 id="系统">系统</h2>
+<ul>
+<li>
+<p><strong>uname -a</strong>**</p>
+<blockquote>
+<p>查看内核/操作系统/CPU信息</p>
+</blockquote>
+</li>
+<li>
+<p><strong>head -n 1 /etc/issue</strong></p>
+<blockquote>
+<p>查看操作系统版本</p>
+</blockquote>
+</li>
+<li>
+<p>*<strong>cat /proc/cpuinfo</strong></p>
+<blockquote>
+<p>查看<code>CPU</code>信息</p>
+</blockquote>
+</li>
+<li>
+<p><strong>hostname</strong>**</p>
+<blockquote>
+<p>查看计算机名</p>
+</blockquote>
+</li>
+</ul>]]></description>
+</item><item>
+    <title>Ubuntu root用户下java -version无法获取java环境变量解决办法</title>
+    <link>http://example.org/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+    <pubDate>Mon, 24 Feb 2020 22:49:27 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+    <description><![CDATA[<h2 id="问题现象">问题现象</h2>
+<p>​	按照网上配置java环境变量的方法在/etc/profile文件中添加如下内容，配置之后，如果重启系统后切换到root用户无法获取已配置的java环境变量，在普通用户下可以获取到</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/local/java/jdk1.8.0_65
+
+<span class="nb">export</span> <span class="nv">JRE_HOME</span><span class="o">=</span><span class="si">${</span><span class="nv">JAVA_HOME</span><span class="si">}</span>/jre
+
+<span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$JAVA_HOME</span>/lib:<span class="nv">$JRE_HOME</span>/lib:<span class="nv">$CLASSPATH</span>
+
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JRE_HOME</span>/bin:<span class="nv">$PATH</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="解决办法">解决办法</h2>]]></description>
+</item><item>
+    <title>让其他用户使用oh-my-zsh</title>
+    <link>http://example.org/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/</link>
+    <pubDate>Mon, 24 Feb 2020 22:46:22 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/</guid>
+    <description><![CDATA[<p>如果使用<code>wt</code>用户安装配置了<code>oh-my-zsh</code>，其他用户想要使用相同的主题和配置，可以参考<code>https://askubuntu.com/questions/521469/oh-my-zsh-for-the-root-and-for-all-user</code>
+这里介绍一种更简单的方法（亲测有效）：
+比如让<code>root</code>用户使用和<code>wt</code>用户相同的配置：</p>]]></description>
+</item><item>
+    <title>Docker-常用基础命令</title>
+    <link>http://example.org/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
+    <pubDate>Mon, 24 Feb 2020 22:43:34 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
+    <description><![CDATA[<ul>
+<li><strong>docker 服务重启，关闭，启动及版本查看</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"> <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl restart docker.service  <span class="c1">#重启服务</span>
+ <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl stop docker.service     <span class="c1">#关闭服务</span>
+ <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl start docker.service    <span class="c1">#启动服务</span>
+ <span class="o">[</span>root@iZm5e3hwzuo58e05kxjiifZ /<span class="o">]</span> docker -v <span class="c1">#docker版本查看</span>
+ Docker version 18.06.1-ce, build e68fc7a
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>docker 搜索/下载/查看镜像</strong></li>
+</ul>]]></description>
+</item><item>
+    <title>.vimrc-备份</title>
+    <link>http://example.org/vimrc-%E5%A4%87%E4%BB%BD/</link>
+    <pubDate>Mon, 24 Feb 2020 22:31:16 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/vimrc-%E5%A4%87%E4%BB%BD/</guid>
+    <description><![CDATA[<p>自用的vimrc配置文件备份:</p>]]></description>
+</item></channel>
+</rss>

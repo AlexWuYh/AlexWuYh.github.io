@@ -1,0 +1,117 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Linux - 标签 - 我的全新 Hugo 网站</title>
+        <link>http://example.org/tags/linux/</link>
+        <description>Linux - 标签 - 我的全新 Hugo 网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 26 Feb 2020 22:39:36 &#43;0000</lastBuildDate><atom:link href="http://example.org/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>grep</title>
+    <link>http://example.org/grep/</link>
+    <pubDate>Wed, 26 Feb 2020 22:39:36 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/grep/</guid>
+    <description><![CDATA[<p>用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
+在每个 FILE 或是标准输入中查找 PATTERN。
+默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。
+例如: <code>grep -i 'hello world' menu.h main.c</code></p>
+<ul>
+<li>
+<p>正则表达式选择与解释:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式<span class="o">(</span>缩写为 ERE<span class="o">)</span>
+  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
+  -G, --basic-regexp        PATTERN 是一个基本正则表达式<span class="o">(</span>缩写为 BRE<span class="o">)</span>
+  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
+  -e, --regexp<span class="o">=</span>PATTERN      用 PATTERN 来进行匹配操作
+  -f, --file<span class="o">=</span>FILE           从 FILE 中取得 PATTERN
+  -i, --ignore-case         忽略大小写
+  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
+  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
+  -z, --null-data           一个 <span class="m">0</span> 字节的数据行，但不是空行
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>]]></description>
+</item><item>
+    <title>Linux常用命令</title>
+    <link>http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+    <pubDate>Mon, 24 Feb 2020 22:51:36 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+    <description><![CDATA[<h2 id="系统">系统</h2>
+<ul>
+<li>
+<p><strong>uname -a</strong>**</p>
+<blockquote>
+<p>查看内核/操作系统/CPU信息</p>
+</blockquote>
+</li>
+<li>
+<p><strong>head -n 1 /etc/issue</strong></p>
+<blockquote>
+<p>查看操作系统版本</p>
+</blockquote>
+</li>
+<li>
+<p>*<strong>cat /proc/cpuinfo</strong></p>
+<blockquote>
+<p>查看<code>CPU</code>信息</p>
+</blockquote>
+</li>
+<li>
+<p><strong>hostname</strong>**</p>
+<blockquote>
+<p>查看计算机名</p>
+</blockquote>
+</li>
+</ul>]]></description>
+</item><item>
+    <title>Docker-常用基础命令</title>
+    <link>http://example.org/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
+    <pubDate>Mon, 24 Feb 2020 22:43:34 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
+    <description><![CDATA[<ul>
+<li><strong>docker 服务重启，关闭，启动及版本查看</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"> <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl restart docker.service  <span class="c1">#重启服务</span>
+ <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl stop docker.service     <span class="c1">#关闭服务</span>
+ <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl start docker.service    <span class="c1">#启动服务</span>
+ <span class="o">[</span>root@iZm5e3hwzuo58e05kxjiifZ /<span class="o">]</span> docker -v <span class="c1">#docker版本查看</span>
+ Docker version 18.06.1-ce, build e68fc7a
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>docker 搜索/下载/查看镜像</strong></li>
+</ul>]]></description>
+</item><item>
+    <title>.vimrc-备份</title>
+    <link>http://example.org/vimrc-%E5%A4%87%E4%BB%BD/</link>
+    <pubDate>Mon, 24 Feb 2020 22:31:16 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/vimrc-%E5%A4%87%E4%BB%BD/</guid>
+    <description><![CDATA[<p>自用的vimrc配置文件备份:</p>]]></description>
+</item></channel>
+</rss>
