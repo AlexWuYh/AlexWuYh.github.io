@@ -164,6 +164,6 @@ chmod +x bbr.sh
     <pubDate>Tue, 25 Feb 2020 14:36:41 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://oneone.life/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[下面内容对应环境为：Ubuntu 16.04 首先放一张根目录下的文件夹图 boot 该文件夹存放引导加载器(bootstrap loader)使用的文件,一般我们]]></description>
 </item></channel>
 </rss>

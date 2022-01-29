@@ -46,6 +46,13 @@
 </div></li>
 </ul>]]></description>
 </item><item>
+    <title>Linux下各文件夹的作用</title>
+    <link>https://oneone.life/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
+    <pubDate>Tue, 25 Feb 2020 14:36:41 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://oneone.life/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
+    <description><![CDATA[下面内容对应环境为：Ubuntu 16.04 首先放一张根目录下的文件夹图 boot 该文件夹存放引导加载器(bootstrap loader)使用的文件,一般我们]]></description>
+</item><item>
     <title>Linux常用命令</title>
     <link>https://oneone.life/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
     <pubDate>Mon, 24 Feb 2020 22:51:36 &#43;0000</pubDate>
@@ -78,6 +85,35 @@
 </blockquote>
 </li>
 </ul>]]></description>
+</item><item>
+    <title>Ubuntu root用户下java -version无法获取java环境变量解决办法</title>
+    <link>https://oneone.life/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+    <pubDate>Mon, 24 Feb 2020 22:49:27 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://oneone.life/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+    <description><![CDATA[<h2 id="问题现象">问题现象</h2>
+<p>​	按照网上配置java环境变量的方法在/etc/profile文件中添加如下内容，配置之后，如果重启系统后切换到root用户无法获取已配置的java环境变量，在普通用户下可以获取到</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/local/java/jdk1.8.0_65
+
+<span class="nb">export</span> <span class="nv">JRE_HOME</span><span class="o">=</span><span class="si">${</span><span class="nv">JAVA_HOME</span><span class="si">}</span>/jre
+
+<span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$JAVA_HOME</span>/lib:<span class="nv">$JRE_HOME</span>/lib:<span class="nv">$CLASSPATH</span>
+
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JRE_HOME</span>/bin:<span class="nv">$PATH</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="解决办法">解决办法</h2>]]></description>
 </item><item>
     <title>Docker-常用基础命令</title>
     <link>https://oneone.life/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
@@ -113,5 +149,33 @@
     <author>作者</author>
     <guid>https://oneone.life/vimrc-%E5%A4%87%E4%BB%BD/</guid>
     <description><![CDATA[<p>自用的vimrc配置文件备份:</p>]]></description>
+</item><item>
+    <title>Linux上删除文件后空间没有被释放</title>
+    <link>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</guid>
+    <description><![CDATA[有时候，在Linux系统中rm删除文件后，使用df查看空间占用情况时会发现，占用空间并没有减少。这往往都是因为被删除的文件还被某些进程占用着]]></description>
+</item><item>
+    <title>Linux系统启动过程</title>
+    <link>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</guid>
+    <description><![CDATA[Linux 系统启动过程linux启动时我们会看到许多启动信息。 Linux系统的启动过程并不是大家想象中的那么复杂，其过程可以分为5个阶段： 内核的引导]]></description>
+</item><item>
+    <title>NTP协议简单分析</title>
+    <link>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</guid>
+    <description><![CDATA[一.概述 NTP (Network Time Protocol, 网络时间协议) 是由 RFC 5905 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同]]></description>
+</item><item>
+    <title>tcpdump命令使用简介</title>
+    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
+    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
 </item></channel>
 </rss>
