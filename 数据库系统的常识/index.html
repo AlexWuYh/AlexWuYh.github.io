@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件" />
-<meta property="og:description" content="安装配置lrzsz/iterm2-zmodem 安装: 1 brew install lrzsz 打开终端下载支持脚本： 1 git clone git@github.com:mmastrac/iterm2-zmodem.git 在终端下安装支持脚本： 1 cp iterm2-zmodem/iterm2-*.sh /usr/local/bin &amp;&amp; chmod &#43;x /usr/local/bin/iterm2-*.sh 设置iter" />
+        <title>数据库系统的常识 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="数据库系统的常识" />
+<meta property="og:description" content="事务处理 事务来自于2个独立的需求: 并发数据库访问 和 系统错误恢复. 一个事务可以被看作是 一个单元的一系列SQL语句的集合. 事务特性 (A.C.I.D) A - 原子性 (Atomacity):" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-02-08T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-02-08T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://oneone.life/logo.png"/>
 
-<meta name="twitter:title" content="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件"/>
-<meta name="twitter:description" content="安装配置lrzsz/iterm2-zmodem 安装: 1 brew install lrzsz 打开终端下载支持脚本： 1 git clone git@github.com:mmastrac/iterm2-zmodem.git 在终端下安装支持脚本： 1 cp iterm2-zmodem/iterm2-*.sh /usr/local/bin &amp;&amp; chmod &#43;x /usr/local/bin/iterm2-*.sh 设置iter"/>
+<meta name="twitter:title" content="数据库系统的常识"/>
+<meta name="twitter:description" content="事务处理 事务来自于2个独立的需求: 并发数据库访问 和 系统错误恢复. 一个事务可以被看作是 一个单元的一系列SQL语句的集合. 事务特性 (A.C.I.D) A - 原子性 (Atomacity):"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" /><link rel="prev" href="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" /><link rel="prev" href="https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/" /><link rel="next" href="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件",
+        "headline": "数据库系统的常识",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/oneone.life\/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6\/"
-        },"genre": "posts","keywords": "MacOS","wordcount":  172 ,
-        "url": "https:\/\/oneone.life\/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6\/","datePublished": "2022-02-08T00:00:00+00:00","dateModified": "2022-02-08T00:00:00+00:00","publisher": {
+            "@id": "https:\/\/oneone.life\/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86\/"
+        },"genre": "posts","keywords": "mysql","wordcount":  2136 ,
+        "url": "https:\/\/oneone.life\/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86\/","datePublished": "2022-02-08T00:00:00+00:00","dateModified": "2022-02-08T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -104,10 +104,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/macos/"><i class="far fa-folder fa-fw"></i>MacOS</a>&nbsp;<a href="/categories/tools/"><i class="far fa-folder fa-fw"></i>tools</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-08">2022-02-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 172 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" class="leancloud_visitors" data-flag-title="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件">
+        </div><article class="page single"><h1 class="single-title animated flipInX">数据库系统的常识</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/mysql/"><i class="far fa-folder fa-fw"></i>mysql</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-02-08">2022-02-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2136 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" class="leancloud_visitors" data-flag-title="数据库系统的常识">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
@@ -117,91 +117,177 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#安装配置lrzsziterm2-zmodem">安装配置lrzsz/iterm2-zmodem</a></li>
-    <li><a href="#设置iterm2">设置iterm2</a></li>
-    <li><a href="#上传文件下载文件">上传文件、下载文件</a></li>
+    <li><a href="#事务处理">事务处理</a>
+      <ul>
+        <li><a href="#事务特性-acid">事务特性 (A.C.I.D)</a></li>
+        <li><a href="#事务的隔离级别">事务的隔离级别</a></li>
+        <li><a href="#事务隔离的实现---锁">事务隔离的实现 - 锁</a></li>
+      </ul>
+    </li>
+    <li><a href="#索引">索引</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="安装配置lrzsziterm2-zmodem">安装配置lrzsz/iterm2-zmodem</h2>
+            </div><div class="content" id="content"><h2 id="事务处理">事务处理</h2>
+<ul>
+<li>
+<p>事务来自于2个独立的需求: <strong>并发数据库访问</strong> 和 <strong>系统错误恢复</strong>.</p>
+</li>
+<li>
+<p>一个事务可以被看作是 <strong>一个单元的一系列SQL语句的集合</strong>.</p>
+</li>
+</ul>
+<h3 id="事务特性-acid">事务特性 (A.C.I.D)</h3>
+<ul>
+<li>
+<p>A - 原子性 (Atomacity): 事务必须是原子工作单元,对于其数据修改,要么全都执行,要么全都不执行.</p>
+</li>
+<li>
+<p>C - 一致性 (Consistency): 事务将数据库从一种一致状态转变为下一种一致状态.</p>
+</li>
+<li>
+<p>I - 隔离性 (Isolation): 由并发事务所作的修改必须与任何其它并发事务所作的修改隔离.</p>
+</li>
+<li>
+<p>D - 持久性 (Durability): 事务完成之后,它对于系统的影响是永久性的.即使出现致命的系统故障也将一直保持.</p>
+</li>
+</ul>
+<h3 id="事务的隔离级别">事务的隔离级别</h3>
+<ul>
+<li>
+<p>不对数据库进行并发控制,会产生异常情况:</p>
 <ol>
-<li>安装:</li>
+<li>脏读 (Dirty Read): 一个事务读取<strong>另一个事务尚未提交的修改</strong>产生脏读,同一事务内不是脏读. - 由于读取过程中,另一事务更新了数据没有及时提交造成的(数据可能被回滚).</li>
+<li>非重复读 (Nonrepeatable Read): 一个事务对<strong>同一行数据重复读取两次</strong>得到不同的结果. - 由于查询过程中,其他提交事务修改或删除数据造成的.</li>
+<li>幻像读 (Phantom Read): 事务在操作过程中进行<strong>两次查询</strong>,第二次查询结果包含第一次查询中未出现的数据(不要求两次查询的SQL语句相同). - 由于两次查询中,另一事务插入数据造成的.</li>
+<li>丢失修改 (Lost Update): a. 两个事物更新相同的数据源,第一个被提交,第二个被撤销,那么第一个做的更新也会被撤销. b. 两个并发事务同时读取同一行数据,第一个进行修改提交,第二个也进行修改提交,造成第一次写操作失效.</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">brew install lrzsz
-</code></pre></td></tr></table>
-</div>
-</div><ol start="2">
-<li>打开终端下载支持脚本：</li>
+</li>
+<li>
+<p>为了兼顾并发效率和异常控制,标准SQL规范里定义了4个事务隔离级别:</p>
+<ol>
+<li>未提交读 (Read Uncommitted): 更新语句没有提交,别的事务可以读到改变数据. - 允许 <strong>脏读</strong>.</li>
+<li>已提交读 (Read Committed): 只能读取到已提交的数据. - 不允许 <strong>脏读</strong>, 允许 <strong>非重复读</strong>.(多数数据库默认该级别).</li>
+<li>可重复读 (Repeatable Read): 同一事务先后执行同一查询语句得到一样的结果. - 不允许 <strong>脏读</strong>,<strong>非重复读</strong>, 允许 <strong>幻像读</strong>.</li>
+<li>串行读 (Serializable): 串行化的读,当前事务执行时不允许别的事务并发进行.每次读需要获得 <strong>表级共享锁</strong>,读写都会阻塞. - 不允许 <strong>不一致现象</strong> 出现.</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">git clone git@github.com:mmastrac/iterm2-zmodem.git
-</code></pre></td></tr></table>
-</div>
-</div><ol start="3">
-<li>在终端下安装支持脚本：</li>
+</li>
+<li>
+<p>各隔离级别对各种异常的控制能力:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>LU丢失修改</th>
+<th>DR脏读</th>
+<th>NRR非重复读</th>
+<th>SLU二类丢失修改</th>
+<th>PR幻像读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RU 未提交读</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>RC 提交读</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>RR 可重复读</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>S 串行读</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="事务隔离的实现---锁">事务隔离的实现 - 锁</h3>
+<ul>
+<li>共享锁(S锁): 用于只读操作(SELECT),锁定共享的资源. - 不阻止其他用户 <strong>读</strong>, 只阻止其他用户 <strong>写</strong>.</li>
+<li>更新锁(U锁): 用于可更新的资源.防止多个会话读取,锁定,资源更新时发生死锁.</li>
+<li>独立锁(X锁,排他锁): 一次只有一个独占锁用在一个资源上,阻止其他锁.写是独占锁,可有效的防止 <strong>脏读</strong>.</li>
+<li>Read Uncommited: 一个事务在<strong>写数据</strong>, 另外一事务则 <strong>不允许</strong> 同时进行 <strong>写操作</strong>, 但允许其他事务 <strong>读数据</strong>. 该隔离级别可以通过 <strong>“排他写锁”</strong> 实现.</li>
+<li>Read Committed <strong>读取数据</strong>的事务允许其他事务继续<strong>访问该数据</strong>; 但 <strong>未提交的写事务</strong> 会禁止 <strong>其他事务访问该数据</strong>. 可以通过 <strong>“瞬间共享读锁”</strong> 和 <strong>“排他写锁”</strong> 实现.</li>
+<li>Repeatable Read <strong>读取数据</strong>的事务 <strong>禁止写事务</strong>, 但 <strong>允许读事务</strong>, 写事务则<strong>禁止任何其他事务</strong>. 可以通过 <strong>“共享读锁”</strong> 和 <strong>“排他写锁”</strong> 实现.</li>
+<li>Serializable <strong>读数据</strong> 加 <strong>共享锁</strong>, <strong>写数据</strong> 加 <strong>排他锁</strong>, <strong>读写互斥</strong>.</li>
+<li>一般处理并发问题时的步骤:
+<ol>
+<li>开启事务.</li>
+<li>申请写权限,也就是给对象(表或记录)加锁.</li>
+<li>假如失败,则结束事务,过一会重试.</li>
+<li>假如成功,也就是给对象加锁成功,防止其他用户再用同样的方式打开.</li>
+<li>进行编辑操作.</li>
+<li>写入所进行的编辑结果.</li>
+<li>假如写入成功，则提交事务,完成操作.</li>
+<li>假如写入失败，则回滚事务，取消提交.</li>
+<li>(7.8)两步操作已释放了锁定的对象,恢复到操作前的状态.</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">cp iterm2-zmodem/iterm2-*.sh /usr/local/bin   <span class="o">&amp;&amp;</span>   chmod +x /usr/local/bin/iterm2-*.sh
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="设置iterm2">设置iterm2</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://qiniu.oneone.life/img/20220208162628.png"
-        data-srcset="https://qiniu.oneone.life/img/20220208162628.png, https://qiniu.oneone.life/img/20220208162628.png 1.5x, https://qiniu.oneone.life/img/20220208162628.png 2x"
-        data-sizes="auto"
-        alt="https://qiniu.oneone.life/img/20220208162628.png"
-        title="https://qiniu.oneone.life/img/20220208162628.png" /></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://qiniu.oneone.life/img/20220208162710.png"
-        data-srcset="https://qiniu.oneone.life/img/20220208162710.png, https://qiniu.oneone.life/img/20220208162710.png 1.5x, https://qiniu.oneone.life/img/20220208162710.png 2x"
-        data-sizes="auto"
-        alt="https://qiniu.oneone.life/img/20220208162710.png"
-        title="https://qiniu.oneone.life/img/20220208162710.png" /></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">Regular expression: rz waiting to receive.**B0100
-Action: Run Silent Coprocess
-Parameters: /usr/local/bin/iterm2-send-zmodem.sh
-Instant: checked
- 
-Regular expression: **B00000000000000
-Action: Run Silent Coprocess
-Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
-Instant: checked
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="上传文件下载文件">上传文件、下载文件</h2>
-<p>首先，通过跳板机登录到服务器。
-下载文件：sz {要下载的文件名}
-上传文件：rz
-上传文件时，要要求你选择待上传的文件。</p>
+</li>
+</ul>
+<hr>
+<h2 id="索引">索引</h2>
+<ul>
+<li>数据库创建索引的优点:提高系统的性能
+<ol>
+<li>创建唯一性的索引,保证数据库表中每一行数据的唯一性.</li>
+<li>加速数据的检索速度 – <strong>最主要的原因</strong>.</li>
+<li>加速表与表之间的连接,特别在实现数据的参考完整性方面特别有意义.</li>
+<li>使用分组和排序子句进行数据检索时,可以显著的减少查询中分组和排序的时间.</li>
+<li>通过使用索引,可以在查询的过程中,使用优化隐藏器,提高系统的性能.</li>
+</ol>
+</li>
+<li>数据创建索引的缺点:
+<ol>
+<li>创建索引和维护索引需要消耗时间,且随着数据增加而增加.</li>
+<li>索引需要占物理空间,除了数据表占据数据空间之外,每个索引还要占一定的物理空间.</li>
+<li>表的数据增加,删除,修改时,索引要动态维护,降低了数据维护的速度.</li>
+</ol>
+</li>
+<li>什么样的列建立索引:
+<ol>
+<li>在主键的列上,强制该列的唯一性和组织表中数据的排列结构.</li>
+<li>在经常用在连接的列上,这些列主要是一些外键,可以加快连接的速度.</li>
+<li>在经常需要根据范围进行搜索的列上创建索引,因为索引已经排序,其指定的范围是连续的.</li>
+<li>在经常需要排序的列上创建索引,因为索引已经排序,这样查询可以利用索引的排序,加快排序查询时间.</li>
+<li>在经常使用在where子句中的列上面创建索引,加快条件的判断速度.</li>
+</ol>
+</li>
+<li>什么样的列不创建索引:
+<ol>
+<li>在查询中很少使用或者作为参考的列不应该创建索引.</li>
+<li>对于那些只有很少数据值的列也不应该增加索引(比如性别,结果集的数据行占了表中数据行的很大比例,即需要在表中搜索的数据行的比例很大.增加索引,并不能明显加快检索速度).</li>
+<li>对于那些定义为text,image和bit数据类型的列不应该增加索引.因为这些列的数据量要么相当大,要么取值很少.</li>
+<li>当修改性能远远大于检索性能时,不应该创建索引,因为修改性能和检索性能是矛盾的.</li>
+</ol>
+</li>
+<li>创建索引的方法: 直接创建和间接创建.<br /></li>
+<li>索引特征:
+<ol>
+<li>唯一性索引. – 保证在索引列中的全部数据是唯一的,不包含冗余数据.</li>
+<li>复合索引. – 一个索引创建在多列上,可以减少表中索引的数量.</li>
+</ol>
+</li>
+</ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -212,22 +298,23 @@ Instant: checked
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" data-title="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件" data-via="Alex_WuYh" data-hashtags="MacOS"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" data-hashtag="MacOS"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" data-title="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" data-title="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" data-title="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" data-title="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" data-title="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" data-title="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" data-title="数据库系统的常识" data-via="Alex_WuYh" data-hashtags="mysql"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" data-hashtag="mysql"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" data-title="数据库系统的常识" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" data-title="数据库系统的常识"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" data-title="数据库系统的常识" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" data-title="数据库系统的常识" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" data-title="数据库系统的常识" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" data-title="数据库系统的常识"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/macos/">MacOS</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mysql/">mysql</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/" class="prev" rel="prev" title="数据库系统的常识"><i class="fas fa-angle-left fa-fw"></i>数据库系统的常识</a></div>
+    <div class="post-nav"><a href="/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/" class="prev" rel="prev" title="通过tcpdump抓取mysql报文"><i class="fas fa-angle-left fa-fw"></i>通过tcpdump抓取mysql报文</a>
+            <a href="/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" class="next" rel="next" title="MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件">MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
