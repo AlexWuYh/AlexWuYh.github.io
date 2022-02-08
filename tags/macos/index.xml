@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>MacOS - 标签 - Simple Life</title>
+        <link>https://oneone.life/tags/macos/</link>
+        <description>MacOS - 标签 - Simple Life</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/macos/" rel="self" type="application/rss+xml" /><item>
+    <title>MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件</title>
+    <link>https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</link>
+    <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</guid>
+    <description><![CDATA[安装配置lrzsz/iterm2-zmodem 安装: 1 brew install lrzsz 打开终端下载支持脚本： 1 git clone git@github.com:mmastrac/iterm2-zmodem.git 在终端下安装支持脚本： 1 cp iterm2-zmodem/iterm2-*.sh /usr/local/bin &amp;&amp; chmod +x /usr/local/bin/iterm2-*.sh 设置iter]]></description>
+</item></channel>
+</rss>

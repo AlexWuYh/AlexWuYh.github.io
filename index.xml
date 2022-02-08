@@ -7,6 +7,13 @@
             <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://oneone.life/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件</title>
+    <link>https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</link>
+    <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</guid>
+    <description><![CDATA[安装配置lrzsz/iterm2-zmodem 安装: 1 brew install lrzsz 打开终端下载支持脚本： 1 git clone git@github.com:mmastrac/iterm2-zmodem.git 在终端下安装支持脚本： 1 cp iterm2-zmodem/iterm2-*.sh /usr/local/bin &amp;&amp; chmod +x /usr/local/bin/iterm2-*.sh 设置iter]]></description>
+</item><item>
     <title>通过tcpdump抓取mysql报文</title>
     <link>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
@@ -78,16 +85,6 @@ emmm&hellip;在酒店白待了两周。。😣</p>
     <description><![CDATA[<h2 id="2021年5月">2021年5月</h2>
 <p>没错，还没过完五一假期，就又马不停蹄的回到了武汉。。</p>
 <p>这次换了个酒店，窗外的景色也就不一样了
-</p>]]></description>
-</item><item>
-    <title>2021年6月-出差扫街记录之武汉篇</title>
-    <link>https://oneone.life/2021%E5%B9%B46%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/</link>
-    <pubDate>Mon, 10 Jan 2022 19:30:22 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://oneone.life/2021%E5%B9%B46%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/</guid>
-    <description><![CDATA[<h2 id="2021年6月">2021年6月</h2>
-<p>是的，我又又又来武汉了，还是出差。。🙁</p>
-<p>南湖的晚霞算是一点点些许安慰吧（太喜欢这张了，所以忍不住多调了个黑白版的）
 </p>]]></description>
 </item></channel>
 </rss>
