@@ -4,7 +4,14 @@
         <link>https://oneone.life/categories/linux/</link>
         <description>Linux - 分类 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>鲲鹏920服务器上安装arm版本的docker</title>
+    <link>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
+    <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
+    <description><![CDATA[因为鲲鹏920处理是ARM架构的，所以一般的x86架构的包是不能安装的，该文档主要基于arm版本的centos7系统来编写(其他arm系统也]]></description>
+</item><item>
     <title>通过tcpdump抓取mysql报文</title>
     <link>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
@@ -140,38 +147,5 @@ chmod +x bbr.sh
     <description><![CDATA[<p>在使用<code>vim</code>时，当我们以普通用户去打开一个只有<code>root</code>用户才有权限操作的文件时，我们编辑完成之后，正要保存，却发现，这个文件我们没有权限修改。
 经过查找，发现一个命令可以解决这个问题
 命令：</p>]]></description>
-</item><item>
-    <title>Linux常用命令</title>
-    <link>https://oneone.life/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
-    <pubDate>Mon, 24 Feb 2020 22:51:36 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://oneone.life/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-    <description><![CDATA[<h2 id="系统">系统</h2>
-<ul>
-<li>
-<p><strong>uname -a</strong>**</p>
-<blockquote>
-<p>查看内核/操作系统/CPU信息</p>
-</blockquote>
-</li>
-<li>
-<p><strong>head -n 1 /etc/issue</strong></p>
-<blockquote>
-<p>查看操作系统版本</p>
-</blockquote>
-</li>
-<li>
-<p>*<strong>cat /proc/cpuinfo</strong></p>
-<blockquote>
-<p>查看<code>CPU</code>信息</p>
-</blockquote>
-</li>
-<li>
-<p><strong>hostname</strong>**</p>
-<blockquote>
-<p>查看计算机名</p>
-</blockquote>
-</li>
-</ul>]]></description>
 </item></channel>
 </rss>
