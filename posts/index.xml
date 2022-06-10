@@ -8,75 +8,85 @@
     <title>鲲鹏920服务器上安装arm版本的docker</title>
     <link>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
     <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
     <description><![CDATA[因为鲲鹏920处理是ARM架构的，所以一般的x86架构的包是不能安装的，该文档主要基于arm版本的centos7系统来编写(其他arm系统也]]></description>
-</item><item>
+</item>
+<item>
     <title>MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件</title>
     <link>https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</guid>
     <description><![CDATA[安装配置lrzsz/iterm2-zmodem 安装: 1 brew install lrzsz 打开终端下载支持脚本： 1 git clone git@github.com:mmastrac/iterm2-zmodem.git 在终端下安装支持脚本： 1 cp iterm2-zmodem/iterm2-*.sh /usr/local/bin &amp;&amp; chmod +x /usr/local/bin/iterm2-*.sh 设置iter]]></description>
-</item><item>
+</item>
+<item>
     <title>数据库系统的常识</title>
     <link>https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/</guid>
     <description><![CDATA[事务处理 事务来自于2个独立的需求: 并发数据库访问 和 系统错误恢复. 一个事务可以被看作是 一个单元的一系列SQL语句的集合. 事务特性 (A.C.I.D) A - 原子性 (Atomacity):]]></description>
-</item><item>
+</item>
+<item>
     <title>通过tcpdump抓取mysql报文</title>
     <link>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</guid>
     <description><![CDATA[1 tcpdump -s 65535 -xX -nn -q -tttt -i any -c 1000 port 3306 1 2 #只以ASIC显示内容 tcpdump -s 65535 -A -nn -q -tttt -i any -c 1000 port 3306]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux上删除文件后空间没有被释放</title>
     <link>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</guid>
     <description><![CDATA[有时候，在Linux系统中rm删除文件后，使用df查看空间占用情况时会发现，占用空间并没有减少。这往往都是因为被删除的文件还被某些进程占用着]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux系统启动过程</title>
     <link>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</guid>
     <description><![CDATA[Linux 系统启动过程linux启动时我们会看到许多启动信息。 Linux系统的启动过程并不是大家想象中的那么复杂，其过程可以分为5个阶段： 内核的引导]]></description>
-</item><item>
+</item>
+<item>
     <title>NTP协议简单分析</title>
     <link>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</guid>
     <description><![CDATA[一.概述 NTP (Network Time Protocol, 网络时间协议) 是由 RFC 5905 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同]]></description>
-</item><item>
-    <title>tcpdump命令使用简介</title>
-    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
-    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
-    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
-</item><item>
+</item>
+<item>
     <title>tcpdump命令高级过滤方式</title>
     <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</guid>
     <description><![CDATA[首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr]]></description>
-</item><item>
+</item>
+<item>
+    <title>tcpdump命令使用简介</title>
+    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
+    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
+    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
+</item>
+<item>
     <title>2021年10月-出差扫街记录之武汉篇</title>
     <link>https://oneone.life/2021%E5%B9%B410%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/</link>
     <pubDate>Mon, 10 Jan 2022 19:31:22 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/2021%E5%B9%B410%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/</guid>
     <description><![CDATA[<h2 id="2021年10月">2021年10月</h2>
 <p>过完国庆没多久又又又又又又来武汉了&hellip; 结果刚走没多久成都那边就爆发了疫情，然后甲方爸爸最开始说要先隔离7天，结果临到要进园区的前一天告知不让进了(这时成都升为了高风险)。。。
 emmm&hellip;在酒店白待了两周。。😣</p>
 <p>周末依然是出去扫街
 </p>]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

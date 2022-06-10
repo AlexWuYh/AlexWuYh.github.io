@@ -8,22 +8,25 @@
     <title>NTP协议简单分析</title>
     <link>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</guid>
     <description><![CDATA[一.概述 NTP (Network Time Protocol, 网络时间协议) 是由 RFC 5905 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同]]></description>
-</item><item>
-    <title>tcpdump命令使用简介</title>
-    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
-    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
-    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
-</item><item>
+</item>
+<item>
     <title>tcpdump命令高级过滤方式</title>
     <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</guid>
     <description><![CDATA[首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr]]></description>
-</item></channel>
+</item>
+<item>
+    <title>tcpdump命令使用简介</title>
+    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
+    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
+    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
+</item>
+</channel>
 </rss>

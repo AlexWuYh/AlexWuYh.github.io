@@ -8,49 +8,55 @@
     <title>鲲鹏920服务器上安装arm版本的docker</title>
     <link>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
     <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
     <description><![CDATA[因为鲲鹏920处理是ARM架构的，所以一般的x86架构的包是不能安装的，该文档主要基于arm版本的centos7系统来编写(其他arm系统也]]></description>
-</item><item>
+</item>
+<item>
     <title>通过tcpdump抓取mysql报文</title>
     <link>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</guid>
     <description><![CDATA[1 tcpdump -s 65535 -xX -nn -q -tttt -i any -c 1000 port 3306 1 2 #只以ASIC显示内容 tcpdump -s 65535 -A -nn -q -tttt -i any -c 1000 port 3306]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux上删除文件后空间没有被释放</title>
     <link>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</guid>
     <description><![CDATA[有时候，在Linux系统中rm删除文件后，使用df查看空间占用情况时会发现，占用空间并没有减少。这往往都是因为被删除的文件还被某些进程占用着]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux系统启动过程</title>
     <link>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</guid>
     <description><![CDATA[Linux 系统启动过程linux启动时我们会看到许多启动信息。 Linux系统的启动过程并不是大家想象中的那么复杂，其过程可以分为5个阶段： 内核的引导]]></description>
-</item><item>
-    <title>tcpdump命令使用简介</title>
-    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
-    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
-    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
-</item><item>
+</item>
+<item>
     <title>tcpdump命令高级过滤方式</title>
     <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</guid>
     <description><![CDATA[首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr]]></description>
-</item><item>
+</item>
+<item>
+    <title>tcpdump命令使用简介</title>
+    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
+    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
+    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
+</item>
+<item>
     <title>在Ubuntu16.04和Centos7上启用TCP-BBR</title>
     <link>https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</link>
     <pubDate>Sat, 07 Mar 2020 22:02:34 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</guid>
     <description><![CDATA[<blockquote>
 <ol>
@@ -63,10 +69,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh
-chmod +x tcp.sh
-./tcp.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh
+</span></span><span class="line"><span class="cl">chmod +x tcp.sh
+</span></span><span class="line"><span class="cl">./tcp.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>新增Google原版BBR一键安装脚本：</li>
@@ -78,10 +84,10 @@ chmod +x tcp.sh
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
-chmod +x bbr.sh
-./bbr.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+</span></span><span class="line"><span class="cl">chmod +x bbr.sh
+</span></span><span class="line"><span class="cl">./bbr.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div></blockquote>
 <h2 id="bbr简介">BBR简介</h2>
@@ -90,11 +96,12 @@ chmod +x bbr.sh
 <p><code>BBR</code> 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。</p>
 <h2 id="检测-bbr-是否开启">检测 BBR 是否开启</h2>
 <p>在开始之前，先看看 <code>BBR</code> 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：</p>]]></description>
-</item><item>
+</item>
+<item>
     <title>grep</title>
     <link>https://oneone.life/grep/</link>
     <pubDate>Wed, 26 Feb 2020 22:39:36 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/grep/</guid>
     <description><![CDATA[<p>用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
 在每个 FILE 或是标准输入中查找 PATTERN。
@@ -117,35 +124,38 @@ chmod +x bbr.sh
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式<span class="o">(</span>缩写为 ERE<span class="o">)</span>
-  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
-  -G, --basic-regexp        PATTERN 是一个基本正则表达式<span class="o">(</span>缩写为 BRE<span class="o">)</span>
-  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
-  -e, --regexp<span class="o">=</span>PATTERN      用 PATTERN 来进行匹配操作
-  -f, --file<span class="o">=</span>FILE           从 FILE 中取得 PATTERN
-  -i, --ignore-case         忽略大小写
-  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
-  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
-  -z, --null-data           一个 <span class="m">0</span> 字节的数据行，但不是空行
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式<span class="o">(</span>缩写为 ERE<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
+</span></span><span class="line"><span class="cl">  -G, --basic-regexp        PATTERN 是一个基本正则表达式<span class="o">(</span>缩写为 BRE<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
+</span></span><span class="line"><span class="cl">  -e, --regexp<span class="o">=</span>PATTERN      用 PATTERN 来进行匹配操作
+</span></span><span class="line"><span class="cl">  -f, --file<span class="o">=</span>FILE           从 FILE 中取得 PATTERN
+</span></span><span class="line"><span class="cl">  -i, --ignore-case         忽略大小写
+</span></span><span class="line"><span class="cl">  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
+</span></span><span class="line"><span class="cl">  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
+</span></span><span class="line"><span class="cl">  -z, --null-data           一个 <span class="m">0</span> 字节的数据行，但不是空行
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux下各文件夹的作用</title>
     <link>https://oneone.life/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
     <pubDate>Tue, 25 Feb 2020 14:36:41 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
     <description><![CDATA[下面内容对应环境为：Ubuntu 16.04 首先放一张根目录下的文件夹图 boot 该文件夹存放引导加载器(bootstrap loader)使用的文件,一般我们]]></description>
-</item><item>
+</item>
+<item>
     <title>Vim权限不足时强制保存只读类型文件的方法</title>
     <link>https://oneone.life/vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</link>
     <pubDate>Tue, 25 Feb 2020 14:35:25 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
     <description><![CDATA[<p>在使用<code>vim</code>时，当我们以普通用户去打开一个只有<code>root</code>用户才有权限操作的文件时，我们编辑完成之后，正要保存，却发现，这个文件我们没有权限修改。
 经过查找，发现一个命令可以解决这个问题
 命令：</p>]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

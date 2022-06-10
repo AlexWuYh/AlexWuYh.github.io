@@ -8,10 +8,11 @@
     <title>让其他用户使用oh-my-zsh</title>
     <link>https://oneone.life/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/</link>
     <pubDate>Mon, 24 Feb 2020 22:46:22 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/</guid>
     <description><![CDATA[<p>如果使用<code>wt</code>用户安装配置了<code>oh-my-zsh</code>，其他用户想要使用相同的主题和配置，可以参考<code>https://askubuntu.com/questions/521469/oh-my-zsh-for-the-root-and-for-all-user</code>
 这里介绍一种更简单的方法（亲测有效）：
 比如让<code>root</code>用户使用和<code>wt</code>用户相同的配置：</p>]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

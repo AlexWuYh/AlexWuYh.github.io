@@ -8,49 +8,55 @@
     <title>鲲鹏920服务器上安装arm版本的docker</title>
     <link>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
     <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
     <description><![CDATA[因为鲲鹏920处理是ARM架构的，所以一般的x86架构的包是不能安装的，该文档主要基于arm版本的centos7系统来编写(其他arm系统也]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux上删除文件后空间没有被释放</title>
     <link>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</guid>
     <description><![CDATA[有时候，在Linux系统中rm删除文件后，使用df查看空间占用情况时会发现，占用空间并没有减少。这往往都是因为被删除的文件还被某些进程占用着]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux系统启动过程</title>
     <link>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</guid>
     <description><![CDATA[Linux 系统启动过程linux启动时我们会看到许多启动信息。 Linux系统的启动过程并不是大家想象中的那么复杂，其过程可以分为5个阶段： 内核的引导]]></description>
-</item><item>
+</item>
+<item>
     <title>NTP协议简单分析</title>
     <link>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</guid>
     <description><![CDATA[一.概述 NTP (Network Time Protocol, 网络时间协议) 是由 RFC 5905 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同]]></description>
-</item><item>
-    <title>tcpdump命令使用简介</title>
-    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
-    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
-    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
-</item><item>
+</item>
+<item>
     <title>tcpdump命令高级过滤方式</title>
     <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</guid>
     <description><![CDATA[首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr]]></description>
-</item><item>
+</item>
+<item>
+    <title>tcpdump命令使用简介</title>
+    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
+    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
+    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
+</item>
+<item>
     <title>grep</title>
     <link>https://oneone.life/grep/</link>
     <pubDate>Wed, 26 Feb 2020 22:39:36 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/grep/</guid>
     <description><![CDATA[<p>用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
 在每个 FILE 或是标准输入中查找 PATTERN。
@@ -73,32 +79,34 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式<span class="o">(</span>缩写为 ERE<span class="o">)</span>
-  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
-  -G, --basic-regexp        PATTERN 是一个基本正则表达式<span class="o">(</span>缩写为 BRE<span class="o">)</span>
-  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
-  -e, --regexp<span class="o">=</span>PATTERN      用 PATTERN 来进行匹配操作
-  -f, --file<span class="o">=</span>FILE           从 FILE 中取得 PATTERN
-  -i, --ignore-case         忽略大小写
-  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
-  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
-  -z, --null-data           一个 <span class="m">0</span> 字节的数据行，但不是空行
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式<span class="o">(</span>缩写为 ERE<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
+</span></span><span class="line"><span class="cl">  -G, --basic-regexp        PATTERN 是一个基本正则表达式<span class="o">(</span>缩写为 BRE<span class="o">)</span>
+</span></span><span class="line"><span class="cl">  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
+</span></span><span class="line"><span class="cl">  -e, --regexp<span class="o">=</span>PATTERN      用 PATTERN 来进行匹配操作
+</span></span><span class="line"><span class="cl">  -f, --file<span class="o">=</span>FILE           从 FILE 中取得 PATTERN
+</span></span><span class="line"><span class="cl">  -i, --ignore-case         忽略大小写
+</span></span><span class="line"><span class="cl">  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
+</span></span><span class="line"><span class="cl">  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
+</span></span><span class="line"><span class="cl">  -z, --null-data           一个 <span class="m">0</span> 字节的数据行，但不是空行
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux下各文件夹的作用</title>
     <link>https://oneone.life/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
     <pubDate>Tue, 25 Feb 2020 14:36:41 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
     <description><![CDATA[下面内容对应环境为：Ubuntu 16.04 首先放一张根目录下的文件夹图 boot 该文件夹存放引导加载器(bootstrap loader)使用的文件,一般我们]]></description>
-</item><item>
+</item>
+<item>
     <title>Linux常用命令</title>
     <link>https://oneone.life/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
     <pubDate>Mon, 24 Feb 2020 22:51:36 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
     <description><![CDATA[<h2 id="系统">系统</h2>
 <ul>
@@ -127,11 +135,12 @@
 </blockquote>
 </li>
 </ul>]]></description>
-</item><item>
+</item>
+<item>
     <title>Ubuntu root用户下java -version无法获取java环境变量解决办法</title>
     <link>https://oneone.life/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
     <pubDate>Mon, 24 Feb 2020 22:49:27 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
     <description><![CDATA[<h2 id="问题现象">问题现象</h2>
 <p>​	按照网上配置java环境变量的方法在/etc/profile文件中添加如下内容，配置之后，如果重启系统后切换到root用户无法获取已配置的java环境变量，在普通用户下可以获取到</p>
@@ -146,15 +155,16 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/local/java/jdk1.8.0_65
-
-<span class="nb">export</span> <span class="nv">JRE_HOME</span><span class="o">=</span><span class="si">${</span><span class="nv">JAVA_HOME</span><span class="si">}</span>/jre
-
-<span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$JAVA_HOME</span>/lib:<span class="nv">$JRE_HOME</span>/lib:<span class="nv">$CLASSPATH</span>
-
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JRE_HOME</span>/bin:<span class="nv">$PATH</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/local/java/jdk1.8.0_65
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JRE_HOME</span><span class="o">=</span><span class="si">${</span><span class="nv">JAVA_HOME</span><span class="si">}</span>/jre
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$JAVA_HOME</span>/lib:<span class="nv">$JRE_HOME</span>/lib:<span class="nv">$CLASSPATH</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JRE_HOME</span>/bin:<span class="nv">$PATH</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="解决办法">解决办法</h2>]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

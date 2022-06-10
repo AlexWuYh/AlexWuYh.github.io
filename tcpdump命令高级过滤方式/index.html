@@ -4,13 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>tcpdump命令高级过滤方式 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="tcpdump命令高级过滤方式" />
 <meta property="og:description" content="首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-01-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-01-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-29T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://oneone.life/logo.png"/>
@@ -20,7 +19,9 @@
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" /><link rel="prev" href="https://oneone.life/2021%E5%B9%B410%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/" /><link rel="next" href="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" /><link rel="prev" href="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" /><link rel="next" href="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -38,7 +39,7 @@
             },"description": ""
     }
     </script></head>
-    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -49,16 +50,16 @@
             <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                    <i class="fas fa-adjust fa-fw"></i>
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a>
             </div>
         </div>
@@ -77,43 +78,41 @@
                     <div class="search mobile" id="search-mobile">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
-                            <i class="fas fa-search fa-fw"></i>
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
                         <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
                         </span>
                     </div>
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
                 </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
-                <i class="fas fa-adjust fa-fw"></i>
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">tcpdump命令高级过滤方式</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a>&nbsp;<a href="/categories/network/"><i class="far fa-folder fa-fw"></i>Network</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-29">2022-01-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4051 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" class="leancloud_visitors" data-flag-title="tcpdump命令高级过滤方式">
-                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">tcpdump命令高级过滤方式</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a>&nbsp;<a href="/categories/network/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Network</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-01-29">2022-01-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 4051 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" class="leancloud_visitors" data-flag-title="tcpdump命令高级过滤方式">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="true">
+        </div><div class="details toc" id="toc-static"  data-kept="true">
                 <div class="details-summary toc-title">
                     <span>目录</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
@@ -140,12 +139,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">proto<span class="o">[</span>x:y<span class="o">]</span>          : 过滤从x字节开始的y字节数。比如ip<span class="o">[</span>2:2<span class="o">]</span>过滤出3、4字节（第一字节从0开始排）
-proto<span class="o">[</span>x:y<span class="o">]</span> <span class="p">&amp;</span> <span class="nv">z</span> <span class="o">=</span> <span class="m">0</span>  : proto<span class="o">[</span>x:y<span class="o">]</span>和z的与操作为0
-proto<span class="o">[</span>x:y<span class="o">]</span> <span class="p">&amp;</span> z !<span class="o">=</span><span class="m">0</span>  : proto<span class="o">[</span>x:y<span class="o">]</span>和z的与操作不为0
-proto<span class="o">[</span>x:y<span class="o">]</span> <span class="p">&amp;</span> <span class="nv">z</span> <span class="o">=</span> z  : proto<span class="o">[</span>x:y<span class="o">]</span>和z的与操作为z
-proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span> z      : proto<span class="o">[</span>x:y<span class="o">]</span>等于z
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">proto<span class="o">[</span>x:y<span class="o">]</span>          : 过滤从x字节开始的y字节数。比如ip<span class="o">[</span>2:2<span class="o">]</span>过滤出3、4字节（第一字节从0开始排）
+</span></span><span class="line"><span class="cl">proto<span class="o">[</span>x:y<span class="o">]</span> <span class="p">&amp;</span> <span class="nv">z</span> <span class="o">=</span> <span class="m">0</span>  : proto<span class="o">[</span>x:y<span class="o">]</span>和z的与操作为0
+</span></span><span class="line"><span class="cl">proto<span class="o">[</span>x:y<span class="o">]</span> <span class="p">&amp;</span> z !<span class="o">=</span><span class="m">0</span>  : proto<span class="o">[</span>x:y<span class="o">]</span>和z的与操作不为0
+</span></span><span class="line"><span class="cl">proto<span class="o">[</span>x:y<span class="o">]</span> <span class="p">&amp;</span> <span class="nv">z</span> <span class="o">=</span> z  : proto<span class="o">[</span>x:y<span class="o">]</span>和z的与操作为z
+</span></span><span class="line"><span class="cl">proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span> z      : proto<span class="o">[</span>x:y<span class="o">]</span>等于z
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>操作符 : <strong>&gt;, &lt;, &gt;=, &lt;=, =, !=</strong></p>
 <h2 id="ip头ipv4">IP头（IPV4）</h2>
@@ -170,24 +169,24 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">0                   1                   2                   3
-0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|Version|  IHL  |Type of Service|          Total Length         |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|         Identification        |Flags|      Fragment Offset    |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|  Time to Live |    Protocol   |         Header Checksum       |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                       Source Address                          |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Destination Address                        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Options                    |    Padding    | &lt;-- optional
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                            DATA ...                           |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">0                   1                   2                   3
+</span></span><span class="line"><span class="cl">0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl">|Version|  IHL  |Type of Service|          Total Length         |
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl">|         Identification        |Flags|      Fragment Offset    |
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl">|  Time to Live |    Protocol   |         Header Checksum       |
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl">|                       Source Address                          |
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl">|                    Destination Address                        |
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl">|                    Options                    |    Padding    | &lt;-- optional
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl">|                            DATA ...                           |
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
 <p><strong>中文：</strong></p>
@@ -218,21 +217,21 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cm">/*IP头定义，共20个字节*/</span>
-<span class="k">typedef</span> <span class="k">struct</span> <span class="n">_IP_HEADER</span>
-<span class="p">{</span>
-	<span class="kt">char</span> <span class="n">m_cVersionAndHeaderLen</span><span class="p">;</span>     　　<span class="c1">//版本信息(前4位)，头长度(后4位)
-</span><span class="c1"></span>	<span class="kt">char</span> <span class="n">m_cTypeOfService</span><span class="p">;</span>      　　　　　 <span class="c1">// 服务类型8位
-</span><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sTotalLenOfPacket</span><span class="p">;</span>    　　　　<span class="c1">//数据包长度
-</span><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sPacketID</span><span class="p">;</span>      　　　　　　　 <span class="c1">//数据包标识
-</span><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sSliceinfo</span><span class="p">;</span>      　　　　　　　  <span class="c1">//分片使用
-</span><span class="c1"></span>	<span class="kt">char</span> <span class="n">m_cTTL</span><span class="p">;</span>        　　　　　　　　　　<span class="c1">//存活时间
-</span><span class="c1"></span>	<span class="kt">char</span> <span class="n">m_cTypeOfProtocol</span><span class="p">;</span>    　　　　　 <span class="c1">//协议类型
-</span><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sCheckSum</span><span class="p">;</span>      　　　　　　 <span class="c1">//校验和
-</span><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiSourIp</span><span class="p">;</span>     　　　　　<span class="c1">//源ip
-</span><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiDestIp</span><span class="p">;</span>     　　　　　<span class="c1">//目的ip
-</span><span class="c1"></span><span class="p">}</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="n">IP_HEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PIP_HEADER</span> <span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/*IP头定义，共20个字节*/</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">_IP_HEADER</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="n">m_cVersionAndHeaderLen</span><span class="p">;</span>     　　<span class="c1">//版本信息(前4位)，头长度(后4位)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">char</span> <span class="n">m_cTypeOfService</span><span class="p">;</span>      　　　　　 <span class="c1">// 服务类型8位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sTotalLenOfPacket</span><span class="p">;</span>    　　　　<span class="c1">//数据包长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sPacketID</span><span class="p">;</span>      　　　　　　　 <span class="c1">//数据包标识
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sSliceinfo</span><span class="p">;</span>      　　　　　　　  <span class="c1">//分片使用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">char</span> <span class="n">m_cTTL</span><span class="p">;</span>        　　　　　　　　　　<span class="c1">//存活时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">char</span> <span class="n">m_cTypeOfProtocol</span><span class="p">;</span>    　　　　　 <span class="c1">//协议类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sCheckSum</span><span class="p">;</span>      　　　　　　 <span class="c1">//校验和
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiSourIp</span><span class="p">;</span>     　　　　　<span class="c1">//源ip
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiDestIp</span><span class="p">;</span>     　　　　　<span class="c1">//目的ip
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="n">IP_HEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PIP_HEADER</span> <span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>
@@ -315,8 +314,8 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;ip[0] &amp; 15 &gt; 5&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;ip[0] &amp; 15 &gt; 5&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>或者</p>
 <div class="highlight"><div class="chroma">
@@ -324,8 +323,8 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;ip[0] &amp; 0x0f &gt; 5&#39;</span>　
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;ip[0] &amp; 0x0f &gt; 5&#39;</span>　
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="分片标记">分片标记</h2>
 <p>当发送端的MTU大于到目的路径链路上的MTU时就会被分片，分片信息在IP头的第七和第八字节：</p>
@@ -336,10 +335,10 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"> +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
- |Flags|      Fragment Offset    |
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"> |Flags|      Fragment Offset    |
+</span></span><span class="line"><span class="cl"> +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Bit 0</strong>: 保留，必须是0
 <strong>Bit 1</strong>: (DF) 0 = 可能分片, 1 = 不分片
@@ -352,8 +351,8 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;ip[6] = 64&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;ip[6] = 64&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="抓分片包">抓分片包</h2>
 <ul>
@@ -364,8 +363,8 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;ip[6] = 32&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;ip[6] = 32&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>最后分片包的开始3位是0，但是有Fragment Offset字段。</p>
 <ul>
@@ -376,8 +375,8 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;((ip[6:2] &gt; 0) and (not ip[6] = 64))&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;((ip[6:2] &gt; 0) and (not ip[6] = 64))&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>测试分片可以用下面的命令：</p>
 <div class="highlight"><div class="chroma">
@@ -385,8 +384,8 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">ping -M want -s <span class="m">3000</span> 192.168.1.1
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ping -M want -s <span class="m">3000</span> 192.168.1.1
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="匹配小ttl">匹配小TTL</h2>
 <p>TTL字段在第九字节，并且正好是完整的一个字节，TTL最大值是255，二进制为11111111。</p>
@@ -397,9 +396,9 @@ proto<span class="o">[</span>x:y<span class="o">]</span> <span class="o">=</span
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ ping -M want -s <span class="m">3000</span> -t <span class="m">256</span> 192.168.1.200
-ping: ttl <span class="m">256</span> out of range
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ ping -M want -s <span class="m">3000</span> -t <span class="m">256</span> 192.168.1.200
+</span></span><span class="line"><span class="cl">ping: ttl <span class="m">256</span> out of range
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -408,10 +407,10 @@ ping: ttl <span class="m">256</span> out of range
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"> +-+-+-+-+-+-+-+-+
- |  Time to Live |
- +-+-+-+-+-+-+-+-+
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> +-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"> |  Time to Live |
+</span></span><span class="line"><span class="cl"> +-+-+-+-+-+-+-+-+
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>在网关可以用下面的命令看看网络中谁在使用<code>traceroute</code></li>
@@ -421,8 +420,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;ip[8] &lt; 5&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;ip[8] &lt; 5&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="抓大于x字节的包">抓大于X字节的包</h2>
 <ul>
@@ -433,8 +432,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;ip[2:2] &gt; 600&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;ip[2:2] &gt; 600&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="更多的过滤方式">更多的过滤方式</h2>
 <p>首先还是需要知道TCP基本结构</p>
@@ -464,26 +463,26 @@ ping: ttl <span class="m">256</span> out of range
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="m">0</span>                   <span class="m">1</span>                   <span class="m">2</span>                   <span class="m">3</span>
-<span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span> <span class="m">1</span>
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-<span class="p">|</span>          Source Port          <span class="p">|</span>       Destination Port        <span class="p">|</span>
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-<span class="p">|</span>                        Sequence Number                        <span class="p">|</span>
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-<span class="p">|</span>                    Acknowledgment Number                      <span class="p">|</span>
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-<span class="p">|</span>  Data <span class="p">|</span>       <span class="p">|</span>C<span class="p">|</span>E<span class="p">|</span>U<span class="p">|</span>A<span class="p">|</span>P<span class="p">|</span>R<span class="p">|</span>S<span class="p">|</span>F<span class="p">|</span>                               <span class="p">|</span>
-<span class="p">|</span> Offset<span class="p">|</span>  Res. <span class="p">|</span>W<span class="p">|</span>C<span class="p">|</span>R<span class="p">|</span>C<span class="p">|</span>S<span class="p">|</span>S<span class="p">|</span>Y<span class="p">|</span>I<span class="p">|</span>            Window             <span class="p">|</span>
-<span class="p">|</span>       <span class="p">|</span>       <span class="p">|</span>R<span class="p">|</span>E<span class="p">|</span>G<span class="p">|</span>K<span class="p">|</span>H<span class="p">|</span>T<span class="p">|</span>N<span class="p">|</span>N<span class="p">|</span>                               <span class="p">|</span>
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-<span class="p">|</span>           Checksum            <span class="p">|</span>         Urgent Pointer        <span class="p">|</span>
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-<span class="p">|</span>                    Options                    <span class="p">|</span>    Padding    <span class="p">|</span>
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-<span class="p">|</span>                             data                              <span class="p">|</span>
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="m">0</span>                   <span class="m">1</span>                   <span class="m">2</span>                   <span class="m">3</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"><span class="p">|</span>          Source Port          <span class="p">|</span>       Destination Port        <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"><span class="p">|</span>                        Sequence Number                        <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"><span class="p">|</span>                    Acknowledgment Number                      <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"><span class="p">|</span>  Data <span class="p">|</span>       <span class="p">|</span>C<span class="p">|</span>E<span class="p">|</span>U<span class="p">|</span>A<span class="p">|</span>P<span class="p">|</span>R<span class="p">|</span>S<span class="p">|</span>F<span class="p">|</span>                               <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> Offset<span class="p">|</span>  Res. <span class="p">|</span>W<span class="p">|</span>C<span class="p">|</span>R<span class="p">|</span>C<span class="p">|</span>S<span class="p">|</span>S<span class="p">|</span>Y<span class="p">|</span>I<span class="p">|</span>            Window             <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span>       <span class="p">|</span>       <span class="p">|</span>R<span class="p">|</span>E<span class="p">|</span>G<span class="p">|</span>K<span class="p">|</span>H<span class="p">|</span>T<span class="p">|</span>N<span class="p">|</span>N<span class="p">|</span>                               <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"><span class="p">|</span>           Checksum            <span class="p">|</span>         Urgent Pointer        <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"><span class="p">|</span>                    Options                    <span class="p">|</span>    Padding    <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"><span class="p">|</span>                             data                              <span class="p">|</span>
+</span></span><span class="line"><span class="cl">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>　　<img
         class="lazyload"
@@ -522,32 +521,32 @@ ping: ttl <span class="m">256</span> out of range
 </span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"> 
-<span class="cm">/*TCP头定义，共20个字节*/</span>
-<span class="k">typedef</span> <span class="k">struct</span> <span class="n">_TCP_HEADER</span>
-<span class="p">{</span> 
-	<span class="kt">short</span> <span class="n">m_sSourPort</span><span class="p">;</span>        　　　　　　<span class="c1">//源端口号16bit
-</span><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sDestPort</span><span class="p">;</span>       　　　　　　 <span class="c1">//目的端口号16bit 
-</span><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiSequNum</span><span class="p">;</span>       　　<span class="c1">//序列号32bit 
-</span><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiAcknowledgeNum</span><span class="p">;</span>  <span class="c1">//确认号32bit 
-</span><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sHeaderLenAndFlag</span><span class="p">;</span>      　　<span class="c1">//前4位：TCP头长度；中6位：保留；后6位：标志位
-</span><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sWindowSize</span><span class="p">;</span>       　　　　　<span class="c1">//窗口大小16bit
-</span><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sCheckSum</span><span class="p">;</span>        　　　　　 <span class="c1">//检验和16bit
-</span><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_surgentPointer</span><span class="p">;</span>      　　　　 <span class="c1">//紧急数据偏移量16bit
-</span><span class="c1"></span><span class="p">}</span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="n">TCP_HEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PTCP_HEADER</span><span class="p">;</span>
-<span class="cm">/*TCP头中的选项定义 
-</span><span class="cm">
-</span><span class="cm">kind(8bit)+Length(8bit，整个选项的长度，包含前两部分)+内容(如果有的话)
-</span><span class="cm">
-</span><span class="cm">KIND =
-</span><span class="cm">	1表示 无操作NOP，无后面的部分
-</span><span class="cm">	2表示 maximum segment   后面的LENGTH就是maximum segment选项的长度（以byte为单位，1+1+内容部分长度）
-</span><span class="cm">	3表示 windows scale     后面的LENGTH就是 windows scale选项的长度（以byte为单位，1+1+内容部分长度）
-</span><span class="cm">	4表示 SACK permitted    LENGTH为2，没有内容部分
-</span><span class="cm">	5表示这是一个SACK包     LENGTH为2，没有内容部分
-</span><span class="cm">	8表示时间戳，LENGTH为10，含8个字节的时间戳
-</span><span class="cm">*/</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="cm">/*TCP头定义，共20个字节*/</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="k">struct</span> <span class="n">_TCP_HEADER</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> 
+</span></span><span class="line"><span class="cl">	<span class="kt">short</span> <span class="n">m_sSourPort</span><span class="p">;</span>        　　　　　　<span class="c1">//源端口号16bit
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sDestPort</span><span class="p">;</span>       　　　　　　 <span class="c1">//目的端口号16bit 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiSequNum</span><span class="p">;</span>       　　<span class="c1">//序列号32bit 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiAcknowledgeNum</span><span class="p">;</span>  <span class="c1">//确认号32bit 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sHeaderLenAndFlag</span><span class="p">;</span>      　　<span class="c1">//前4位：TCP头长度；中6位：保留；后6位：标志位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sWindowSize</span><span class="p">;</span>       　　　　　<span class="c1">//窗口大小16bit
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sCheckSum</span><span class="p">;</span>        　　　　　 <span class="c1">//检验和16bit
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_surgentPointer</span><span class="p">;</span>      　　　　 <span class="c1">//紧急数据偏移量16bit
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="n">TCP_HEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PTCP_HEADER</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*TCP头中的选项定义 
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">kind(8bit)+Length(8bit，整个选项的长度，包含前两部分)+内容(如果有的话)
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">KIND =
+</span></span></span><span class="line"><span class="cl"><span class="cm">	1表示 无操作NOP，无后面的部分
+</span></span></span><span class="line"><span class="cl"><span class="cm">	2表示 maximum segment   后面的LENGTH就是maximum segment选项的长度（以byte为单位，1+1+内容部分长度）
+</span></span></span><span class="line"><span class="cl"><span class="cm">	3表示 windows scale     后面的LENGTH就是 windows scale选项的长度（以byte为单位，1+1+内容部分长度）
+</span></span></span><span class="line"><span class="cl"><span class="cm">	4表示 SACK permitted    LENGTH为2，没有内容部分
+</span></span></span><span class="line"><span class="cl"><span class="cm">	5表示这是一个SACK包     LENGTH为2，没有内容部分
+</span></span></span><span class="line"><span class="cl"><span class="cm">	8表示时间戳，LENGTH为10，含8个字节的时间戳
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>16位源端口号和16位目的端口号。</p>
 <p><strong>32位序号</strong>：</p>
@@ -606,8 +605,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[0:2] &gt; 1024&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[0:2] &gt; 1024&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>匹配TCP数据包的特殊标记</li>
@@ -622,12 +621,12 @@ ping: ttl <span class="m">256</span> out of range
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"> +-+-+-+-+-+-+-+-+
- <span class="p">|</span>C<span class="p">|</span>E<span class="p">|</span>U<span class="p">|</span>A<span class="p">|</span>P<span class="p">|</span>R<span class="p">|</span>S<span class="p">|</span>F<span class="p">|</span>
- <span class="p">|</span>W<span class="p">|</span>C<span class="p">|</span>R<span class="p">|</span>C<span class="p">|</span>S<span class="p">|</span>S<span class="p">|</span>Y<span class="p">|</span>I<span class="p">|</span>
- <span class="p">|</span>R<span class="p">|</span>E<span class="p">|</span>G<span class="p">|</span>K<span class="p">|</span>H<span class="p">|</span>T<span class="p">|</span>N<span class="p">|</span>N<span class="p">|</span>
- +-+-+-+-+-+-+-+-+
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> +-+-+-+-+-+-+-+-+
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>C<span class="p">|</span>E<span class="p">|</span>U<span class="p">|</span>A<span class="p">|</span>P<span class="p">|</span>R<span class="p">|</span>S<span class="p">|</span>F<span class="p">|</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>W<span class="p">|</span>C<span class="p">|</span>R<span class="p">|</span>C<span class="p">|</span>S<span class="p">|</span>S<span class="p">|</span>Y<span class="p">|</span>I<span class="p">|</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>R<span class="p">|</span>E<span class="p">|</span>G<span class="p">|</span>K<span class="p">|</span>H<span class="p">|</span>T<span class="p">|</span>N<span class="p">|</span>N<span class="p">|</span>
+</span></span><span class="line"><span class="cl"> +-+-+-+-+-+-+-+-+
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>只抓SYN包，第十四字节是二进制的00000010，也就是十进制的2</li>
@@ -637,8 +636,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[13] = 2&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[13] = 2&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>抓SYN, ACK （00010010 or 18）</li>
@@ -648,8 +647,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[13] = 18&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[13] = 18&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>抓SYN或者SYN-ACK</li>
@@ -659,8 +658,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[13] &amp; 2 = 2&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[13] &amp; 2 = 2&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>抓PSH-ACK</li>
@@ -670,8 +669,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[13] = 24&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[13] = 24&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>抓所有包含FIN标记的包（FIN通常和ACK一起，表示幽会完了，回见）</li>
@@ -681,8 +680,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[13] &amp; 1 = 1&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[13] &amp; 1 = 1&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>抓RST</li>
@@ -692,8 +691,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[13] &amp; 4 = 4&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[13] &amp; 4 = 4&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="常用的字段偏移名字">常用的字段偏移名字</h2>
 <p>tcpdump考虑了一些数字恐惧症者的需求，提供了部分常用的字段偏移名字：</p>
@@ -715,8 +714,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[tcpflags] = tcp-syn&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[tcpflags] = tcp-syn&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>抓SYN, ACK</li>
@@ -726,8 +725,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[tcpflags] &amp; tcp-syn != 0 and tcp[tcpflags] &amp; tcp-ack != 0&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[tcpflags] &amp; tcp-syn != 0 and tcp[tcpflags] &amp; tcp-ack != 0&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="抓smtp数据">抓SMTP数据</h2>
 <div class="highlight"><div class="chroma">
@@ -735,8 +734,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;((port 25) and (tcp[(tcp[12]&gt;&gt;2):4] = 0x4d41494c))&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;((port 25) and (tcp[(tcp[12]&gt;&gt;2):4] = 0x4d41494c))&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>抓取数据区开始为&quot;MAIL&quot;的包，&ldquo;MAIL&quot;的十六进制为0x4d41494c。</p>
 <h2 id="抓http-get数据">抓HTTP GET数据</h2>
@@ -745,8 +744,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[(tcp[12]&gt;&gt;2):4] = 0x47455420&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[(tcp[12]&gt;&gt;2):4] = 0x47455420&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>&ldquo;GET &ldquo;的十六进制是47455420</p>
 <h2 id="抓ssh返回">抓SSH返回</h2>
@@ -755,8 +754,8 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;tcp[(tcp[12]&gt;&gt;2):4] = 0x5353482D&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;tcp[(tcp[12]&gt;&gt;2):4] = 0x5353482D&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>　&ldquo;SSH-&ldquo;的十六进制是0x5353482D</p>
 <div class="highlight"><div class="chroma">
@@ -764,53 +763,51 @@ ping: ttl <span class="m">256</span> out of range
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">tcpdump -i eth1 <span class="s1">&#39;(tcp[(tcp[12]&gt;&gt;2):4] = 0x5353482D) and (tcp[((tcp[12]&gt;&gt;2)+4):2] = 0x312E)&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tcpdump -i eth1 <span class="s1">&#39;(tcp[(tcp[12]&gt;&gt;2):4] = 0x5353482D) and (tcp[((tcp[12]&gt;&gt;2)+4):2] = 0x312E)&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
                 <span>更新于 2022-01-29</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
+            </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
                             <a class="link-to-markdown" href="/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式" data-via="Alex_WuYh" data-hashtags="TCPDump,Network,Linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-hashtag="TCPDump"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式" data-via="Alex_WuYh" data-hashtags="TCPDump,Network,Linux"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-hashtag="TCPDump"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" data-title="tcpdump命令高级过滤方式"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/tcpdump/">TCPDump</a>,&nbsp;<a href="/tags/network/">Network</a>,&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/tcpdump/">TCPDump</a>,&nbsp;<a href="/tags/network/">Network</a>,&nbsp;<a href="/tags/linux/">Linux</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/2021%E5%B9%B410%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/" class="prev" rel="prev" title="2021年10月-出差扫街记录之武汉篇"><i class="fas fa-angle-left fa-fw"></i>2021年10月-出差扫街记录之武汉篇</a>
-            <a href="/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" class="next" rel="next" title="tcpdump命令使用简介">tcpdump命令使用简介<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" class="prev" rel="prev" title="tcpdump命令使用简介"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>tcpdump命令使用简介</a>
+            <a href="/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" class="next" rel="next" title="NTP协议简单分析">NTP协议简单分析<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
                     <span class="icp">蜀ICP备20004229号-1</span></div>
         </div>
     </footer></div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
-                <i class="fas fa-arrow-up fa-fw"></i>
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
-                <i class="fas fa-comment fa-fw"></i>
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"o5gq6eLbupSlKq678zx1aKcd-gzGzoHsz","appKey":"S2CU3haJIhCbfVoIxhtrIzNp","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Simple Life","id-2":"Simple Life"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"o5gq6eLbupSlKq678zx1aKcd-gzGzoHsz","appKey":"S2CU3haJIhCbfVoIxhtrIzNp","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Simple Life","id-2":"Simple Life"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'G-KJGDZS4RKJ', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-KJGDZS4RKJ" async></script></body>

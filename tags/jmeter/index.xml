@@ -8,7 +8,7 @@
     <title>Jmeter</title>
     <link>https://oneone.life/jmeter/</link>
     <pubDate>Tue, 25 Feb 2020 14:32:24 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/jmeter/</guid>
     <description><![CDATA[<p>脚本规范：</p>
 <ul>
@@ -22,5 +22,6 @@
 <p>接口作为用例级别，命名格式类似为 ：</p>
 </li>
 </ul>]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>

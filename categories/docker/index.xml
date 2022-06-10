@@ -8,7 +8,7 @@
     <title>Docker-常用基础命令</title>
     <link>https://oneone.life/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
     <pubDate>Mon, 24 Feb 2020 22:43:34 &#43;0000</pubDate>
-    <author>作者</author>
+    <author>Alex Wu</author>
     <guid>https://oneone.life/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
     <description><![CDATA[<ul>
 <li><strong>docker 服务重启，关闭，启动及版本查看</strong></li>
@@ -22,15 +22,16 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"> <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl restart docker.service  <span class="c1">#重启服务</span>
- <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl stop docker.service     <span class="c1">#关闭服务</span>
- <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl start docker.service    <span class="c1">#启动服务</span>
- <span class="o">[</span>root@iZm5e3hwzuo58e05kxjiifZ /<span class="o">]</span> docker -v <span class="c1">#docker版本查看</span>
- Docker version 18.06.1-ce, build e68fc7a
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl restart docker.service  <span class="c1">#重启服务</span>
+</span></span><span class="line"><span class="cl"> <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl stop docker.service     <span class="c1">#关闭服务</span>
+</span></span><span class="line"><span class="cl"> <span class="o">[</span>root@localhost /<span class="o">]</span> systemctl start docker.service    <span class="c1">#启动服务</span>
+</span></span><span class="line"><span class="cl"> <span class="o">[</span>root@iZm5e3hwzuo58e05kxjiifZ /<span class="o">]</span> docker -v <span class="c1">#docker版本查看</span>
+</span></span><span class="line"><span class="cl"> Docker version 18.06.1-ce, build e68fc7a
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li><strong>docker 搜索/下载/查看镜像</strong></li>
 </ul>]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>
