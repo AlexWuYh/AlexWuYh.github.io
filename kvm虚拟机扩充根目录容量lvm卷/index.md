@@ -110,7 +110,7 @@ root@zentao:/home/ubuntu# vgdisplay
 
 2. 查看目录挂载信息
 
-```shell=
+```bash
 root@zentao:/home/ubuntu# df -h
 Filesystem                   Size  Used Avail Use% Mounted on
 udev                         3.9G     0  3.9G   0% /dev
