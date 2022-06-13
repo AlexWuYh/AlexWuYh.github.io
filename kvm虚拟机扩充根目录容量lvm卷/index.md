@@ -11,7 +11,7 @@
 
 下方所示为硬盘扩容非新增，但操作方式都一致
 
-```shell=
+```bash
 root@zentao:/home/ubuntu# fdisk /dev/sda
 
 Welcome to fdisk (util-linux 2.27.1).
@@ -83,7 +83,7 @@ The partition table has been altered
 ## 扩容根目录
 
 1. 查看VG Name
-```shell=
+```bash
 root@zentao:/home/ubuntu# vgdisplay 
   --- Volume group ---
   VG Name               zentao-vg
@@ -128,7 +128,7 @@ tmpfs                        799M     0  799M   0% /run/user/1000
 
 2. 分别执行以下命令对根目录进行扩容
 
-```shell=
+```bash
 mkfs.ext4 /dev/sda3
 
 pvcreate /dev/sda3
@@ -144,7 +144,7 @@ resize2fs /dev/mapper/zentao--vg-root
 
 3. 查看扩容后的根目录大小
 
-```shell=
+```bash
 root@zentao:/home/ubuntu# df -h
 Filesystem                   Size  Used Avail Use% Mounted on
 udev                         3.9G     0  3.9G   0% /dev
