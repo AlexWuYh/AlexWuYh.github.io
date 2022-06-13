@@ -4,7 +4,31 @@
         <link>https://oneone.life/posts/</link>
         <description>所有文章 | Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>iterm2中管理ssh以及配置快捷登录</title>
+    <link>https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</link>
+    <pubDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</guid>
+    <description><![CDATA[方案一：利用ssh的config文件来管理SSH回话以及快捷登录 在~/.ssh/目录下新建config文件，并按如下格式分别添加需要保存的S]]></description>
+</item>
+<item>
+    <title>brew update时报错“fatal_ Could not resolve HEAD to a revision”解决</title>
+    <link>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</link>
+    <pubDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</guid>
+    <description><![CDATA[报错信息 在安装brew并更改为国内下载源后，执行brew update时老是报错，信息如下： 解决办法 上网查了下，找到了解决办法，参考链接 依次执]]></description>
+</item>
+<item>
+    <title>kvm虚拟机扩充根目录容量(lvm卷)</title>
+    <link>https://oneone.life/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</link>
+    <pubDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</guid>
+    <description><![CDATA[给虚拟机添加硬盘(或扩容) 停止虚拟机 在管理页面给虚拟机新增一块硬盘 重新启动虚拟机 登入虚拟机，对新增硬盘进行分区 下方所示为硬盘扩容非新增，但操]]></description>
+</item>
+<item>
     <title>鲲鹏920服务器上安装arm版本的docker</title>
     <link>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
     <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
@@ -59,34 +83,6 @@
     <author>Alex Wu</author>
     <guid>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</guid>
     <description><![CDATA[一.概述 NTP (Network Time Protocol, 网络时间协议) 是由 RFC 5905 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同]]></description>
-</item>
-<item>
-    <title>tcpdump命令高级过滤方式</title>
-    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</link>
-    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</guid>
-    <description><![CDATA[首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr]]></description>
-</item>
-<item>
-    <title>tcpdump命令使用简介</title>
-    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
-    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
-    <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
-</item>
-<item>
-    <title>2021年10月-出差扫街记录之武汉篇</title>
-    <link>https://oneone.life/2021%E5%B9%B410%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/</link>
-    <pubDate>Mon, 10 Jan 2022 19:31:22 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/2021%E5%B9%B410%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/</guid>
-    <description><![CDATA[<h2 id="2021年10月">2021年10月</h2>
-<p>过完国庆没多久又又又又又又来武汉了&hellip; 结果刚走没多久成都那边就爆发了疫情，然后甲方爸爸最开始说要先隔离7天，结果临到要进园区的前一天告知不让进了(这时成都升为了高风险)。。。
-emmm&hellip;在酒店白待了两周。。😣</p>
-<p>周末依然是出去扫街
-</p>]]></description>
 </item>
 </channel>
 </rss>
