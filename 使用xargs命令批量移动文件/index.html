@@ -4,34 +4,34 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>find和xargs命令组合使用处理带空格文件名的文件 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="find和xargs命令组合使用处理带空格文件名的文件" />
-<meta property="og:description" content="当用find命令查找文件然后用xargs来批量处理文件时，当文件名中包含空格字符时，就会导致处理失败，因为xargs会认为空格前后分别是两个" />
+        <title>使用xargs命令批量移动文件 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="使用xargs命令批量移动文件" />
+<meta property="og:description" content="当遇到这样一个场景，需要批量把查找出来的多个文件或者目录移动到一个统一的目录下面，这时可以使用xargs命令与查询命令(例如find)结合使" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-07-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-07-06T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
+<meta property="og:url" content="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-01T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://oneone.life/logo.png"/>
 
-<meta name="twitter:title" content="find和xargs命令组合使用处理带空格文件名的文件"/>
-<meta name="twitter:description" content="当用find命令查找文件然后用xargs来批量处理文件时，当文件名中包含空格字符时，就会导致处理失败，因为xargs会认为空格前后分别是两个"/>
+<meta name="twitter:title" content="使用xargs命令批量移动文件"/>
+<meta name="twitter:description" content="当遇到这样一个场景，需要批量把查找出来的多个文件或者目录移动到一个统一的目录下面，这时可以使用xargs命令与查询命令(例如find)结合使"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" /><link rel="prev" href="https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/" /><link rel="next" href="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" /><link rel="prev" href="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" /><link rel="next" href="https://oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "find和xargs命令组合使用处理带空格文件名的文件",
+        "headline": "使用xargs命令批量移动文件",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/oneone.life\/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6\/"
-        },"genre": "posts","keywords": "Linux","wordcount":  340 ,
-        "url": "https:\/\/oneone.life\/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6\/","datePublished": "2022-07-06T00:00:00+00:00","dateModified": "2022-07-06T00:00:00+00:00","publisher": {
+            "@id": "https:\/\/oneone.life\/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6\/"
+        },"genre": "posts","keywords": "Linux","wordcount":  419 ,
+        "url": "https:\/\/oneone.life\/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6\/","datePublished": "2022-11-01T00:00:00+00:00","dateModified": "2022-11-01T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -103,10 +103,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">find和xargs命令组合使用处理带空格文件名的文件</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用xargs命令批量移动文件</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-06">2022-07-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 340 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" class="leancloud_visitors" data-flag-title="find和xargs命令组合使用处理带空格文件名的文件">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-01">2022-11-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 419 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" class="leancloud_visitors" data-flag-title="使用xargs命令批量移动文件">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="true">
@@ -115,58 +115,77 @@
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>当用<code>find</code>命令查找文件然后用<code>xargs</code>来批量处理文件时，当文件名中包含空格字符时，就会导致处理失败，因为xargs会认为空格前后分别是两个不同的文件。如下图：
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png"
-        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png" /></p>
-<p>我们查看<code>find</code>命令帮助文档可以发现，它有一个专门针对该情况并配合<code>xargs</code>命令的参数：<code>-print0</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-print0
-</span></span><span class="line"><span class="cl">              True<span class="p">;</span> print the full file name on the standard output, followed by a null character <span class="o">(</span>instead of the newline character that -print uses<span class="o">)</span>.  This allows file names that con‐
-</span></span><span class="line"><span class="cl">              tain newlines or other types of white space to be correctly interpreted by programs that process the find output.  This option corresponds to the -0 option of xargs.
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>与<code>find</code>默认的<code>-print</code>参数相比，它输出的序列不是以空格分隔，而是以<code>null</code>字符分隔。而<code>xargs</code>也有一个参数<code>-0</code>，可以接受以<code>null</code>而<code>非空格</code>间隔的输入流。</p>
-<p>所以，假如我们要找到当前目录下所有文件名以<code>1).jpg</code>结尾的文件并将它们全部删除掉时，就可以像下面这样操作：</p>
+            </div><div class="content" id="content"><p>当遇到这样一个场景，需要批量把查找出来的多个文件或者目录移动到一个统一的目录下面，这时可以使用<code>xargs</code>命令与查询命令(例如<code>find</code>)结合使用再批量操作<code>mv</code>命令的方式来实现。</p>
+<p>这里结合自己遇到的一个实际场景来说明，具体操作方式如下：</p>
+<blockquote>
+<p>我这里因为是直接查找当前目录下的部分文件，所以就直接使用了<code>ls</code>命令，如果是查找分散在多个路径下的文件建议使用<code>find</code>命令，但是具体实现原理是一致的</p>
+</blockquote>
+<ol>
+<li>首先过滤出需要移动的文件&amp;目录</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find . -name <span class="s2">&#34;*1).jpg&#34;</span> -print0 <span class="p">|</span> xargs -0 rm -f
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -1 <span class="p">|</span> awk <span class="s1">&#39;/(-{1,})/{print$0}&#39;</span> 
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png 2x"
+        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281721468.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281721468.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281721468.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281721468.png 2x"
         data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png"
-        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png" /></p>
+        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281721468.png"
+        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281721468.png" /></p>
+<ul>
+<li><code>ls -1</code> 查找当前目录下的所有文件&amp;目录，且只列出名称</li>
+<li><code>awk '/(-{1,})/{print$0}'</code> 过滤出名称中包含多个<code>-</code>符号的文件&amp;目录</li>
+</ul>
+<ol>
+<li>再加上xargs命令批量移动文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -1 <span class="p">|</span> awk <span class="s1">&#39;/(-{1,})/{print$0}&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> mv <span class="o">{}</span> ~/tmp220928-02/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281726054.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281726054.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281726054.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281726054.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281726054.png"
+        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202209281726054.png" /></p>
+<p>执行完命令后查看，可以发现所有过滤出来的文件已经移动到了<code>tmp220928-02</code>目录下去</p>
+<ul>
+<li><code>xargs</code> 参数过滤器</li>
+<li><code>-I</code> 将xargs的每项名称，一行一行的赋值给 {}，可以用 {} 代替
+<ul>
+<li>大写的i</li>
+<li><code>{}</code> 过滤数据存放</li>
+</ul>
+</li>
+<li><code>mv</code> 移动文件&amp;目录的命令</li>
+<li><code>~/tmp220928-02/</code> 目标目录，会把所有文件移动该目录下</li>
+</ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-07-06</span>
+                <span>更新于 2022-11-01</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件" data-hashtags="Linux"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" data-title="使用xargs命令批量移动文件" data-hashtags="Linux"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" data-title="使用xargs命令批量移动文件" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" data-title="使用xargs命令批量移动文件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" data-title="使用xargs命令批量移动文件" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" data-title="使用xargs命令批量移动文件" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" data-title="使用xargs命令批量移动文件"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -178,8 +197,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/" class="prev" rel="prev" title="iterm2中管理ssh以及配置快捷登录"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>iterm2中管理ssh以及配置快捷登录</a>
-            <a href="/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" class="next" rel="next" title="使用xargs命令批量移动文件">使用xargs命令批量移动文件<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" class="prev" rel="prev" title="find和xargs命令组合使用处理带空格文件名的文件"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>find和xargs命令组合使用处理带空格文件名的文件</a>
+            <a href="/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/" class="next" rel="next" title="解决Mac下&#34;xcrun error invalid active developer path&#34;报错的问题">解决Mac下"xcrun error invalid active developer path"报错的问题<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

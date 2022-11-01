@@ -4,7 +4,15 @@
         <link>https://oneone.life/categories/linux/</link>
         <description>Linux - 分类 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 06 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>使用xargs命令批量移动文件</title>
+    <link>https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</link>
+    <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</guid>
+    <description><![CDATA[当遇到这样一个场景，需要批量把查找出来的多个文件或者目录移动到一个统一的目录下面，这时可以使用xargs命令与查询命令(例如find)结合使]]></description>
+</item>
+<item>
     <title>find和xargs命令组合使用处理带空格文件名的文件</title>
     <link>https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</link>
     <pubDate>Wed, 06 Jul 2022 00:00:00 &#43;0000</pubDate>
@@ -112,48 +120,6 @@
 <p><code>BBR</code> 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。</p>
 <h2 id="检测-bbr-是否开启">检测 BBR 是否开启</h2>
 <p>在开始之前，先看看 <code>BBR</code> 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：</p>]]></description>
-</item>
-<item>
-    <title>grep</title>
-    <link>https://oneone.life/grep/</link>
-    <pubDate>Wed, 26 Feb 2020 22:39:36 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/grep/</guid>
-    <description><![CDATA[<p>用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
-在每个 FILE 或是标准输入中查找 PATTERN。
-默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。
-例如: <code>grep -i 'hello world' menu.h main.c</code></p>
-<ul>
-<li>
-<p>正则表达式选择与解释:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式<span class="o">(</span>缩写为 ERE<span class="o">)</span>
-</span></span><span class="line"><span class="cl">  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
-</span></span><span class="line"><span class="cl">  -G, --basic-regexp        PATTERN 是一个基本正则表达式<span class="o">(</span>缩写为 BRE<span class="o">)</span>
-</span></span><span class="line"><span class="cl">  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
-</span></span><span class="line"><span class="cl">  -e, --regexp<span class="o">=</span>PATTERN      用 PATTERN 来进行匹配操作
-</span></span><span class="line"><span class="cl">  -f, --file<span class="o">=</span>FILE           从 FILE 中取得 PATTERN
-</span></span><span class="line"><span class="cl">  -i, --ignore-case         忽略大小写
-</span></span><span class="line"><span class="cl">  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
-</span></span><span class="line"><span class="cl">  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
-</span></span><span class="line"><span class="cl">  -z, --null-data           一个 <span class="m">0</span> 字节的数据行，但不是空行
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>]]></description>
 </item>
 </channel>
 </rss>

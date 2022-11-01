@@ -4,7 +4,15 @@
         <link>https://oneone.life/tags/linux/</link>
         <description>Linux - 标签 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 06 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>使用xargs命令批量移动文件</title>
+    <link>https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</link>
+    <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</guid>
+    <description><![CDATA[当遇到这样一个场景，需要批量把查找出来的多个文件或者目录移动到一个统一的目录下面，这时可以使用xargs命令与查询命令(例如find)结合使]]></description>
+</item>
+<item>
     <title>find和xargs命令组合使用处理带空格文件名的文件</title>
     <link>https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</link>
     <pubDate>Wed, 06 Jul 2022 00:00:00 &#43;0000</pubDate>
@@ -109,14 +117,6 @@
 </div>
 </div></li>
 </ul>]]></description>
-</item>
-<item>
-    <title>Linux下各文件夹的作用</title>
-    <link>https://oneone.life/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
-    <pubDate>Tue, 25 Feb 2020 14:36:41 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/linux%E4%B8%8B%E5%90%84%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
-    <description><![CDATA[下面内容对应环境为：Ubuntu 16.04 首先放一张根目录下的文件夹图 boot 该文件夹存放引导加载器(bootstrap loader)使用的文件,一般我们]]></description>
 </item>
 </channel>
 </rss>

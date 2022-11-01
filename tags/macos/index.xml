@@ -4,7 +4,15 @@
         <link>https://oneone.life/tags/macos/</link>
         <description>MacOS - 标签 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/macos/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/macos/" rel="self" type="application/rss+xml" /><item>
+    <title>解决Mac下&#34;xcrun error invalid active developer path&#34;报错的问题</title>
+    <link>https://oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+    <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[最近Mac推送了最新的系统版本Ventura，在升级到该版本之后发现，在终端中使用git、python等命令的时候会报错，报错信息如下： xcrun: error:]]></description>
+</item>
+<item>
     <title>iterm2中管理ssh以及配置快捷登录</title>
     <link>https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</link>
     <pubDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</pubDate>
