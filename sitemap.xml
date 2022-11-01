@@ -2,21 +2,21 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://oneone.life/categories/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/tags/linux/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/categories/linux/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/posts/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/tags/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/tags/iterm2/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://oneone.life/tags/macos/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://oneone.life/categories/macos/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://oneone.life/tags/ssh%E5%85%8D%E5%AF%86/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://oneone.life/tags/brew/</loc><lastmod>2022-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</loc><lastmod>2022-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://oneone.life/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</loc><lastmod>2022-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://oneone.life/categories/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/tags/linux/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/categories/linux/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/posts/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/tags/</loc><lastmod>2022-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/tags/iterm2/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/tags/macos/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/categories/macos/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/tags/ssh%E5%85%8D%E5%AF%86/</loc><lastmod>2022-06-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/tags/brew/</loc><lastmod>2022-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</loc><lastmod>2022-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</loc><lastmod>2022-06-10T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/tags/arm/</loc><lastmod>2022-02-23T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/tags/docker/</loc><lastmod>2022-02-23T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</loc><lastmod>2022-02-23T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
