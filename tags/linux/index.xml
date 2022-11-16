@@ -4,7 +4,15 @@
         <link>https://oneone.life/tags/linux/</link>
         <description>Linux - 标签 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>linux中curl调用登录接口然后用sed命令提取出token值</title>
+    <link>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</link>
+    <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</guid>
+    <description><![CDATA[💡背景： 因为客户现场特殊情况不能访问管理平台Web页面，且不能远程访问服务器和其中的所有虚拟机实例，只能在机房直接操作集群对应服务器。现场技]]></description>
+</item>
+<item>
     <title>使用xargs命令批量移动文件</title>
     <link>https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</link>
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
@@ -75,48 +83,6 @@
     <author>Alex Wu</author>
     <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
     <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
-</item>
-<item>
-    <title>grep</title>
-    <link>https://oneone.life/grep/</link>
-    <pubDate>Wed, 26 Feb 2020 22:39:36 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/grep/</guid>
-    <description><![CDATA[<p>用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
-在每个 FILE 或是标准输入中查找 PATTERN。
-默认的 PATTERN 是一个基本正则表达式(缩写为 BRE)。
-例如: <code>grep -i 'hello world' menu.h main.c</code></p>
-<ul>
-<li>
-<p>正则表达式选择与解释:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">  -E, --extended-regexp     PATTERN 是一个可扩展的正则表达式<span class="o">(</span>缩写为 ERE<span class="o">)</span>
-</span></span><span class="line"><span class="cl">  -F, --fixed-strings       PATTERN 是一组由断行符分隔的字符串。
-</span></span><span class="line"><span class="cl">  -G, --basic-regexp        PATTERN 是一个基本正则表达式<span class="o">(</span>缩写为 BRE<span class="o">)</span>
-</span></span><span class="line"><span class="cl">  -P, --perl-regexp         PATTERN 是一个 Perl 正则表达式
-</span></span><span class="line"><span class="cl">  -e, --regexp<span class="o">=</span>PATTERN      用 PATTERN 来进行匹配操作
-</span></span><span class="line"><span class="cl">  -f, --file<span class="o">=</span>FILE           从 FILE 中取得 PATTERN
-</span></span><span class="line"><span class="cl">  -i, --ignore-case         忽略大小写
-</span></span><span class="line"><span class="cl">  -w, --word-regexp         强制 PATTERN 仅完全匹配字词
-</span></span><span class="line"><span class="cl">  -x, --line-regexp         强制 PATTERN 仅完全匹配一行
-</span></span><span class="line"><span class="cl">  -z, --null-data           一个 <span class="m">0</span> 字节的数据行，但不是空行
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>]]></description>
 </item>
 </channel>
 </rss>

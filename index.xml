@@ -4,9 +4,17 @@
         <link>https://oneone.life/</link>
         <description>易娃的Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://oneone.life/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>linux中curl调用登录接口然后用sed命令提取出token值</title>
+    <link>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</link>
+    <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</guid>
+    <description><![CDATA[💡背景： 因为客户现场特殊情况不能访问管理平台Web页面，且不能远程访问服务器和其中的所有虚拟机实例，只能在机房直接操作集群对应服务器。现场技]]></description>
+</item>
+<item>
     <title>解决Mac下&#34;xcrun error invalid active developer path&#34;报错的问题</title>
     <link>https://oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</link>
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
@@ -77,14 +85,6 @@
     <author>Alex Wu</author>
     <guid>https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/</guid>
     <description><![CDATA[事务处理 事务来自于2个独立的需求: 并发数据库访问 和 系统错误恢复. 一个事务可以被看作是 一个单元的一系列SQL语句的集合. 事务特性 (A.C.I.D) A - 原子性 (Atomacity):]]></description>
-</item>
-<item>
-    <title>通过tcpdump抓取mysql报文</title>
-    <link>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</link>
-    <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</guid>
-    <description><![CDATA[1 tcpdump -s 65535 -xX -nn -q -tttt -i any -c 1000 port 3306 1 2 #只以ASIC显示内容 tcpdump -s 65535 -A -nn -q -tttt -i any -c 1000 port 3306]]></description>
 </item>
 </channel>
 </rss>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>linux中curl调用登录接口然后用sed命令提取出token值 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="linux中curl调用登录接口然后用sed命令提取出token值" />
+<meta property="og:description" content="💡背景： 因为客户现场特殊情况不能访问管理平台Web页面，且不能远程访问服务器和其中的所有虚拟机实例，只能在机房直接操作集群对应服务器。现场技" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-16T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://oneone.life/logo.png"/>
+
+<meta name="twitter:title" content="linux中curl调用登录接口然后用sed命令提取出token值"/>
+<meta name="twitter:description" content="💡背景： 因为客户现场特殊情况不能访问管理平台Web页面，且不能远程访问服务器和其中的所有虚拟机实例，只能在机房直接操作集群对应服务器。现场技"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" /><link rel="prev" href="https://oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "linux中curl调用登录接口然后用sed命令提取出token值",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/oneone.life\/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC\/"
+        },"genre": "posts","keywords": "Linux","wordcount":  1336 ,
+        "url": "https:\/\/oneone.life\/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC\/","datePublished": "2022-11-16T00:00:00+00:00","dateModified": "2022-11-16T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Alex Wu"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Simple Life"><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Simple Life"><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">linux中curl调用登录接口然后用sed命令提取出token值</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-16">2022-11-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1336 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" class="leancloud_visitors" data-flag-title="linux中curl调用登录接口然后用sed命令提取出token值">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-把镜像文件上传到宿主机">1. 把镜像文件上传到宿主机</a></li>
+    <li><a href="#2-获取token">2. 获取token</a>
+      <ul>
+        <li><a href="#21-方法一">2.1 方法一</a>
+          <ul>
+            <li><a href="#调用登录接口获取token">调用登录接口获取token</a></li>
+            <li><a href="#编辑responsetxt文件只保留token值部分的内容">编辑<code>response.txt</code>文件，只保留<code>token</code>值部分的内容</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#22-方法二">2.2 方法二</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#调用登录接口获取token并自动截取出token值部分内容"><strong>调用登录接口获取token，并自动截取出token值部分内容</strong></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-调用上传接口上传镜像文件">3. 调用上传接口，上传镜像文件</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p>💡<strong>背景：</strong><br /><strong>因为客户现场特殊情况不能访问管理平台Web页面，且不能远程访问服务器和其中的所有虚拟机实例，只能在机房直接操作集群对应服务器。现场技支同事需要上传一个镜像文件到集群中的某一个微服务中，通常还可以通过Web页面进行操作，现在却不行。为了解决他们的这个述求，就想到直接从宿主机中调用对应服务的注册接口获取token，然后再直接调用上传的接口上传镜像文件。</strong></p>
+</blockquote>
+<h2 id="1-把镜像文件上传到宿主机">1. 把镜像文件上传到宿主机</h2>
+<ul>
+<li>把需要上传的镜像文件拷贝到集群中任一节点的宿主机系统中去(建议就NG节点，接口请求本身也就是先走NG)，目录随意记住就行。</li>
+</ul>
+<h2 id="2-获取token">2. 获取token</h2>
+<p>首先需要通过注册接口获取<code>token</code>用于后续接口调用的鉴权，但是<code>toeken</code>是一个很长的字符串，再加上只能操作纯命令行的Linux系统，所以就不能使用鼠标直接选择复制这种操作了。为了方便现场同事后续的操作，就只能把接口返回的<code>token</code>值直接写入到一个文件中或者一个变量函数，此处选择的是写文件。</p>
+<h3 id="21-方法一">2.1 方法一</h3>
+<p>直接将接口返回全部写入到一个指定文件，然后再编辑该文件，手动删掉无用的内容只保留<code>token</code>值的部分。好处是命令较短，手动敲入的时候出错的概率较低(至于为什么照着文档都能敲错，这里就不吐槽我司个别技支同事的技术水平和粗心大意了🤐)，缺点是操作较繁琐。</p>
+<h4 id="调用登录接口获取token">调用登录接口获取token</h4>
+<ul>
+<li>在服务器上执行下方的命令获取token，并把token写入文件response.txt</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl --location --request POST <span class="s1">&#39;http://xx.xx.xx.xx/api/v2/login&#39;</span> --header <span class="s1">&#39;Content-Type: application/json&#39;</span> --data-raw <span class="s1">&#39;{&#34;userName&#34;: &#34;xxxxx&#34;,&#34;password&#34;: &#34;xxxxx&#34;}&#39;</span> &gt; response.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>💡<strong>参数说明：</strong></p>
+<ul>
+<li>使用<code>curl</code>命令直接调用登陆接口</li>
+<li>同时使用<code>&gt;</code>把接口返回接口重定向写入到文件<code>response.txt</code>中去</li>
+</ul>
+</blockquote>
+<h4 id="编辑responsetxt文件只保留token值部分的内容">编辑<code>response.txt</code>文件，只保留<code>token</code>值部分的内容</h4>
+<ul>
+<li>使用<code>vim</code>命令编辑<code>response.txt</code>文件，只保留<code>token</code>字段的值那部分内容，其他内容删除掉(如下图)，然后<code>:wq</code>保存退出
+<ul>
+<li>编辑前：
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161058140.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161058140.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161058140.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161058140.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161058140.png"
+        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161058140.png" /></li>
+<li>编辑后：
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059519.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059519.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059519.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059519.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059519.png"
+        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059519.png" /></li>
+</ul>
+</li>
+</ul>
+<h2 id="22-方法二">2.2 方法二</h2>
+<p>将接口返回的值先进行处理，截取出<code>token</code>值部分的内容后再写入到一个指定的文件中去。好处是减少手动编辑文件删除内容截取token的步骤(毕竟接口返回内容还是比较多)，缺点是命令较长手动敲入时容易出错。</p>
+<h4 id="调用登录接口获取token并自动截取出token值部分内容"><strong>调用登录接口获取token，并自动截取出token值部分内容</strong></h4>
+<ul>
+<li>执行下方的命令获取token，并把处理好的token值写入到文件中去</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl --location --request POST <span class="s1">&#39;http://xx.xx.xx.xx/api/v2/login&#39;</span> --header <span class="s1">&#39;Content-Type: application/json&#39;</span> --data-raw <span class="s1">&#39;{&#34;userName&#34;: &#34;xxxxx&#34;,&#34;password&#34;: &#34;xxxxx&#34;}&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s/,/\n/g&#39;</span> <span class="p">|</span> grep <span class="s2">&#34;token&#34;</span> <span class="p">|</span> sed <span class="s1">&#39;s/:/\n/g&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;1d&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s/&#34;//g&#39;</span> &gt; response.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>💡参数说明：</strong></p>
+<ul>
+<li>使用<code>curl</code>命令直接调用登陆接口</li>
+<li>第一个<code>sed</code>是将<code>,</code>换成<code>\n</code></li>
+<li>第二个<code>grep</code> 是将 <code>token</code> 关键字找出来，并单独列出来</li>
+<li>第三个 <code>sed</code>是将 <code>:</code> 换成 <code>\n</code></li>
+<li>第四个<code>sed</code> 是删除第一行</li>
+<li>第五个<code>sed</code>是将 <code>&quot;</code> 用空字符替换掉, 最后的<code>g</code>的参数表示替换所有符合的引号</li>
+<li>第六个<code>&gt;</code>是将结果重定向写入到文件<code>response.txt</code>中</li>
+</ul>
+</blockquote>
+<h2 id="3-调用上传接口上传镜像文件">3. 调用上传接口，上传镜像文件</h2>
+<ul>
+<li>读取之前写入<code>token</code>的文件，并使用<code>xargs</code>命令传入<code>curl</code>的接口请求参数中去（当然还有其他的方法实现传参，此处就不做介绍了，一切以现场同事手动录入方便为先🤐）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat response.txt <span class="p">|</span> xargs -I <span class="o">{}</span> curl -v  --location --request POST <span class="s1">&#39;http://xx.xx.xx.xx/api/v2/image&#39;</span> --header <span class="s1">&#39;Authorization: Bearer {}&#39;</span> --form <span class="s1">&#39;file=@&#34;/home/app/xxxxxx.tar.gz&#34;&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>💡参数说明：</strong></p>
+<ul>
+<li><code>xargs</code>命令后面那个参数是大写的英文字母<code>i</code></li>
+<li>把镜像包的路径替换为现场的真实路径（<code>file=@</code>后面那部分）</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p><strong>当</strong>接口返回状态为<code>HTTP 100 Continue</code>，这表示镜像文件正在上传中，耐心等待，直到文件上传完成即可</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059420.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059420.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059420.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059420.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059420.png"
+        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059420.png" /></p>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-11-16</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" data-title="linux中curl调用登录接口然后用sed命令提取出token值" data-hashtags="Linux"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" data-title="linux中curl调用登录接口然后用sed命令提取出token值" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" data-title="linux中curl调用登录接口然后用sed命令提取出token值"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" data-title="linux中curl调用登录接口然后用sed命令提取出token值" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" data-title="linux中curl调用登录接口然后用sed命令提取出token值" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" data-title="linux中curl调用登录接口然后用sed命令提取出token值"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/" class="prev" rel="prev" title="解决Mac下&#34;xcrun error invalid active developer path&#34;报错的问题"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>解决Mac下"xcrun error invalid active developer path"报错的问题</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.yuque.com/wuyiwa" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备20004229号-1</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"o5gq6eLbupSlKq678zx1aKcd-gzGzoHsz","appKey":"S2CU3haJIhCbfVoIxhtrIzNp","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Simple Life","id-2":"Simple Life"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-KJGDZS4RKJ', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-KJGDZS4RKJ" async></script></body>
+</html>
