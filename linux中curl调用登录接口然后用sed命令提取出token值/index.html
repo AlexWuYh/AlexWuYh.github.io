@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/oneone.life\/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC\/"
-        },"genre": "posts","keywords": "Linux","wordcount":  1336 ,
+        },"genre": "posts","keywords": "Linux","wordcount":  1293 ,
         "url": "https:\/\/oneone.life\/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC\/","datePublished": "2022-11-16T00:00:00+00:00","dateModified": "2022-11-16T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">linux中curl调用登录接口然后用sed命令提取出token值</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-16">2022-11-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1336 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-16">2022-11-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1293 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" class="leancloud_visitors" data-flag-title="linux中curl调用登录接口然后用sed命令提取出token值">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -148,7 +148,7 @@
 <h2 id="2-获取token">2. 获取token</h2>
 <p>首先需要通过注册接口获取<code>token</code>用于后续接口调用的鉴权，但是<code>toeken</code>是一个很长的字符串，再加上只能操作纯命令行的Linux系统，所以就不能使用鼠标直接选择复制这种操作了。为了方便现场同事后续的操作，就只能把接口返回的<code>token</code>值直接写入到一个文件中或者一个变量函数，此处选择的是写文件。</p>
 <h3 id="21-方法一">2.1 方法一</h3>
-<p>直接将接口返回全部写入到一个指定文件，然后再编辑该文件，手动删掉无用的内容只保留<code>token</code>值的部分。好处是命令较短，手动敲入的时候出错的概率较低(至于为什么照着文档都能敲错，这里就不吐槽我司个别技支同事的技术水平和粗心大意了🤐)，缺点是操作较繁琐。</p>
+<p>直接将接口返回全部写入到一个指定文件，然后再编辑该文件，手动删掉无用的内容只保留<code>token</code>值的部分。好处是命令较短，手动敲入的时候出错的概率较低，缺点是操作较繁琐。</p>
 <h4 id="调用登录接口获取token">调用登录接口获取token</h4>
 <ul>
 <li>在服务器上执行下方的命令获取token，并把token写入文件response.txt</li>
@@ -221,7 +221,7 @@
 </blockquote>
 <h2 id="3-调用上传接口上传镜像文件">3. 调用上传接口，上传镜像文件</h2>
 <ul>
-<li>读取之前写入<code>token</code>的文件，并使用<code>xargs</code>命令传入<code>curl</code>的接口请求参数中去（当然还有其他的方法实现传参，此处就不做介绍了，一切以现场同事手动录入方便为先🤐）</li>
+<li>读取之前写入<code>token</code>的文件，并使用<code>xargs</code>命令传入<code>curl</code>的接口请求参数中去（当然还有其他的方法实现传参，此处就不做介绍了，一切以现场同事手动录入方便为先）</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
