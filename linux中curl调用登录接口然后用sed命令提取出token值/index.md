@@ -27,9 +27,9 @@ curl --location --request POST 'http://xx.xx.xx.xx/api/v2/login' --header 'Conte
 
 - 使用`vim`命令编辑`response.txt`文件，只保留`token`字段的值那部分内容，其他内容删除掉(如下图)，然后`:wq`保存退出
    - 编辑前：
-   ![](https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161058140.png)
+   ![](https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202212291424420.png)
    - 编辑后：
-   ![](https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059519.png)
+   ![](https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202212291425499.png)
 
 ## 2.2 方法二
 将接口返回的值先进行处理，截取出`token`值部分的内容后再写入到一个指定的文件中去。好处是减少手动编辑文件删除内容截取token的步骤(毕竟接口返回内容还是比较多)，缺点是命令较长手动敲入时容易出错。
