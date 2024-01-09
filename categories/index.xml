@@ -1,7 +1,88 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Categories - 分类 - 我的全新 Hugo 网站</title>
-        <link>http://example.org/categories/</link>
-        <description>Categories - 分类 - 我的全新 Hugo 网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><atom:link href="http://example.org/categories/" rel="self" type="application/rss+xml" /></channel>
+        <title>Categories - 分类 - Simple Life</title>
+        <link>https://oneone.life/categories/</link>
+        <description>Categories - 分类 - Simple Life</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux</title>
+    <link>https://oneone.life/categories/linux/</link>
+    <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/linux/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Mac</title>
+    <link>https://oneone.life/categories/mac/</link>
+    <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/mac/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>MacOS</title>
+    <link>https://oneone.life/categories/macos/</link>
+    <pubDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/macos/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>mysql</title>
+    <link>https://oneone.life/categories/mysql/</link>
+    <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/mysql/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>tcpdump</title>
+    <link>https://oneone.life/categories/tcpdump/</link>
+    <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/tcpdump/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>tools</title>
+    <link>https://oneone.life/categories/tools/</link>
+    <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/tools/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Network</title>
+    <link>https://oneone.life/categories/network/</link>
+    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/network/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>NTP</title>
+    <link>https://oneone.life/categories/ntp/</link>
+    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/ntp/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>记录生活</title>
+    <link>https://oneone.life/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/</link>
+    <pubDate>Mon, 10 Jan 2022 19:31:22 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>摄影</title>
+    <link>https://oneone.life/categories/%E6%91%84%E5%BD%B1/</link>
+    <pubDate>Mon, 10 Jan 2022 19:31:22 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/%E6%91%84%E5%BD%B1/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
 </rss>

@@ -2,12 +2,13 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://oneone.life/post/git-use-skills-1kyiph.html</loc><lastmod>2023-11-30T19:24:12&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/posts/</loc><lastmod>2023-11-30T19:24:12&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/</loc><lastmod>2023-11-30T19:24:12&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/categories/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/tags/linux/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/categories/linux/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://oneone.life/posts/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://oneone.life/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/tags/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/categories/mac/</loc><lastmod>2022-11-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/tags/macos/</loc><lastmod>2022-11-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-	<meta name="generator" content="Hugo 0.100.2" />
+	<meta name="generator" content="Hugo 0.121.1">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="Simple Life" />
 <meta property="og:description" content="易娃的Blog" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://oneone.life/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="og:site_name" content="My cool site" />
+<meta property="og:url" content="https://oneone.life/" /><meta property="og:image" content="https://oneone.life/logo.png" /><meta property="og:site_name" content="My cool site" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://oneone.life/logo.png"/>
-
-<meta name="twitter:title" content="Simple Life"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://oneone.life/logo.png" /><meta name="twitter:title" content="Simple Life"/>
 <meta name="twitter:description" content="易娃的Blog"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -100,6 +98,48 @@
         alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211011705754.png"
         title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211011705754.png" /></a></div><h1 class="home-title">易娃的杂货铺</h1><div class="home-subtitle"><div id="id-3" class="typeit"></div></div><div class="links"><a href="https://github.com/AlexWuYh" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://www.instagram.com/alex_wuyh" title="Instagram" target="_blank" rel="noopener noreffer me"><i class="fab fa-instagram fa-fw" aria-hidden="true"></i></a><a href="https://weibo.com/AlexWuYh" title="微博" target="_blank" rel="noopener noreffer me"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="https://www.zhihu.com/people/wu_yh" title="知乎" target="_blank" rel="noopener noreffer me"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/zhihu.svg" aria-hidden="true"></i></a><a href="https://www.yuque.com/wuyiwa" title="语雀" target="_blank" rel="noopener noreffer me"><i data-svg-src="/svg/icons/yuque.min.svg" aria-hidden="true"></i></a><a href="mailto:alex.wuyinghao@gmail.com" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/">在Ubuntu16.04和Centos7上启用TCP-BBR</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-03-07">2020-03-07</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div><div class="content"><blockquote>
+<ol>
+<li>新增atrandys大佬的一键安装脚本，支持<code>centos7+</code>/<code>debian9+</code>/<code>ubuntu16+</code>:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh
+</span></span><span class="line"><span class="cl">chmod +x tcp.sh
+</span></span><span class="line"><span class="cl">./tcp.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>新增Google原版BBR一键安装脚本：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+</span></span><span class="line"><span class="cl">chmod +x bbr.sh
+</span></span><span class="line"><span class="cl">./bbr.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<h2 id="bbr简介">BBR简介</h2>
+<p><code>BBR</code> 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。</p>
+<p>简单地说，开启 <code>BBR</code> 的 Linux Server 和不开启 <code>BBR</code> 的 Linux Server，在持续传输数据方面可以有非常大的不同。</p>
+<p><code>BBR</code> 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。</p>
+<h2 id="检测-bbr-是否开启">检测 BBR 是否开启</h2>
+<p>在开始之前，先看看 <code>BBR</code> 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：</p></div><div class="post-footer">
+        <a href="/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/grep/">grep</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-02-26">2020-02-26</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div><div class="content"><p>用法: grep [选项]&hellip; PATTERN [FILE]&hellip;
 在每个 FILE 或是标准输入中查找 PATTERN。
@@ -197,33 +237,6 @@
 </ul></div><div class="post-footer">
         <a href="/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">Ubuntu root用户下java -version无法获取java环境变量解决办法</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-02-24">2020-02-24</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div><div class="content"><h2 id="问题现象">问题现象</h2>
-<p>​	按照网上配置java环境变量的方法在/etc/profile文件中添加如下内容，配置之后，如果重启系统后切换到root用户无法获取已配置的java环境变量，在普通用户下可以获取到</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/local/java/jdk1.8.0_65
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">JRE_HOME</span><span class="o">=</span><span class="si">${</span><span class="nv">JAVA_HOME</span><span class="si">}</span>/jre
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">CLASSPATH</span><span class="o">=</span>.:<span class="nv">$JAVA_HOME</span>/lib:<span class="nv">$JRE_HOME</span>/lib:<span class="nv">$CLASSPATH</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$JAVA_HOME</span>/bin:<span class="nv">$JRE_HOME</span>/bin:<span class="nv">$PATH</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="解决办法">解决办法</h2></div><div class="post-footer">
-        <a href="/ubuntu-root%E7%94%A8%E6%88%B7%E4%B8%8Bjava-version%E6%97%A0%E6%B3%95%E8%8E%B7%E5%8F%96java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -248,8 +261,8 @@
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.yuque.com/wuyiwa" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.yuque.com/wuyiwa" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
                     <span class="icp"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2023016660号</a></span></div>
         </div>
     </footer></div>
