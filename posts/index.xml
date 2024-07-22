@@ -4,7 +4,15 @@
         <link>https://oneone.life/posts/</link>
         <description>所有文章 | Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Mon, 17 Jun 2024 19:12:42 &#43;0800</lastBuildDate><atom:link href="https://oneone.life/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>将ubuntu的默认编辑器从nano修改为vim</title>
+    <link>https://oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/</link>
+    <pubDate>Mon, 17 Jun 2024 19:12:42 &#43;0800</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/</guid>
+    <description><![CDATA[将ubuntu的默认编辑器从nano修改为vim 在使用ubunut时经常会遇到打开一些系统文件的时候，要么默认使用nano​打开，要么会让你]]></description>
+</item>
+<item>
     <title>git 使用技巧</title>
     <link>https://oneone.life/git-use-skills-1kyiph/</link>
     <pubDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</pubDate>
@@ -75,14 +83,6 @@
     <author>Alex Wu</author>
     <guid>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
     <description><![CDATA[因为鲲鹏920处理是ARM架构的，所以一般的x86架构的包是不能安装的，该文档主要基于arm版本的centos7系统来编写(其他arm系统也]]></description>
-</item>
-<item>
-    <title>MacOS上使用iterm2在跳板机上用lrzsz上传或下载文件</title>
-    <link>https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</link>
-    <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/macos%E4%B8%8A%E4%BD%BF%E7%94%A8iterm2%E5%9C%A8%E8%B7%B3%E6%9D%BF%E6%9C%BA%E4%B8%8A%E7%94%A8lrzsz%E4%B8%8A%E4%BC%A0%E6%88%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/</guid>
-    <description><![CDATA[安装配置lrzsz/iterm2-zmodem 安装: 1 brew install lrzsz 打开终端下载支持脚本： 1 git clone git@github.com:mmastrac/iterm2-zmodem.git 在终端下安装支持脚本： 1 cp iterm2-zmodem/iterm2-*.sh /usr/local/bin &amp;&amp; chmod +x /usr/local/bin/iterm2-*.sh 设置iter]]></description>
 </item>
 </channel>
 </rss>
