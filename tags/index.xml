@@ -4,7 +4,15 @@
         <link>https://oneone.life/tags/</link>
         <description>Tags - 标签 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Git</title>
+    <link>https://oneone.life/tags/git/</link>
+    <pubDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/tags/git/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Linux</title>
     <link>https://oneone.life/tags/linux/</link>
     <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
@@ -21,7 +29,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>iterm2</title>
+    <title>Iterm2</title>
     <link>https://oneone.life/tags/iterm2/</link>
     <pubDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
@@ -29,7 +37,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>ssh免密</title>
+    <title>Ssh免密</title>
     <link>https://oneone.life/tags/ssh%E5%85%8D%E5%AF%86/</link>
     <pubDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
@@ -37,7 +45,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>brew</title>
+    <title>Brew</title>
     <link>https://oneone.life/tags/brew/</link>
     <pubDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
@@ -61,7 +69,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>mysql</title>
+    <title>Mysql</title>
     <link>https://oneone.life/tags/mysql/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
@@ -69,19 +77,11 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>TCPDump</title>
+    <title>Tcpdump</title>
     <link>https://oneone.life/tags/tcpdump/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
     <guid>https://oneone.life/tags/tcpdump/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Network</title>
-    <link>https://oneone.life/tags/network/</link>
-    <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/network/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

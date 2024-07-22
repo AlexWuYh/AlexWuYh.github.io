@@ -4,7 +4,15 @@
         <link>https://oneone.life/categories/</link>
         <description>Categories - 分类 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Git</title>
+    <link>https://oneone.life/categories/git/</link>
+    <pubDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/categories/git/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Linux</title>
     <link>https://oneone.life/categories/linux/</link>
     <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
@@ -29,7 +37,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>mysql</title>
+    <title>Mysql</title>
     <link>https://oneone.life/categories/mysql/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
@@ -37,7 +45,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>tcpdump</title>
+    <title>Tcpdump</title>
     <link>https://oneone.life/categories/tcpdump/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
@@ -45,7 +53,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>tools</title>
+    <title>Tools</title>
     <link>https://oneone.life/categories/tools/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
@@ -74,14 +82,6 @@
     <pubDate>Mon, 10 Jan 2022 19:31:22 &#43;0000</pubDate>
     <author>Alex Wu</author>
     <guid>https://oneone.life/categories/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>摄影</title>
-    <link>https://oneone.life/categories/%E6%91%84%E5%BD%B1/</link>
-    <pubDate>Mon, 10 Jan 2022 19:31:22 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/categories/%E6%91%84%E5%BD%B1/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
