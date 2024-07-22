@@ -21,6 +21,14 @@
     <description><![CDATA[git log美化输出 1 git log --all --decorate --oneline --graph 效果如下： ​​ ‍ git 拉取指定目录或文件 目录初始化 1 git init 设置远程仓库地址 1 git remote add -f origin &lt;origin_url&gt; ​启用sparse check]]></description>
 </item>
 <item>
+    <title>netmarker安装部署</title>
+    <link>https://oneone.life/netmarker-installation-deployment-lvbj2/</link>
+    <pubDate>Thu, 23 Nov 2023 18:06:07 &#43;0800</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/netmarker-installation-deployment-lvbj2/</guid>
+    <description><![CDATA[netmarker安装部署 Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes]]></description>
+</item>
+<item>
     <title>linux中curl调用登录接口然后用sed命令提取出token值</title>
     <link>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</link>
     <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
@@ -75,14 +83,6 @@
     <author>Alex Wu</author>
     <guid>https://oneone.life/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</guid>
     <description><![CDATA[给虚拟机添加硬盘(或扩容) 停止虚拟机 在管理页面给虚拟机新增一块硬盘 重新启动虚拟机 登入虚拟机，对新增硬盘进行分区 下方所示为硬盘扩容非新增，但操]]></description>
-</item>
-<item>
-    <title>鲲鹏920服务器上安装arm版本的docker</title>
-    <link>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
-    <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
-    <description><![CDATA[因为鲲鹏920处理是ARM架构的，所以一般的x86架构的包是不能安装的，该文档主要基于arm版本的centos7系统来编写(其他arm系统也]]></description>
 </item>
 </channel>
 </rss>
