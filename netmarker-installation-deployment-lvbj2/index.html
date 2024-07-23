@@ -7,7 +7,7 @@
         <title>netmarker安装部署 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://oneone.life/netmarker-installation-deployment-lvbj2/">
   <meta property="og:site_name" content="Simple Life">
   <meta property="og:title" content="netmarker安装部署">
-  <meta property="og:description" content="netmarker安装部署 Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes">
+  <meta property="og:description" content="Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://oneone.life/logo.png">
   <meta name="twitter:title" content="netmarker安装部署">
-  <meta name="twitter:description" content="netmarker安装部署 Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes">
+  <meta name="twitter:description" content="Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎">
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -33,7 +33,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/oneone.life\/netmarker-installation-deployment-lvbj2\/"
-        },"genre": "posts","wordcount":  1929 ,
+        },"genre": "posts","wordcount":  1916 ,
         "url": "https:\/\/oneone.life\/netmarker-installation-deployment-lvbj2\/","datePublished": "2023-11-23T18:06:07+08:00","dateModified": "2024-07-22T18:37:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">netmarker安装部署</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-23">2023-11-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1929 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-23">2023-11-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1916 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/netmarker-installation-deployment-lvbj2/" class="leancloud_visitors" data-flag-title="netmarker安装部署">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -138,19 +138,18 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="netmarker安装部署">netmarker安装部署</h1>
-<h2 id="netmaker-介绍">Netmaker 介绍</h2>
+            </div><div class="content" id="content"><h2 id="netmaker-介绍">Netmaker 介绍</h2>
 <p>Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎适配了所有平台，包括 Linux, Mac 和 Windows，还可以通过 WireGuard 原生客户端连接 iPhone 和 Android。</p>
 <p>其最新版本的基准测试结果显示，基于 Netmaker 的 WireGuard 网络速度比其他全互联模式的 VPN（例如 Tailscale 和 ZeroTier）网络速度快 50% 以上。</p>
 <h2 id="netmaker-架构">Netmaker 架构</h2>
 <p>​<img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620175548.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620175548.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620175548.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620175548.png 2x"
+        data-src="https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9, https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9 1.5x, https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9 2x"
         data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620175548.png"
-        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620175548.png" />​</p>
+        alt="https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9"
+        title="https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9" />​</p>
 <p>Netmaker 使用的是 C/S 架构，即客户端/服务器架构。Netmaker Server 包含两个核心组件：用来管理网络的可视化界面，以及与客户端通信的 gRPC Server。你也可以可以选择部署DNS服务器（CoreDNS）来管理私有DNS。</p>
 <p>客户端（netclient）是一个二进制文件，可以在绝大多数 Linux 客户端以及 macOS 和 Windows 客户端运行，它的功能就是自动管理 WireGuard，动态更新 Peer 的配置。</p>
 <blockquote>
@@ -164,11 +163,11 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620181431.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620181431.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620181431.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620181431.png 2x"
+        data-src="https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9, https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9 1.5x, https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9 2x"
         data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620181431.png"
-        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620181431.png" /></p>
+        alt="https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9"
+        title="https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9" /></p>
 <p>主要的点：</p>
 <ul>
 <li>开放服务器的443(tcp), 53(tcp &amp; udp), 51821-518XX(udp)端口

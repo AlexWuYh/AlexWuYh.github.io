@@ -1,8 +1,6 @@
 # netmarker安装部署
 
 
-# netmarker安装部署
-
 ## Netmaker 介绍
 
 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎适配了所有平台，包括 Linux, Mac 和 Windows，还可以通过 WireGuard 原生客户端连接 iPhone 和 Android。
@@ -11,7 +9,7 @@ Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它
 
 ## Netmaker 架构
 
-​![](https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620175548.png)​
+​![](https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9)​
 
 Netmaker 使用的是 C/S 架构，即客户端/服务器架构。Netmaker Server 包含两个核心组件：用来管理网络的可视化界面，以及与客户端通信的 gRPC Server。你也可以可以选择部署DNS服务器（CoreDNS）来管理私有DNS。
 
@@ -29,7 +27,7 @@ Netmaker 支持多种部署方式，包括二进制部署和容器化部署，�
 
 ### 1. 先决条件
 
-![](https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220620181431.png)
+![](https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9)
 
 主要的点：
 

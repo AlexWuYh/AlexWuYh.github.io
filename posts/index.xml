@@ -26,7 +26,7 @@
     <pubDate>Thu, 23 Nov 2023 18:06:07 &#43;0800</pubDate>
     <author>Alex Wu</author>
     <guid>https://oneone.life/netmarker-installation-deployment-lvbj2/</guid>
-    <description><![CDATA[netmarker安装部署 Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes]]></description>
+    <description><![CDATA[Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎]]></description>
 </item>
 <item>
     <title>linux中curl调用登录接口然后用sed命令提取出token值</title>
