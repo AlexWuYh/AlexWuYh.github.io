@@ -29,6 +29,14 @@
     <description><![CDATA[Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎]]></description>
 </item>
 <item>
+    <title>PinPoint安装配置</title>
+    <link>https://oneone.life/pinpoint-installation-configuration-z1gpqfn/</link>
+    <pubDate>Thu, 23 Nov 2023 18:05:51 &#43;0800</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/pinpoint-installation-configuration-z1gpqfn/</guid>
+    <description><![CDATA[PinPoint安装配置 简介 ​​ pinpoint是开源在github上的一款全链路APM监控工具，提供了无侵入式的调用链监控、方法执行详情查]]></description>
+</item>
+<item>
     <title>linux中curl调用登录接口然后用sed命令提取出token值</title>
     <link>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</link>
     <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
@@ -75,14 +83,6 @@
     <author>Alex Wu</author>
     <guid>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</guid>
     <description><![CDATA[报错信息 在安装brew并更改为国内下载源后，执行brew update时老是报错，信息如下： 解决办法 上网查了下，找到了解决办法，参考链接 依次执]]></description>
-</item>
-<item>
-    <title>kvm虚拟机扩充根目录容量(lvm卷)</title>
-    <link>https://oneone.life/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</link>
-    <pubDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</guid>
-    <description><![CDATA[给虚拟机添加硬盘(或扩容) 停止虚拟机 在管理页面给虚拟机新增一块硬盘 重新启动虚拟机 登入虚拟机，对新增硬盘进行分区 下方所示为硬盘扩容非新增，但操]]></description>
 </item>
 </channel>
 </rss>
