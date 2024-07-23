@@ -29,7 +29,7 @@ BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouT
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" /><link rel="prev" href="https://oneone.life/grep/" /><link rel="next" href="https://oneone.life/2021%E5%B9%B49%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" /><link rel="prev" href="https://oneone.life/grep/" /><link rel="next" href="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="hEcQ6nEr41mGdKm5NvLM-M13MAox_EMIqc5f6Lz2cbY" /><meta name="baidu-site-verification" content="code-xRAT9UnTv5" /><script type="application/ld+json">
     {
@@ -57,7 +57,7 @@ BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouT
             <a href="/" title="Simple Life"><span id="id-1" class="typeit"></span></a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/photo/"> 摄影 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw" aria-hidden="true"></i>
@@ -99,7 +99,7 @@ BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouT
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/photo/" title="">摄影</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
@@ -455,7 +455,7 @@ BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouT
     </div>
 
     <div class="post-nav"><a href="/grep/" class="prev" rel="prev" title="grep"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>grep</a>
-            <a href="/2021%E5%B9%B49%E6%9C%88-%E5%87%BA%E5%B7%AE%E6%89%AB%E8%A1%97%E8%AE%B0%E5%BD%95%E4%B9%8B%E6%AD%A6%E6%B1%89%E7%AF%87/" class="next" rel="next" title="2021年9月-出差扫街记录之武汉篇">2021年9月-出差扫街记录之武汉篇<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+            <a href="/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" class="next" rel="next" title="tcpdump命令使用简介">tcpdump命令使用简介<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
