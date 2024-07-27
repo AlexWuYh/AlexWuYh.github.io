@@ -69,3 +69,8 @@ cat response.txt | xargs -I {} curl -v  --location --request POST 'http://xx.xx.
 
     ![](https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/202211161059420.png)
 
+
+---
+
+我的博客即将同步至腾讯云开发者社区，邀请大家一同入驻：https://cloud.tencent.com/developer/support-plan?invite_code=24be6fvhrt0ks
+

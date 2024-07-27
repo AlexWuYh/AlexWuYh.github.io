@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>netmarker安装部署 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://oneone.life/netmarker-installation-deployment-lvbj2/">
+  <meta property="og:site_name" content="Simple Life">
+  <meta property="og:title" content="netmarker安装部署">
+  <meta property="og:description" content="Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-11-23T18:06:07+08:00">
+    <meta property="article:modified_time" content="2024-07-22T18:37:40+08:00">
+    <meta property="og:image" content="https://oneone.life/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://oneone.life/logo.png">
+  <meta name="twitter:title" content="netmarker安装部署">
+  <meta name="twitter:description" content="Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎">
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/netmarker-installation-deployment-lvbj2/" /><link rel="prev" href="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/" /><link rel="next" href="https://oneone.life/git-use-skills-1kyiph/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="hEcQ6nEr41mGdKm5NvLM-M13MAox_EMIqc5f6Lz2cbY" /><meta name="baidu-site-verification" content="code-xRAT9UnTv5" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "netmarker安装部署",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/oneone.life\/netmarker-installation-deployment-lvbj2\/"
+        },"genre": "posts","wordcount":  1916 ,
+        "url": "https:\/\/oneone.life\/netmarker-installation-deployment-lvbj2\/","datePublished": "2023-11-23T18:06:07+08:00","dateModified": "2024-07-22T18:37:40+08:00","publisher": {
+            "@type": "Organization",
+            "name": "WUYH","logo": "https:\/\/imgup.oneone.life\/app\/hide.php?key=R2M2UHVFbUU1Uzc3cGN3OE9ObXRlUEx5SjdlWS9uOWowY2M9"},"author": {
+                "@type": "Person",
+                "name": "Alex Wu"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Simple Life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9, https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9 1.5x, https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"
+        title="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/photo/"> 摄影 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Simple Life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9, https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9 1.5x, https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"
+        title="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/photo/" title="">摄影</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">netmarker安装部署</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-23">2023-11-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1916 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/netmarker-installation-deployment-lvbj2/" class="leancloud_visitors" data-flag-title="netmarker安装部署">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#netmaker-介绍">Netmaker 介绍</a></li>
+    <li><a href="#netmaker-架构">Netmaker 架构</a></li>
+    <li><a href="#netmarker-部署">Netmarker 部署</a>
+      <ul>
+        <li><a href="#1-先决条件">1. 先决条件</a></li>
+        <li><a href="#2-依赖安装">2. 依赖安装</a></li>
+        <li><a href="#3-安装-netmarker">3. 安装 Netmarker</a>
+          <ul>
+            <li><a href="#a-从官方获取docker-compose的yaml文件并修改其中的参数">a. 从官方获取docker-compose的YAML文件，并修改其中的参数</a></li>
+            <li><a href="#b-生成唯一的master-key并写入yaml文件">b. 生成唯一的master key并写入yaml文件</a></li>
+            <li><a href="#c-拉取mq配置文件">c. 拉取MQ配置文件</a></li>
+            <li><a href="#d-增加caddy的配置">d. 增加<code>Caddy</code>的配置</a></li>
+            <li><a href="#e-启动服务">e. 启动服务</a></li>
+            <li><a href="#最后贴上我自己的docker-composeyml文件内容">最后贴上我自己的<code>docker-compose.yml</code>文件内容：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="netmaker-介绍">Netmaker 介绍</h2>
+<p>Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎适配了所有平台，包括 Linux, Mac 和 Windows，还可以通过 WireGuard 原生客户端连接 iPhone 和 Android。</p>
+<p>其最新版本的基准测试结果显示，基于 Netmaker 的 WireGuard 网络速度比其他全互联模式的 VPN（例如 Tailscale 和 ZeroTier）网络速度快 50% 以上。</p>
+<h2 id="netmaker-架构">Netmaker 架构</h2>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9, https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9 1.5x, https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9"
+        title="https://imgup.oneone.life/app/hide.php?key=aGlLNHFKR1B3THR1V1Jralp3L0s1bFVGWTdENndCb2hoSVU9" />​</p>
+<p>Netmaker 使用的是 C/S 架构，即客户端/服务器架构。Netmaker Server 包含两个核心组件：用来管理网络的可视化界面，以及与客户端通信的 gRPC Server。你也可以可以选择部署DNS服务器（CoreDNS）来管理私有DNS。</p>
+<p>客户端（netclient）是一个二进制文件，可以在绝大多数 Linux 客户端以及 macOS 和 Windows 客户端运行，它的功能就是自动管理 WireGuard，动态更新 Peer 的配置。</p>
+<blockquote>
+<p>注意：Netmaker Server 只是用来存储虚拟网络的配置并管理各个 Peer 的状态，Peer 之间的网络流量并不会通过 Netmaker Server。</p>
+</blockquote>
+<p>Netmaker 还有一个重要的术语叫<code>签到</code>，客户端会通过定时任务来不断向 Netmaker Server 签到，以动态更新自身的状态和 Peer 的配置，它会从 Netmaker Server 检索 Peer 列表，然后与所有的 Peer 建立点对点连接，即全互联模式。所有的 Peer 通过互联最终呈现出来的网络拓扑结构就类似于本地子网或 VPC。</p>
+<h2 id="netmarker-部署">Netmarker 部署</h2>
+<p>Netmaker 支持多种部署方式，包括二进制部署和容器化部署，容器化部署还支持 docker-compose 和 Kubernetes。个人推荐使用docker-compose来部署，简单易维护。</p>
+<p>主要的部署步骤都是参考的<a href="https://docs.netmaker.org/quick-start.html" target="_blank" rel="noopener noreffer ">官方部署文档</a>，因为官方文档使用的是<code>traefik</code>来做的反向代理和负载，但是我个人的服务器上的其他服务已经使用了<code>Caddy</code>来做代理，所以此处就修改了下YAML文件，继续使用Caddy做代理。</p>
+<h3 id="1-先决条件">1. 先决条件</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9, https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9 1.5x, https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9"
+        title="https://imgup.oneone.life/app/hide.php?key=V3hRRHgyaW9OOUZlQnpFU01NdnB5bFVGWTdENndCb2hoSVU9" /></p>
+<p>主要的点：</p>
+<ul>
+<li>开放服务器的443(tcp), 53(tcp &amp; udp), 51821-518XX(udp)端口
+<ul>
+<li>443 端口，Dashboard，REST API 和 gRPC</li>
+<li>53端口，CoreDNS</li>
+<li>51821-518XX，WireGuard，每一个网络需要一个端口，起始端口会使用 51821，可以根据自己的网络端数量需要设定端口范围</li>
+</ul>
+</li>
+<li>如果有防火墙的话，需要开启防火墙的允许访问
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow proto tcp from any to any port <span class="m">443</span> <span class="o">&amp;&amp;</span> sudo ufw allow 51821:51830/udp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">iptables --policy FORWARD ACCEPT
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>如果是使用域名模式的话，还需要增加3条域名解析（如果只用IP访问，可以在配置文件中修改网络模式为：host，此处不做详细配置说明）
+<ul>
+<li>dashboard.domain</li>
+<li>api.domain</li>
+<li>broker.domain</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-依赖安装">2. 依赖安装</h3>
+<p>分别安装 <code>docker</code> 、<code>docker-compose</code>、<code>wireguard</code>，如果已经安装则略过</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get isntall -y docker.io docker-compose wireguard
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-安装-netmarker">3. 安装 Netmarker</h3>
+<h4 id="a-从官方获取docker-compose的yaml文件并修改其中的参数">a. 从官方获取docker-compose的YAML文件，并修改其中的参数</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 获取docker-compose文件</span>
+</span></span><span class="line"><span class="cl">wget -O docker-compose.yml https://raw.githubusercontent.com/gravitl/netmaker/master/compose/docker-compose.traefik.yml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改域名</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/NETMAKER_BASE_DOMAIN/&lt;your base domain&gt;/g&#39;</span> docker-compose.yml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改公网IP</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/SERVER_PUBLIC_IP/&lt;your server ip&gt;/g&#39;</span> docker-compose.yml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改邮件地址</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/YOUR_EMAIL/&lt;your email&gt;/g&#39;</span> docker-compose.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="b-生成唯一的master-key并写入yaml文件">b. 生成唯一的master key并写入yaml文件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tr -dc A-Za-z0-9 &lt;/dev/urandom <span class="p">|</span> head -c <span class="m">30</span> <span class="p">;</span> <span class="nb">echo</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/REPLACE_MASTER_KEY/&lt;your generated key&gt;/g&#39;</span> docker-compose.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="c-拉取mq配置文件">c. 拉取MQ配置文件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#从官方获取MQ配置文件，并存放于/root/目录</span>
+</span></span><span class="line"><span class="cl">wget -O /root/mosquitto.conf https://raw.githubusercontent.com/gravitl/netmaker/master/docker/mosquitto.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="d-增加caddy的配置">d. 增加<code>Caddy</code>的配置</h4>
+<p>在<code>Caddyfile</code>文件末尾增加netmarker的代理配置，然后并重启Caddy服务：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">## netmarker conf</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 替换下方的`NETMAKER_BASE_DOMAIN`和`YOUR_EMAIL`为你的真实信息</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Dashboard</span>
+</span></span><span class="line"><span class="cl">dashboard.NETMAKER_BASE_DOMAIN <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Apply basic security headers</span>
+</span></span><span class="line"><span class="cl">        header <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># Enable HTTP Strict Transport Security (HSTS)</span>
+</span></span><span class="line"><span class="cl">                Strict-Transport-Security <span class="s2">&#34;max-age=31536000;&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># Enable cross-site filter (XSS) and tell browser to block detected attacks</span>
+</span></span><span class="line"><span class="cl">                X-XSS-Protection <span class="s2">&#34;1; mode=block&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># Disallow the site to be rendered within a frame on a foreign domain (clickjacking protection)</span>
+</span></span><span class="line"><span class="cl">                X-Frame-Options <span class="s2">&#34;SAMEORIGIN&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># Prevent search engines from indexing</span>
+</span></span><span class="line"><span class="cl">                X-Robots-Tag <span class="s2">&#34;none&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># Remove the server name</span>
+</span></span><span class="line"><span class="cl">                -Server
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        encode gzip
+</span></span><span class="line"><span class="cl">        <span class="c1">#root * /usr/share/caddy</span>
+</span></span><span class="line"><span class="cl">        tls YOUR_EMAIL
+</span></span><span class="line"><span class="cl">        reverse_proxy 127.0.0.1:8888
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># API</span>
+</span></span><span class="line"><span class="cl">api.NETMAKER_BASE_DOMAIN <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        encode gzip
+</span></span><span class="line"><span class="cl">        root * /usr/share/caddy
+</span></span><span class="line"><span class="cl">        tls YOUR_EMAIL
+</span></span><span class="line"><span class="cl">        reverse_proxy 127.0.0.1:8081
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="e-启动服务">e. 启动服务</h4>
+<p>在<code>docker-compose.yml</code>文件目录执行下面的命令启动服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker-compose up -d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后浏览器访问 dashboard.example.com，即可打开netmarker页面，第一次登录会提示创建用户</p>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=Qmhid1VJNXQxcEl5U0VPbXVQWnV1SFA1RGlydkNTOVIxc0k9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=Qmhid1VJNXQxcEl5U0VPbXVQWnV1SFA1RGlydkNTOVIxc0k9, https://imgup.oneone.life/app/hide.php?key=Qmhid1VJNXQxcEl5U0VPbXVQWnV1SFA1RGlydkNTOVIxc0k9 1.5x, https://imgup.oneone.life/app/hide.php?key=Qmhid1VJNXQxcEl5U0VPbXVQWnV1SFA1RGlydkNTOVIxc0k9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=Qmhid1VJNXQxcEl5U0VPbXVQWnV1SFA1RGlydkNTOVIxc0k9"
+        title="https://imgup.oneone.life/app/hide.php?key=Qmhid1VJNXQxcEl5U0VPbXVQWnV1SFA1RGlydkNTOVIxc0k9" />​</p>
+<h4 id="最后贴上我自己的docker-composeyml文件内容">最后贴上我自己的<code>docker-compose.yml</code>文件内容：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.4&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">netmaker</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">netmaker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">gravitl/netmaker:v0.14.3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">cap_add</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">NET_ADMIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">NET_RAW</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">SYS_MODULE</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sysctls</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">net.ipv4.ip_forward=1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">net.ipv4.conf.all.src_valid_mark=1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">net.ipv6.conf.all.disable_ipv6=0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">net.ipv6.conf.all.forwarding=1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">dnsconfig:/root/config/dnsconfig</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">sqldata:/root/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">shared_certs:/etc/netmaker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">SERVER_NAME</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;broker.NETMAKER_BASE_DOMAIN&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">SERVER_HOST</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;SERVER_PUBLIC_IP&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">SERVER_API_CONN_STRING</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;api.nNETMAKER_BASE_DOMAIN:443&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">COREDNS_ADDR</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;SERVER_PUBLIC_IP&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">DNS_MODE</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;on&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">SERVER_HTTP_HOST</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;api.NETMAKER_BASE_DOMAIN&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">API_PORT</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;8081&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">CLIENT_MODE</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;on&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MASTER_KEY</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;HsGWuuw5I48TEFp9RjBnlLRLT89lzk&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">CORS_ALLOWED_ORIGIN</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;*&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">DISPLAY_KEYS</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;on&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">DATABASE</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;sqlite&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">NODE_ID</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;netmaker-server-1&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MQ_HOST</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;mq&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MQ_PORT</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;443&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">HOST_NETWORK</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;off&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">VERBOSITY</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;1&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">MANAGE_IPTABLES</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;on&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">PORT_FORWARD_SERVICES</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dns&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;51821-51830:51821-51830/udp&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">expose</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;8081&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="c"># 增加端口映射到容器外部，为了安全只开启本地访问</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;127.0.0.1:8081:8081&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">netmaker-ui</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">netmaker-ui</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">gravitl/netmaker-ui:v0.14.3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">netmaker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">links</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;netmaker:api&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">BACKEND_URL</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;https://api.NETMAKER_BASE_DOMAIN&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">expose</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;80&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="c"># 增加端口映射到容器外部，为了安全只开启本地访问</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;127.0.0.1:8888:80&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">coredns</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">coredns</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">coredns/coredns</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span>-<span class="l">conf /root/dnsconfig/Corefile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">netmaker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">dnsconfig:/root/dnsconfig</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mq</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">mq</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">eclipse-mosquitto:2.0.11-openssl</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">netmaker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">/root/mosquitto.conf:/mosquitto/config/mosquitto.conf</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">mosquitto_data:/mosquitto/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">mosquitto_logs:/mosquitto/log</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">shared_certs:/mosquitto/certs</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;127.0.0.1:1883:1883&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">expose</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;8883&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">shared_certs</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">sqldata</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">dnsconfig</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mosquitto_data</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mosquitto_logs</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>主要修改的内容：</p>
+<ul>
+<li>删除<code>traefik</code>相关配置</li>
+<li>增加<code>api</code>、<code>netmaker</code>容器的端口映射</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-07-22</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/netmarker-installation-deployment-lvbj2/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/netmarker-installation-deployment-lvbj2/" data-title="netmarker安装部署"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/netmarker-installation-deployment-lvbj2/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/netmarker-installation-deployment-lvbj2/" data-title="netmarker安装部署" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/netmarker-installation-deployment-lvbj2/" data-title="netmarker安装部署"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/netmarker-installation-deployment-lvbj2/" data-title="netmarker安装部署" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/netmarker-installation-deployment-lvbj2/" data-title="netmarker安装部署" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/netmarker-installation-deployment-lvbj2/" data-title="netmarker安装部署"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/pinpoint-installation-configuration-z1gpqfn/" class="prev" rel="prev" title="PinPoint安装配置"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>PinPoint安装配置</a>
+            <a href="/git-use-skills-1kyiph/" class="next" rel="next" title="git 使用技巧">git 使用技巧<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.128.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.yuque.com/wuyiwa" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2023016660号</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"o5gq6eLbupSlKq678zx1aKcd-gzGzoHsz","appKey":"S2CU3haJIhCbfVoIxhtrIzNp","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Simple Life","id-2":"Simple Life"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-KJGDZS4RKJ', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-KJGDZS4RKJ" async></script></body>
+</html>

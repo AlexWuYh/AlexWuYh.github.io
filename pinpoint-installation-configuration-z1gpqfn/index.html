@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>PinPoint安装配置 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/">
+  <meta property="og:site_name" content="Simple Life">
+  <meta property="og:title" content="PinPoint安装配置">
+  <meta property="og:description" content="PinPoint安装配置 简介 ​​ pinpoint是开源在github上的一款全链路APM监控工具，提供了无侵入式的调用链监控、方法执行详情查">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-11-23T18:05:51+08:00">
+    <meta property="article:modified_time" content="2024-07-23T10:07:38+08:00">
+    <meta property="article:tag" content="PinPoint">
+    <meta property="article:tag" content="APM">
+    <meta property="og:image" content="https://oneone.life/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://oneone.life/logo.png">
+  <meta name="twitter:title" content="PinPoint安装配置">
+  <meta name="twitter:description" content="PinPoint安装配置 简介 ​​ pinpoint是开源在github上的一款全链路APM监控工具，提供了无侵入式的调用链监控、方法执行详情查">
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/" /><link rel="prev" href="https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" /><link rel="next" href="https://oneone.life/netmarker-installation-deployment-lvbj2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="hEcQ6nEr41mGdKm5NvLM-M13MAox_EMIqc5f6Lz2cbY" /><meta name="baidu-site-verification" content="code-xRAT9UnTv5" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "PinPoint安装配置",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/oneone.life\/pinpoint-installation-configuration-z1gpqfn\/"
+        },"genre": "posts","keywords": "PinPoint, APM","wordcount":  2367 ,
+        "url": "https:\/\/oneone.life\/pinpoint-installation-configuration-z1gpqfn\/","datePublished": "2023-11-23T18:05:51+08:00","dateModified": "2024-07-23T10:07:38+08:00","publisher": {
+            "@type": "Organization",
+            "name": "WUYH","logo": "https:\/\/imgup.oneone.life\/app\/hide.php?key=R2M2UHVFbUU1Uzc3cGN3OE9ObXRlUEx5SjdlWS9uOWowY2M9"},"author": {
+                "@type": "Person",
+                "name": "Alex Wu"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Simple Life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9, https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9 1.5x, https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"
+        title="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/photo/"> 摄影 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Simple Life"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9, https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9 1.5x, https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"
+        title="https://imgup.oneone.life/app/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/photo/" title="">摄影</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">PinPoint安装配置</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/pinpoint/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>PinPoint</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-23">2023-11-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2367 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/pinpoint-installation-configuration-z1gpqfn/" class="leancloud_visitors" data-flag-title="PinPoint安装配置">
+                        <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#架构组成">架构组成</a></li>
+    <li><a href="#安装collector组件">安装Collector组件</a></li>
+    <li><a href="#安装配置agent组件">安装配置Agent组件</a>
+      <ul>
+        <li><a href="#配置监听应用">配置监听应用</a></li>
+      </ul>
+    </li>
+    <li><a href="#pinpoint功能介绍">pinpoint功能介绍</a>
+      <ul>
+        <li><a href="#首页">首页</a></li>
+        <li><a href="#调用详细信息">调用详细信息</a></li>
+        <li><a href="#应用检查工具">应用检查工具</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="pinpoint安装配置">PinPoint安装配置</h1>
+<h2 id="简介">简介</h2>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9, https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9"
+        title="image.png" />​</p>
+<p>pinpoint是开源在github上的一款全链路APM监控工具，提供了无侵入式的调用链监控、方法执行详情查看、应用状态信息监控等功能。基于GoogleDapper论文进行的实现，与另一款开源的全链路分析工具Zipkin类似，但相比Zipkin提供了无侵入式、代码维度的监控等更多的特性。 Pinpoint支持的功能比较丰富，可以支持如下几种功能：</p>
+<ul>
+<li>服务拓扑图：<br>
+对整个系统中应用的调用关系进行了可视化的展示，单击某个服务节点，可以显示该节点的    详细信息，比如当前节点状态、请求数量等</li>
+<li>实时活跃线程图：<br>
+监控应用内活跃线程的执行情况，对应用的线程执行性能可以有比较直观的了解</li>
+<li>请求响应散点图：<br>
+以时间维度进行请求计数和响应时间的展示，拖过拖动图表可以选择对应的请求查看执行的详细情况</li>
+<li>请求调用栈查看：<br>
+对分布式环境中每个请求提供了代码维度的可见性，可以在页面中查看请求针对到代码维度的执行详情，帮助查找请求的瓶颈和故障原因。</li>
+<li>应用状态、机器状态检查：<br>
+通过这个功能可以查看相关应用程序的其他的一些详细信息，比如CPU使用情况，内存状态、垃圾收集状态，TPS和JVM信息等参数。</li>
+</ul>
+<p>总体来说，使用pinpoint的一些优点：</p>
+<ul>
+<li>可以掌握系统的整体响应速度情况，对系统运行情况能比较清晰</li>
+<li>可以掌握各节点的响应速度情况，比如第三方服务接口，redis，mysql等</li>
+<li>可以掌握单次请求的具体服务链路耗时情况，定位性能瓶颈</li>
+<li>单次请求的具体服务链路请求信息，对于排查问题能提供帮助</li>
+<li>监控各服务的JVM、线程池、数据库连接池使用情况，尤其是对分布式服务系统来说</li>
+</ul>
+<p><strong>github地址：</strong></p>
+<p>项目地址：<a href="https://github.com/pinpoint-apm/pinpoint" target="_blank" rel="noopener noreffer ">https://github.com/pinpoint-apm/pinpoint</a>
+官方docker部署地址：<a href="https://github.com/pinpoint-apm/pinpoint-docker" target="_blank" rel="noopener noreffer ">https://github.com/pinpoint-apm/pinpoint-docker</a></p>
+<h2 id="架构组成">架构组成</h2>
+<p>Pinpoint 主要由 3 个组件外加 Hbase 数据库组成，三个组件分别为：Agent、Collector 和 Web UI</p>
+<ul>
+<li>Agent组件：<br>
+用于收集应用端监控数据，无侵入式，只需要在启动命令中加入部分参数即可</li>
+<li>Collector组件：<br>
+数据收集模块，接收Agent发送过来的监控数据，并存储到HBase</li>
+<li>WebUI：<br>
+监控展示模块，展示系统调用关系、调用详情、应用状态等，并支持报警等功能</li>
+</ul>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=UGMvSHhMR3I1YmZwendPMzVmS0UzTVFxWE5BK21QV25qQTQ9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=UGMvSHhMR3I1YmZwendPMzVmS0UzTVFxWE5BK21QV25qQTQ9, https://imgup.oneone.life/app/hide.php?key=UGMvSHhMR3I1YmZwendPMzVmS0UzTVFxWE5BK21QV25qQTQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=UGMvSHhMR3I1YmZwendPMzVmS0UzTVFxWE5BK21QV25qQTQ9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=UGMvSHhMR3I1YmZwendPMzVmS0UzTVFxWE5BK21QV25qQTQ9"
+        title="image.png" />​</p>
+<h2 id="安装collector组件">安装Collector组件</h2>
+<p>使用docker-compose安装最新版本：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 克隆官方的docker部署git</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/naver/pinpoint-docker.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入clone的目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> pinpoint-docker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用docker-compose拉取镜像和运行服务。注意docker-compose是需要单独安装的</span>
+</span></span><span class="line"><span class="cl">docker-compose pull <span class="o">&amp;&amp;</span> docker-compose up -d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果想安装历史或指定版本，可以直接指定git tags：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 克隆官方的docker部署git</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/naver/pinpoint-docker.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 进入clone的目录</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> pinpoint-docker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用git命令切换到指定版本的tag</span>
+</span></span><span class="line"><span class="cl">git checkout <span class="o">{</span>tag<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用docker-compose拉取镜像和运行服务。注意docker-compose是需要单独安装的</span>
+</span></span><span class="line"><span class="cl">docker-compose pull <span class="o">&amp;&amp;</span> docker-compose up -d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果部署的时候想使用一些自定义配置，例如指定的端口，可以通过修改 <code>docker-compose.yml</code>​ 和 <code>.env</code>​ 中对应的配置来实现，<strong>建议优先通过修改.env文件来做自定义配置</strong></p>
+<p>修改端口可以直接修改.env文件，默认端口是Pinpoint-Web：8079，QuickStart：8000和Flink：8081</p>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=WXlZSEhrWGF6dCtYOHFDTkRQdnZxTVFxWE5BK21QV25qQTQ9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=WXlZSEhrWGF6dCtYOHFDTkRQdnZxTVFxWE5BK21QV25qQTQ9, https://imgup.oneone.life/app/hide.php?key=WXlZSEhrWGF6dCtYOHFDTkRQdnZxTVFxWE5BK21QV25qQTQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=WXlZSEhrWGF6dCtYOHFDTkRQdnZxTVFxWE5BK21QV25qQTQ9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=WXlZSEhrWGF6dCtYOHFDTkRQdnZxTVFxWE5BK21QV25qQTQ9"
+        title="image.png" />​</p>
+<p>部署完成之后，使用<code>docker-compose ps</code>​命令即可查看所有容器：</p>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=VjAraitHUGlPanpuZVBlM3E4UzF6UkplWUFoeDFQcUZNdU09"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=VjAraitHUGlPanpuZVBlM3E4UzF6UkplWUFoeDFQcUZNdU09, https://imgup.oneone.life/app/hide.php?key=VjAraitHUGlPanpuZVBlM3E4UzF6UkplWUFoeDFQcUZNdU09 1.5x, https://imgup.oneone.life/app/hide.php?key=VjAraitHUGlPanpuZVBlM3E4UzF6UkplWUFoeDFQcUZNdU09 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=VjAraitHUGlPanpuZVBlM3E4UzF6UkplWUFoeDFQcUZNdU09"
+        title="https://imgup.oneone.life/app/hide.php?key=VjAraitHUGlPanpuZVBlM3E4UzF6UkplWUFoeDFQcUZNdU09" />​</p>
+<p>访问 <a href="http://xx.xx.xx.xx:8079/" target="_blank" rel="noopener noreffer ">http://xx.xx.xx.xx:8079/</a> 即可浏览pinpoint页面<br>
+​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=NFpyMUgwbmhydVoxZHFyWGdnRUJueEplWUFoeDFQcUZNdU09"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=NFpyMUgwbmhydVoxZHFyWGdnRUJueEplWUFoeDFQcUZNdU09, https://imgup.oneone.life/app/hide.php?key=NFpyMUgwbmhydVoxZHFyWGdnRUJueEplWUFoeDFQcUZNdU09 1.5x, https://imgup.oneone.life/app/hide.php?key=NFpyMUgwbmhydVoxZHFyWGdnRUJueEplWUFoeDFQcUZNdU09 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=NFpyMUgwbmhydVoxZHFyWGdnRUJueEplWUFoeDFQcUZNdU09"
+        title="https://imgup.oneone.life/app/hide.php?key=NFpyMUgwbmhydVoxZHFyWGdnRUJueEplWUFoeDFQcUZNdU09" />​</p>
+<h2 id="安装配置agent组件">安装配置Agent组件</h2>
+<p>从<code>github</code>​中<code>pinpoint</code>​的<a href="https://github.com/pinpoint-apm/pinpoint/releases" target="_blank" rel="noopener noreffer ">Release发布页面</a>中下载和Collector组件版本一致的Agent程序包</p>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=eUYzVHMvRWJyaXFUd2xPTGwxdUEyUkplWUFoeDFQcUZNdU09"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=eUYzVHMvRWJyaXFUd2xPTGwxdUEyUkplWUFoeDFQcUZNdU09, https://imgup.oneone.life/app/hide.php?key=eUYzVHMvRWJyaXFUd2xPTGwxdUEyUkplWUFoeDFQcUZNdU09 1.5x, https://imgup.oneone.life/app/hide.php?key=eUYzVHMvRWJyaXFUd2xPTGwxdUEyUkplWUFoeDFQcUZNdU09 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=eUYzVHMvRWJyaXFUd2xPTGwxdUEyUkplWUFoeDFQcUZNdU09"
+        title="https://imgup.oneone.life/app/hide.php?key=eUYzVHMvRWJyaXFUd2xPTGwxdUEyUkplWUFoeDFQcUZNdU09" />​</p>
+<p>将Agent程序包上传到需要监控的服务器上，解压压缩包，修改<code>pinpoint.config</code>​配置文件，一般只需修改文件中的<code>profiler.collector.ip=127.0.0.1</code>​为前面所部署的Collector组件所在IP地址</p>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=K09xR0FxUkk0c2xSMnVIOTl6RTV2QkplWUFoeDFQcUZNdU09"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=K09xR0FxUkk0c2xSMnVIOTl6RTV2QkplWUFoeDFQcUZNdU09, https://imgup.oneone.life/app/hide.php?key=K09xR0FxUkk0c2xSMnVIOTl6RTV2QkplWUFoeDFQcUZNdU09 1.5x, https://imgup.oneone.life/app/hide.php?key=K09xR0FxUkk0c2xSMnVIOTl6RTV2QkplWUFoeDFQcUZNdU09 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=K09xR0FxUkk0c2xSMnVIOTl6RTV2QkplWUFoeDFQcUZNdU09"
+        title="image alt" />​</p>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=a2dlYkdGcklEeS8xK1lrWmRDV095aEplWUFoeDFQcUZNdU09"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=a2dlYkdGcklEeS8xK1lrWmRDV095aEplWUFoeDFQcUZNdU09, https://imgup.oneone.life/app/hide.php?key=a2dlYkdGcklEeS8xK1lrWmRDV095aEplWUFoeDFQcUZNdU09 1.5x, https://imgup.oneone.life/app/hide.php?key=a2dlYkdGcklEeS8xK1lrWmRDV095aEplWUFoeDFQcUZNdU09 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=a2dlYkdGcklEeS8xK1lrWmRDV095aEplWUFoeDFQcUZNdU09"
+        title="image alt" />​</p>
+<ul>
+<li>配置文件分为<code>local</code>​和<code>Release</code>​版本，选择任一一个修改即可，但是需要在<code>pinpoint-root.config</code>​文件中指定对应的配置版本<br>
+​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=OUlOU3hGSTRzNjh3akQzWitzV1g0SU5UMkZkQzhZSVFJbDg9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=OUlOU3hGSTRzNjh3akQzWitzV1g0SU5UMkZkQzhZSVFJbDg9, https://imgup.oneone.life/app/hide.php?key=OUlOU3hGSTRzNjh3akQzWitzV1g0SU5UMkZkQzhZSVFJbDg9 1.5x, https://imgup.oneone.life/app/hide.php?key=OUlOU3hGSTRzNjh3akQzWitzV1g0SU5UMkZkQzhZSVFJbDg9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=OUlOU3hGSTRzNjh3akQzWitzV1g0SU5UMkZkQzhZSVFJbDg9"
+        title="image alt" />​</li>
+<li>如果在多台服务器上部署了应用，那么就需要在多台机器上部署Agent组件</li>
+</ul>
+<h3 id="配置监听应用">配置监听应用</h3>
+<p>pinpoint的监控完全是无侵入式的，配置起来也很简单，只需要在java应用的启动命令增加几个参数即可：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># ${pinpointPath}是agent组件存放的路径，类似于JAVA_HOME</span>
+</span></span><span class="line"><span class="cl">-javaagent:<span class="si">${</span><span class="nv">pinpointPath</span><span class="si">}</span>/pinpoint-bootstrap-2.3.1.jar
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#&#39;dpccb&#39;可自定义命名，在pinpoint页面上显示的名称</span>
+</span></span><span class="line"><span class="cl">-Dpinpoint.applicationName<span class="o">=</span>dpccb 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#id可自定义命名，可以和Name一样</span>
+</span></span><span class="line"><span class="cl">-Dpinpoint.agentId<span class="o">=</span>dpccb
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动应用程序，打开应用页面访问一下，然后登陆pinpoint的Web页面即可看到相关的监控内容了</p>
+<p>如果应用是通过容器方式运行的，也可以通过修改启动脚本和Dockerfile的方式来配置agent的监听</p>
+<p>//修改启动命令<br>
+​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=akpWcFhaZDkwT2Y3dFdaa1lKMmJWUkplWUFoeDFQcUZNdU09"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=akpWcFhaZDkwT2Y3dFdaa1lKMmJWUkplWUFoeDFQcUZNdU09, https://imgup.oneone.life/app/hide.php?key=akpWcFhaZDkwT2Y3dFdaa1lKMmJWUkplWUFoeDFQcUZNdU09 1.5x, https://imgup.oneone.life/app/hide.php?key=akpWcFhaZDkwT2Y3dFdaa1lKMmJWUkplWUFoeDFQcUZNdU09 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=akpWcFhaZDkwT2Y3dFdaa1lKMmJWUkplWUFoeDFQcUZNdU09"
+        title="https://imgup.oneone.life/app/hide.php?key=akpWcFhaZDkwT2Y3dFdaa1lKMmJWUkplWUFoeDFQcUZNdU09" />​</p>
+<p>//把agent的存放目录挂载到应用的容器内<br>
+​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=UUZzVEVoNzlmTlZwR3lzVE41WmIwVjVRekJLampBMnhnbDQ9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=UUZzVEVoNzlmTlZwR3lzVE41WmIwVjVRekJLampBMnhnbDQ9, https://imgup.oneone.life/app/hide.php?key=UUZzVEVoNzlmTlZwR3lzVE41WmIwVjVRekJLampBMnhnbDQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=UUZzVEVoNzlmTlZwR3lzVE41WmIwVjVRekJLampBMnhnbDQ9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=UUZzVEVoNzlmTlZwR3lzVE41WmIwVjVRekJLampBMnhnbDQ9"
+        title="https://imgup.oneone.life/app/hide.php?key=UUZzVEVoNzlmTlZwR3lzVE41WmIwVjVRekJLampBMnhnbDQ9" />​</p>
+<h2 id="pinpoint功能介绍">pinpoint功能介绍</h2>
+<p><strong>详细使用教程可以参考这篇文章：<strong>​</strong><a href="https://blog.csdn.net/weixin_43931358/article/details/107671436" target="_blank" rel="noopener noreffer ">pinpoint使用详解（图文版）</a></strong></p>
+<h3 id="首页">首页</h3>
+<p>选择一个需要查看的应用，即可在首页中以图形化的方式展示用户请求、服务间的调用关系等信息。另外还有响应时间分析图、调用散点图、响应时长分布、等待时长分布等。在右侧的调用统计图中用鼠标左键框选(如图上红框)即可查看选中部分的调用详情</p>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=M1IvbmRwTGR0VHNkUDZFbXZac1VTVjVRekJLampBMnhnbDQ9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=M1IvbmRwTGR0VHNkUDZFbXZac1VTVjVRekJLampBMnhnbDQ9, https://imgup.oneone.life/app/hide.php?key=M1IvbmRwTGR0VHNkUDZFbXZac1VTVjVRekJLampBMnhnbDQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=M1IvbmRwTGR0VHNkUDZFbXZac1VTVjVRekJLampBMnhnbDQ9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=M1IvbmRwTGR0VHNkUDZFbXZac1VTVjVRekJLampBMnhnbDQ9"
+        title="https://imgup.oneone.life/app/hide.php?key=M1IvbmRwTGR0VHNkUDZFbXZac1VTVjVRekJLampBMnhnbDQ9" />​</p>
+<h3 id="调用详细信息">调用详细信息</h3>
+<p>详情页，选择一个请求后下方会显示其详细信息，包含响应时间，请求过程中涉及的代码方法，sql语句等</p>
+<p>​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=Z1pQVlRrREdqazgwN29EaTlPNkkzVjVRekJLampBMnhnbDQ9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=Z1pQVlRrREdqazgwN29EaTlPNkkzVjVRekJLampBMnhnbDQ9, https://imgup.oneone.life/app/hide.php?key=Z1pQVlRrREdqazgwN29EaTlPNkkzVjVRekJLampBMnhnbDQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=Z1pQVlRrREdqazgwN29EaTlPNkkzVjVRekJLampBMnhnbDQ9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=Z1pQVlRrREdqazgwN29EaTlPNkkzVjVRekJLampBMnhnbDQ9"
+        title="https://imgup.oneone.life/app/hide.php?key=Z1pQVlRrREdqazgwN29EaTlPNkkzVjVRekJLampBMnhnbDQ9" />​</p>
+<p>选择混合视图后还可以同时查看调用树、服务器性能占用、server map等信息<br>
+​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=aUl4ZHpFT1FjczV3OEtkbmhZaU5jRjVRekJLampBMnhnbDQ9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=aUl4ZHpFT1FjczV3OEtkbmhZaU5jRjVRekJLampBMnhnbDQ9, https://imgup.oneone.life/app/hide.php?key=aUl4ZHpFT1FjczV3OEtkbmhZaU5jRjVRekJLampBMnhnbDQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=aUl4ZHpFT1FjczV3OEtkbmhZaU5jRjVRekJLampBMnhnbDQ9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=aUl4ZHpFT1FjczV3OEtkbmhZaU5jRjVRekJLampBMnhnbDQ9"
+        title="https://imgup.oneone.life/app/hide.php?key=aUl4ZHpFT1FjczV3OEtkbmhZaU5jRjVRekJLampBMnhnbDQ9" />​</p>
+<h3 id="应用检查工具">应用检查工具</h3>
+<p>查看应用的其他细节，如CPU使用、内存/垃圾收集、TPS和JVM参数<br>
+​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=QkhmNFhBejZuTHE5cHR3bzlHWVo4MTVRekJLampBMnhnbDQ9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=QkhmNFhBejZuTHE5cHR3bzlHWVo4MTVRekJLampBMnhnbDQ9, https://imgup.oneone.life/app/hide.php?key=QkhmNFhBejZuTHE5cHR3bzlHWVo4MTVRekJLampBMnhnbDQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=QkhmNFhBejZuTHE5cHR3bzlHWVo4MTVRekJLampBMnhnbDQ9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=QkhmNFhBejZuTHE5cHR3bzlHWVo4MTVRekJLampBMnhnbDQ9"
+        title="https://imgup.oneone.life/app/hide.php?key=QkhmNFhBejZuTHE5cHR3bzlHWVo4MTVRekJLampBMnhnbDQ9" /><br>
+​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=K0pwdk42SU8vemIzZW1nMUo2amtZVjVRekJLampBMnhnbDQ9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=K0pwdk42SU8vemIzZW1nMUo2amtZVjVRekJLampBMnhnbDQ9, https://imgup.oneone.life/app/hide.php?key=K0pwdk42SU8vemIzZW1nMUo2amtZVjVRekJLampBMnhnbDQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=K0pwdk42SU8vemIzZW1nMUo2amtZVjVRekJLampBMnhnbDQ9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=K0pwdk42SU8vemIzZW1nMUo2amtZVjVRekJLampBMnhnbDQ9"
+        title="https://imgup.oneone.life/app/hide.php?key=K0pwdk42SU8vemIzZW1nMUo2amtZVjVRekJLampBMnhnbDQ9" /><br>
+​<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://imgup.oneone.life/app/hide.php?key=VDFuQVU0TlBDU0N4OTZKNzdpWXZJL0JOZkJuUE5CY29vV0U9"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=VDFuQVU0TlBDU0N4OTZKNzdpWXZJL0JOZkJuUE5CY29vV0U9, https://imgup.oneone.life/app/hide.php?key=VDFuQVU0TlBDU0N4OTZKNzdpWXZJL0JOZkJuUE5CY29vV0U9 1.5x, https://imgup.oneone.life/app/hide.php?key=VDFuQVU0TlBDU0N4OTZKNzdpWXZJL0JOZkJuUE5CY29vV0U9 2x"
+        data-sizes="auto"
+        alt="https://imgup.oneone.life/app/hide.php?key=VDFuQVU0TlBDU0N4OTZKNzdpWXZJL0JOZkJuUE5CY29vV0U9"
+        title="https://imgup.oneone.life/app/hide.php?key=VDFuQVU0TlBDU0N4OTZKNzdpWXZJL0JOZkJuUE5CY29vV0U9" />​</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-07-23</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/pinpoint-installation-configuration-z1gpqfn/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/" data-title="PinPoint安装配置" data-hashtags="PinPoint,APM"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/" data-hashtag="PinPoint"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/" data-title="PinPoint安装配置" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/" data-title="PinPoint安装配置"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/" data-title="PinPoint安装配置" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/" data-title="PinPoint安装配置" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/pinpoint-installation-configuration-z1gpqfn/" data-title="PinPoint安装配置"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/pinpoint/">PinPoint</a>,&nbsp;<a href="/tags/apm/">APM</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/" class="prev" rel="prev" title="linux中curl调用登录接口然后用sed命令提取出token值"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>linux中curl调用登录接口然后用sed命令提取出token值</a>
+            <a href="/netmarker-installation-deployment-lvbj2/" class="next" rel="next" title="netmarker安装部署">netmarker安装部署<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.128.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.yuque.com/wuyiwa" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+                    <span class="icp"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2023016660号</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.5.0/dist/Valine.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/lightgallery.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lightgallery@2.5.0/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"o5gq6eLbupSlKq678zx1aKcd-gzGzoHsz","appKey":"S2CU3haJIhCbfVoIxhtrIzNp","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@14.0.0/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-CN","pageSize":10,"placeholder":"你的评论 ...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Simple Life","id-2":"Simple Life"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'G-KJGDZS4RKJ', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-KJGDZS4RKJ" async></script></body>
+</html>
