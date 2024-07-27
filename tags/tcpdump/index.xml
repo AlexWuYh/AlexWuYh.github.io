@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tcpdump - 标签 - Simple Life</title>
+        <title>TCPDump - 标签 - Simple Life</title>
         <link>https://oneone.life/tags/tcpdump/</link>
-        <description>Tcpdump - 标签 - Simple Life</description>
+        <description>TCPDump - 标签 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
             <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/tcpdump/" rel="self" type="application/rss+xml" /><item>
     <title>通过tcpdump抓取mysql报文</title>

@@ -4,34 +4,34 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>find和xargs命令组合使用处理带空格文件名的文件 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="find和xargs命令组合使用处理带空格文件名的文件" />
-<meta property="og:description" content="当用find命令查找文件然后用xargs来批量处理文件时，当文件名中包含空格字符时，就会导致处理失败，因为xargs会认为空格前后分别是两个" />
+        <title>H3C企业路由器端口映射NAT回流问题处理 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="H3C企业路由器端口映射NAT回流问题处理" />
+<meta property="og:description" content="H3C企业路由器端口映射NAT回流问题处理 最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好WAN口​以及nat" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-07-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-07-06T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
+<meta property="og:url" content="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-07-27T22:24:41+08:00" />
+<meta property="article:modified_time" content="2024-07-27T22:27:11+08:00" /><meta property="og:site_name" content="My cool site" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://oneone.life/logo.png"/>
 
-<meta name="twitter:title" content="find和xargs命令组合使用处理带空格文件名的文件"/>
-<meta name="twitter:description" content="当用find命令查找文件然后用xargs来批量处理文件时，当文件名中包含空格字符时，就会导致处理失败，因为xargs会认为空格前后分别是两个"/>
+<meta name="twitter:title" content="H3C企业路由器端口映射NAT回流问题处理"/>
+<meta name="twitter:description" content="H3C企业路由器端口映射NAT回流问题处理 最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好WAN口​以及nat"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" /><link rel="prev" href="https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/" /><link rel="next" href="https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" /><link rel="prev" href="https://oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="hEcQ6nEr41mGdKm5NvLM-M13MAox_EMIqc5f6Lz2cbY" /><meta name="baidu-site-verification" content="code-xRAT9UnTv5" /><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "find和xargs命令组合使用处理带空格文件名的文件",
+        "headline": "H3C企业路由器端口映射NAT回流问题处理",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/oneone.life\/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6\/"
-        },"genre": "posts","keywords": "Linux","wordcount":  340 ,
-        "url": "https:\/\/oneone.life\/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6\/","datePublished": "2022-07-06T00:00:00+00:00","dateModified": "2022-07-06T00:00:00+00:00","publisher": {
+            "@id": "https:\/\/oneone.life\/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk\/"
+        },"genre": "posts","wordcount":  873 ,
+        "url": "https:\/\/oneone.life\/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk\/","datePublished": "2024-07-27T22:24:41+08:00","dateModified": "2024-07-27T22:27:11+08:00","publisher": {
             "@type": "Organization",
             "name": "WUYH","logo": "https:\/\/imgup.oneone.life\/app\/hide.php?key=R2M2UHVFbUU1Uzc3cGN3OE9ObXRlUEx5SjdlWS9uOWowY2M9"},"author": {
                 "@type": "Person",
@@ -116,10 +116,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">find和xargs命令组合使用处理带空格文件名的文件</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-06">2022-07-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 340 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" class="leancloud_visitors" data-flag-title="find和xargs命令组合使用处理带空格文件名的文件">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">H3C企业路由器端口映射NAT回流问题处理</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://www.yuque.com/wuyiwa" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-07-27">2024-07-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 873 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" class="leancloud_visitors" data-flag-title="H3C企业路由器端口映射NAT回流问题处理">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="true">
@@ -127,72 +127,106 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><p>当用<code>find</code>命令查找文件然后用<code>xargs</code>来批量处理文件时，当文件名中包含空格字符时，就会导致处理失败，因为xargs会认为空格前后分别是两个不同的文件。如下图：
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png"
-        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110451.png" /></p>
-<p>我们查看<code>find</code>命令帮助文档可以发现，它有一个专门针对该情况并配合<code>xargs</code>命令的参数：<code>-print0</code></p>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#nat回流的原因是">NAT回流的原因是：</a></li>
+        <li><a href="#怎么解决nat回流的问题">怎么解决NAT回流的问题：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="h3c企业路由器端口映射nat回流问题处理">H3C企业路由器端口映射NAT回流问题处理</h1>
+<p>最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好<code>WAN口</code>​以及<code>nat端口映射</code>​后，从外部公网可以正常访问该端口映射，但是从<code>内网主机</code>​访问<code>WAN口公网IP的端口</code>​时却不能正常访问。百思不得其解&hellip;后面通过抓包和查阅资料才发现是因为<strong>NAT回流</strong>导致的。</p>
+<h3 id="nat回流的原因是">NAT回流的原因是：</h3>
+<ul>
+<li>
+<p>​<code>内网主机A</code>​访问<code>WAN口IP和端口</code>​，通过端口映射去请求<code>内网服务器B</code>​时，会先把流量送到<code>网关设备的WAN口</code>​</p>
+</li>
+<li>
+<p>网关设备的WAN口会配置<code>NAT SERVER</code>​，这个时候它收到该数据包时通过查询NAT端口映射表，就会修改报文中的<code>目的地址</code>​和<code>目的端口</code>​(<strong>内网服务器B的IP和端口</strong>), 但是<strong>不会对源地址进行修改</strong>。</p>
+<ul>
+<li>之所以不修改源地址，是因为从外部公网访问时，需要知道<strong>返程IP</strong>，访问端才能正常收到从网关设备返回的报文。</li>
+</ul>
+</li>
+<li>
+<p>这时报文被发送到<code>内网服务器B</code>​ <strong>，并且源地址IP是</strong>​<code>内网主机A</code>​</p>
+</li>
+<li>
+<p>因为<code>源地址</code>​没有修改，还是<code>内网主机A</code>​的IP，这时<code>内网服务器B</code>​回复数据报文时，目的地址和源地址对调，数据报文就会直接通过内网交换机转发给<code>内网主机A</code>​</p>
+</li>
+<li>
+<p>​<code>内网主机A</code>​收到回复报文，就会发现报文中的<code>源地址IP</code>​与自己请求出去时的<code>目的地址IP</code>​不一致，就会丢弃报文，最终就访问失败</p>
+</li>
+</ul>
+<h3 id="怎么解决nat回流的问题">怎么解决NAT回流的问题：</h3>
+<p>通过查阅资料发现H3C V7版本的路由器支持<code>NAT hairpin</code>​功能，在网关设备的内网侧接口上启用<code>NAT hairpin</code>​ <strong>，</strong> 就可以实现内网主机通过公网地址和端口来访问内网的其他服务器或主机了。</p>
+<p>具体配置如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-print0
-</span></span><span class="line"><span class="cl">              True<span class="p">;</span> print the full file name on the standard output, followed by a null character <span class="o">(</span>instead of the newline character that -print uses<span class="o">)</span>.  This allows file names that con‐
-</span></span><span class="line"><span class="cl">              tain newlines or other types of white space to be correctly interpreted by programs that process the find output.  This option corresponds to the -0 option of xargs.
+<pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">#
+</span></span><span class="line"><span class="cl">interface GigabitEthernet0/1                                                                                                                                                                        
+</span></span><span class="line"><span class="cl">  port link-mode route                                                                                                                                                                               
+</span></span><span class="line"><span class="cl">  combo enable fiber                                                                                                                                                                                 
+</span></span><span class="line"><span class="cl">  ip address 10.10.10.1 255.255.255.0                                                                                                                                                                
+</span></span><span class="line"><span class="cl">  packet-filter name WebHttpHttps3 inbound                                                                                                                                                           
+</span></span><span class="line"><span class="cl">  nat hairpin enable                                                                                                                                                                                 
+</span></span><span class="line"><span class="cl">  undo dhcp select server
+</span></span><span class="line"><span class="cl">#
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>与<code>find</code>默认的<code>-print</code>参数相比，它输出的序列不是以空格分隔，而是以<code>null</code>字符分隔。而<code>xargs</code>也有一个参数<code>-0</code>，可以接受以<code>null</code>而<code>非空格</code>间隔的输入流。</p>
-<p>所以，假如我们要找到当前目录下所有文件名以<code>1).jpg</code>结尾的文件并将它们全部删除掉时，就可以像下面这样操作：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find . -name <span class="s2">&#34;*1).jpg&#34;</span> -print0 <span class="p">|</span> xargs -0 rm -f
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img
+</div><p>​<img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png 1.5x, https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png 2x"
+        data-src="https://imgup.oneone.life/app/hide.php?key=dHpPaUpLTUJRZDBmbFJ1QzJLRThQRFFwS1dwamlFRTZSc25L"
+        data-srcset="https://imgup.oneone.life/app/hide.php?key=dHpPaUpLTUJRZDBmbFJ1QzJLRThQRFFwS1dwamlFRTZSc25L, https://imgup.oneone.life/app/hide.php?key=dHpPaUpLTUJRZDBmbFJ1QzJLRThQRFFwS1dwamlFRTZSc25L 1.5x, https://imgup.oneone.life/app/hide.php?key=dHpPaUpLTUJRZDBmbFJ1QzJLRThQRFFwS1dwamlFRTZSc25L 2x"
         data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png"
-        title="https://cdn.jsdelivr.net/gh/alexwuyh/pic-host@master/photo/20220706110529.png" /></p>
+        alt="https://imgup.oneone.life/app/hide.php?key=dHpPaUpLTUJRZDBmbFJ1QzJLRThQRFFwS1dwamlFRTZSc25L"
+        title="https://imgup.oneone.life/app/hide.php?key=dHpPaUpLTUJRZDBmbFJ1QzJLRThQRFFwS1dwamlFRTZSc25L" />​</p>
+<p>配置完之后，再抓包就会发现，从<code>网关设备</code>​发送给<code>内网服务器B</code>​的数据包中的<code>源地址IP</code>​已经被替换成<code>WAN口IP地址</code>​</p>
+<ul>
+<li>因为隐私的问题，定位和配置回流后抓包截图没有放上来。大家感兴趣可以自行抓包查看。</li>
+</ul>
+<blockquote>
+<p>这里就忍不住要吐槽一下H3C这个Web界面做的真差，在配置时<strong>有一些配置并不会写到后台配置中</strong>，还需要去后台命令行再手动配置。之前配置VPN的时候就也遇到类似的问题</p>
+</blockquote>
+<p>‍</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-07-06</span>
+                <span>更新于 2024-07-27</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件" data-hashtags="Linux"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-hashtag="Linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/" data-title="find和xargs命令组合使用处理带空格文件名的文件"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section class="post-tags"></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/" class="prev" rel="prev" title="iterm2中管理ssh以及配置快捷登录"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>iterm2中管理ssh以及配置快捷登录</a>
-            <a href="/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/" class="next" rel="next" title="使用xargs命令批量移动文件">使用xargs命令批量移动文件<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/" class="prev" rel="prev" title="将ubuntu的默认编辑器从nano修改为vim"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>将ubuntu的默认编辑器从nano修改为vim</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

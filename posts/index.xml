@@ -4,7 +4,15 @@
         <link>https://oneone.life/posts/</link>
         <description>所有文章 | Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Mon, 17 Jun 2024 19:12:42 &#43;0800</lastBuildDate><atom:link href="https://oneone.life/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Sat, 27 Jul 2024 22:24:41 &#43;0800</lastBuildDate><atom:link href="https://oneone.life/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>H3C企业路由器端口映射NAT回流问题处理</title>
+    <link>https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/</link>
+    <pubDate>Sat, 27 Jul 2024 22:24:41 &#43;0800</pubDate>
+    <author>Alex Wu</author>
+    <guid>https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/</guid>
+    <description><![CDATA[H3C企业路由器端口映射NAT回流问题处理 最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好WAN口​以及nat]]></description>
+</item>
+<item>
     <title>将ubuntu的默认编辑器从nano修改为vim</title>
     <link>https://oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/</link>
     <pubDate>Mon, 17 Jun 2024 19:12:42 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>Alex Wu</author>
     <guid>https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</guid>
     <description><![CDATA[方案一：利用ssh的config文件来管理SSH回话以及快捷登录 在~/.ssh/目录下新建config文件，并按如下格式分别添加需要保存的S]]></description>
-</item>
-<item>
-    <title>brew update时报错“fatal_ Could not resolve HEAD to a revision”解决</title>
-    <link>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</link>
-    <pubDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</guid>
-    <description><![CDATA[报错信息 在安装brew并更改为国内下载源后，执行brew update时老是报错，信息如下： 解决办法 上网查了下，找到了解决办法，参考链接 依次执]]></description>
 </item>
 </channel>
 </rss>

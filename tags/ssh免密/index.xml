@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Ssh免密 - 标签 - Simple Life</title>
+        <title>ssh免密 - 标签 - Simple Life</title>
         <link>https://oneone.life/tags/ssh%E5%85%8D%E5%AF%86/</link>
-        <description>Ssh免密 - 标签 - Simple Life</description>
+        <description>ssh免密 - 标签 - Simple Life</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
             <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/ssh%E5%85%8D%E5%AF%86/" rel="self" type="application/rss+xml" /><item>
     <title>iterm2中管理ssh以及配置快捷登录</title>

@@ -4,24 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>tcpdump命令高级过滤方式 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/">
-  <meta property="og:site_name" content="Simple Life">
-  <meta property="og:title" content="tcpdump命令高级过滤方式">
-  <meta property="og:description" content="首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr">
-  <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2022-01-29T00:00:00+00:00">
-    <meta property="article:modified_time" content="2022-01-29T00:00:00+00:00">
-    <meta property="article:tag" content="Tcpdump">
-    <meta property="article:tag" content="Network">
-    <meta property="article:tag" content="Linux">
-    <meta property="og:image" content="https://oneone.life/logo.png">
+        <title>tcpdump命令高级过滤方式 - Simple Life</title><meta name="Description" content="易娃的Blog"><meta property="og:title" content="tcpdump命令高级过滤方式" />
+<meta property="og:description" content="首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" /><meta property="og:image" content="https://oneone.life/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-29T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://oneone.life/logo.png">
-  <meta name="twitter:title" content="tcpdump命令高级过滤方式">
-  <meta name="twitter:description" content="首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr">
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://oneone.life/logo.png"/>
+
+<meta name="twitter:title" content="tcpdump命令高级过滤方式"/>
+<meta name="twitter:description" content="首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -249,7 +243,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sCheckSum</span><span class="p">;</span>      　　　　　　 <span class="c1">//校验和
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiSourIp</span><span class="p">;</span>     　　　　　<span class="c1">//源ip
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">m_uiDestIp</span><span class="p">;</span>     　　　　　<span class="c1">//目的ip
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="nf">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="n">IP_HEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PIP_HEADER</span> <span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="n">IP_HEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PIP_HEADER</span> <span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -552,7 +546,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sWindowSize</span><span class="p">;</span>       　　　　　<span class="c1">//窗口大小16bit
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_sCheckSum</span><span class="p">;</span>        　　　　　 <span class="c1">//检验和16bit
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">short</span> <span class="n">m_surgentPointer</span><span class="p">;</span>      　　　　 <span class="c1">//紧急数据偏移量16bit
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="nf">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="n">TCP_HEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PTCP_HEADER</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">))</span><span class="n">TCP_HEADER</span><span class="p">,</span> <span class="o">*</span><span class="n">PTCP_HEADER</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="cm">/*TCP头中的选项定义 
 </span></span></span><span class="line"><span class="cl"><span class="cm">
 </span></span></span><span class="line"><span class="cl"><span class="cm">kind(8bit)+Length(8bit，整个选项的长度，包含前两部分)+内容(如果有的话)
@@ -802,7 +796,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/tcpdump/">Tcpdump</a>,&nbsp;<a href="/tags/network/">Network</a>,&nbsp;<a href="/tags/linux/">Linux</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/tcpdump/">TCPDump</a>,&nbsp;<a href="/tags/network/">Network</a>,&nbsp;<a href="/tags/linux/">Linux</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -815,7 +809,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.128.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://www.yuque.com/wuyiwa" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
                     <span class="icp"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2023016660号</a></span></div>
         </div>
