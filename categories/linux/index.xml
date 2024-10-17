@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Linux - 分类 - 易娃的个人笔记</title>
-        <link>https://oneone.life/categories/linux/</link>
+        <link>http://localhost:1313/categories/linux/</link>
         <description>Linux - 分类 - 易娃的个人笔记</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/categories/linux/" rel="self" type="application/rss+xml" /><item>
     <title>linux中curl调用登录接口然后用sed命令提取出token值</title>
-    <link>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</link>
+    <link>http://localhost:1313/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</link>
     <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</guid>
+    <guid>http://localhost:1313/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</guid>
     <description><![CDATA[💡背景： 因为客户现场特殊情况不能访问管理平台Web页面，且不能远程访问服务器和其中的所有虚拟机实例，只能在机房直接操作集群对应服务器。现场技]]></description>
 </item>
 <item>
     <title>使用xargs命令批量移动文件</title>
-    <link>https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</link>
+    <link>http://localhost:1313/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</link>
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</guid>
+    <guid>http://localhost:1313/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</guid>
     <description><![CDATA[当遇到这样一个场景，需要批量把查找出来的多个文件或者目录移动到一个统一的目录下面，这时可以使用xargs命令与查询命令(例如find)结合使]]></description>
 </item>
 <item>
     <title>find和xargs命令组合使用处理带空格文件名的文件</title>
-    <link>https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</link>
+    <link>http://localhost:1313/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</link>
     <pubDate>Wed, 06 Jul 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</guid>
+    <guid>http://localhost:1313/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</guid>
     <description><![CDATA[当用find命令查找文件然后用xargs来批量处理文件时，当文件名中包含空格字符时，就会导致处理失败，因为xargs会认为空格前后分别是两个]]></description>
 </item>
 <item>
     <title>kvm虚拟机扩充根目录容量(lvm卷)</title>
-    <link>https://oneone.life/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</link>
+    <link>http://localhost:1313/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</link>
     <pubDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</guid>
+    <guid>http://localhost:1313/kvm%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%89%A9%E5%85%85%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%AE%B9%E9%87%8Flvm%E5%8D%B7/</guid>
     <description><![CDATA[给虚拟机添加硬盘(或扩容) 停止虚拟机 在管理页面给虚拟机新增一块硬盘 重新启动虚拟机 登入虚拟机，对新增硬盘进行分区 下方所示为硬盘扩容非新增，但操]]></description>
 </item>
 <item>
     <title>鲲鹏920服务器上安装arm版本的docker</title>
-    <link>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
+    <link>http://localhost:1313/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
     <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
+    <guid>http://localhost:1313/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
     <description><![CDATA[因为鲲鹏920处理是ARM架构的，所以一般的x86架构的包是不能安装的，该文档主要基于arm版本的centos7系统来编写(其他arm系统也]]></description>
 </item>
 <item>
     <title>通过tcpdump抓取mysql报文</title>
-    <link>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</link>
+    <link>http://localhost:1313/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</guid>
+    <guid>http://localhost:1313/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</guid>
     <description><![CDATA[1 tcpdump -s 65535 -xX -nn -q -tttt -i any -c 1000 port 3306 1 2 #只以ASIC显示内容 tcpdump -s 65535 -A -nn -q -tttt -i any -c 1000 port 3306]]></description>
 </item>
 <item>
     <title>Linux上删除文件后空间没有被释放</title>
-    <link>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</link>
+    <link>http://localhost:1313/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</guid>
+    <guid>http://localhost:1313/linux%E4%B8%8A%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%90%8E%E7%A9%BA%E9%97%B4%E6%B2%A1%E6%9C%89%E8%A2%AB%E9%87%8A%E6%94%BE/</guid>
     <description><![CDATA[有时候，在Linux系统中rm删除文件后，使用df查看空间占用情况时会发现，占用空间并没有减少。这往往都是因为被删除的文件还被某些进程占用着]]></description>
 </item>
 <item>
     <title>Linux系统启动过程</title>
-    <link>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</link>
+    <link>http://localhost:1313/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</guid>
+    <guid>http://localhost:1313/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/</guid>
     <description><![CDATA[Linux 系统启动过程linux启动时我们会看到许多启动信息。 Linux系统的启动过程并不是大家想象中的那么复杂，其过程可以分为5个阶段： 内核的引导]]></description>
 </item>
 <item>
     <title>tcpdump命令高级过滤方式</title>
-    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</link>
+    <link>http://localhost:1313/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</guid>
+    <guid>http://localhost:1313/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/</guid>
     <description><![CDATA[首先了解如何从包头过滤信息 1 2 3 4 5 proto[x:y] : 过滤从x字节开始的y字节数。比如ip[2:2]过滤出3、4字节（第一字节从0开始排） proto[x:y] &amp; z = 0 : pr]]></description>
 </item>
 <item>
     <title>tcpdump命令使用简介</title>
-    <link>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
+    <link>http://localhost:1313/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
+    <guid>http://localhost:1313/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</guid>
     <description><![CDATA[简单介绍 tcpdump 是一款强大的网络抓包工具，运行在 linux 平台上。熟悉 tcpdump 的使用能够帮助你分析、调试网络数据。 要想使用很好地掌握 tcpdump， 必须对网络报]]></description>
 </item>
 </channel>

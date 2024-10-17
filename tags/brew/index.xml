@@ -1,21 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-<<<<<<< HEAD
         <title>Brew - 标签 - 易娃的个人笔记</title>
-        <link>https://oneone.life/tags/brew/</link>
+        <link>http://localhost:1313/tags/brew/</link>
         <description>Brew - 标签 - 易娃的个人笔记</description>
-=======
-        <title>brew - 标签 - Simple Life</title>
-        <link>https://oneone.life/tags/brew/</link>
-        <description>brew - 标签 - Simple Life</description>
->>>>>>> origin/master
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/brew/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/brew/" rel="self" type="application/rss+xml" /><item>
     <title>brew update时报错“fatal_ Could not resolve HEAD to a revision”解决</title>
-    <link>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</link>
+    <link>http://localhost:1313/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</link>
     <pubDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</guid>
+    <guid>http://localhost:1313/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</guid>
     <description><![CDATA[报错信息 在安装brew并更改为国内下载源后，执行brew update时老是报错，信息如下： 解决办法 上网查了下，找到了解决办法，参考链接 依次执]]></description>
 </item>
 </channel>

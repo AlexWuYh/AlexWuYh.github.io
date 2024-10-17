@@ -1,21 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-<<<<<<< HEAD
         <title>Oh-My-Zsh - 标签 - 易娃的个人笔记</title>
-        <link>https://oneone.life/tags/oh-my-zsh/</link>
+        <link>http://localhost:1313/tags/oh-my-zsh/</link>
         <description>Oh-My-Zsh - 标签 - 易娃的个人笔记</description>
-=======
-        <title>oh-my-zsh - 标签 - Simple Life</title>
-        <link>https://oneone.life/tags/oh-my-zsh/</link>
-        <description>oh-my-zsh - 标签 - Simple Life</description>
->>>>>>> origin/master
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Mon, 24 Feb 2020 22:46:22 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/oh-my-zsh/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Mon, 24 Feb 2020 22:46:22 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/oh-my-zsh/" rel="self" type="application/rss+xml" /><item>
     <title>让其他用户使用oh-my-zsh</title>
-    <link>https://oneone.life/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/</link>
+    <link>http://localhost:1313/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/</link>
     <pubDate>Mon, 24 Feb 2020 22:46:22 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/</guid>
+    <guid>http://localhost:1313/%E8%AE%A9%E5%85%B6%E4%BB%96%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8oh-my-zsh/</guid>
     <description><![CDATA[<p>如果使用<code>wt</code>用户安装配置了<code>oh-my-zsh</code>，其他用户想要使用相同的主题和配置，可以参考<code>https://askubuntu.com/questions/521469/oh-my-zsh-for-the-root-and-for-all-user</code>
 这里介绍一种更简单的方法（亲测有效）：
 比如让<code>root</code>用户使用和<code>wt</code>用户相同的配置：</p>]]></description>
