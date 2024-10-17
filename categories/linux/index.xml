@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Linux - 分类 - Simple Life</title>
+        <title>Linux - 分类 - 易娃的个人笔记</title>
         <link>https://oneone.life/categories/linux/</link>
-        <description>Linux - 分类 - Simple Life</description>
+        <description>Linux - 分类 - 易娃的个人笔记</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
             <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/linux/" rel="self" type="application/rss+xml" /><item>
     <title>linux中curl调用登录接口然后用sed命令提取出token值</title>

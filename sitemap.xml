@@ -2,21 +2,21 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://oneone.life/photo/</loc><lastmod>2024-07-23T15:50:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/</loc><lastmod>2024-07-23T15:50:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/photo/test/</loc><lastmod>2024-07-23T15:50:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/posts/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/</loc><lastmod>2024-07-22T18:00:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/categories/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://oneone.life/photo/</loc><lastmod>2024-07-23T15:50:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/photo/test/</loc><lastmod>2024-07-23T15:50:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/</loc><lastmod>2024-07-23T15:50:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/posts/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/</loc><lastmod>2024-07-22T18:00:16&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/categories/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/tags/git/</loc><lastmod>2023-11-30T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/categories/git/</loc><lastmod>2023-11-30T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/git-use-skills-1kyiph/</loc><lastmod>2023-11-30T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://oneone.life/tags/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/netmarker-installation-deployment-lvbj2/</loc><lastmod>2024-07-22T18:37:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/tags/apm/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/tags/pinpoint/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/categories/pinpoint/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://oneone.life/pinpoint-installation-configuration-z1gpqfn/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://oneone.life/tags/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/netmarker-installation-deployment-lvbj2/</loc><lastmod>2024-07-22T18:37:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/tags/apm/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/tags/pinpoint/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/categories/pinpoint/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://oneone.life/pinpoint-installation-configuration-z1gpqfn/</loc><lastmod>2024-07-23T10:07:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/tags/linux/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/categories/linux/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</loc><lastmod>2022-11-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
