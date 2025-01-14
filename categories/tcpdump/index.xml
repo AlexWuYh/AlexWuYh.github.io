@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tcpdump - 分类 - 易娃的个人笔记</title>
-        <link>https://oneone.life/categories/tcpdump/</link>
+        <link>http://localhost:1313/categories/tcpdump/</link>
         <description>Tcpdump - 分类 - 易娃的个人笔记</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/tcpdump/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/categories/tcpdump/" rel="self" type="application/rss+xml" /><item>
     <title>通过tcpdump抓取mysql报文</title>
-    <link>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</link>
+    <link>http://localhost:1313/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</guid>
+    <guid>http://localhost:1313/%E9%80%9A%E8%BF%87tcpdump%E6%8A%93%E5%8F%96mysql%E6%8A%A5%E6%96%87/</guid>
     <description><![CDATA[1 tcpdump -s 65535 -xX -nn -q -tttt -i any -c 1000 port 3306 1 2 #只以ASIC显示内容 tcpdump -s 65535 -A -nn -q -tttt -i any -c 1000 port 3306]]></description>
 </item>
 </channel>

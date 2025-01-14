@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>ARM - 标签 - 易娃的个人笔记</title>
-        <link>https://oneone.life/tags/arm/</link>
+        <link>http://localhost:1313/tags/arm/</link>
         <description>ARM - 标签 - 易娃的个人笔记</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/arm/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/arm/" rel="self" type="application/rss+xml" /><item>
     <title>鲲鹏920服务器上安装arm版本的docker</title>
-    <link>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
+    <link>http://localhost:1313/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</link>
     <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
+    <guid>http://localhost:1313/%E9%B2%B2%E9%B9%8F920%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85arm%E7%89%88%E6%9C%AC%E7%9A%84docker/</guid>
     <description><![CDATA[因为鲲鹏920处理是ARM架构的，所以一般的x86架构的包是不能安装的，该文档主要基于arm版本的centos7系统来编写(其他arm系统也]]></description>
 </item>
 </channel>

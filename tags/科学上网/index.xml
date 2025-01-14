@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>科学上网 - 标签 - 易娃的个人笔记</title>
-        <link>https://oneone.life/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</link>
+        <link>http://localhost:1313/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</link>
         <description>科学上网 - 标签 - 易娃的个人笔记</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Sat, 07 Mar 2020 22:02:34 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Sat, 07 Mar 2020 22:02:34 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="self" type="application/rss+xml" /><item>
     <title>在Ubuntu16.04和Centos7上启用TCP-BBR</title>
-    <link>https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</link>
+    <link>http://localhost:1313/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</link>
     <pubDate>Sat, 07 Mar 2020 22:02:34 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</guid>
+    <guid>http://localhost:1313/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</guid>
     <description><![CDATA[<blockquote>
 <ol>
 <li>新增atrandys大佬的一键安装脚本，支持<code>centos7+</code>/<code>debian9+</code>/<code>ubuntu16+</code>:</li>

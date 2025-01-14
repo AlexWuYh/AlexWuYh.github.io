@@ -1,25 +1,25 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Vim - 标签 - 易娃的个人笔记</title>
-        <link>https://oneone.life/tags/vim/</link>
+        <link>http://localhost:1313/tags/vim/</link>
         <description>Vim - 标签 - 易娃的个人笔记</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 25 Feb 2020 14:35:25 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/vim/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 25 Feb 2020 14:35:25 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/vim/" rel="self" type="application/rss+xml" /><item>
     <title>Vim权限不足时强制保存只读类型文件的方法</title>
-    <link>https://oneone.life/vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+    <link>http://localhost:1313/vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</link>
     <pubDate>Tue, 25 Feb 2020 14:35:25 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+    <guid>http://localhost:1313/vim%E6%9D%83%E9%99%90%E4%B8%8D%E8%B6%B3%E6%97%B6%E5%BC%BA%E5%88%B6%E4%BF%9D%E5%AD%98%E5%8F%AA%E8%AF%BB%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
     <description><![CDATA[<p>在使用<code>vim</code>时，当我们以普通用户去打开一个只有<code>root</code>用户才有权限操作的文件时，我们编辑完成之后，正要保存，却发现，这个文件我们没有权限修改。
 经过查找，发现一个命令可以解决这个问题
 命令：</p>]]></description>
 </item>
 <item>
     <title>.vimrc-备份</title>
-    <link>https://oneone.life/vimrc-%E5%A4%87%E4%BB%BD/</link>
+    <link>http://localhost:1313/vimrc-%E5%A4%87%E4%BB%BD/</link>
     <pubDate>Mon, 24 Feb 2020 22:31:16 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>https://oneone.life/vimrc-%E5%A4%87%E4%BB%BD/</guid>
+    <guid>http://localhost:1313/vimrc-%E5%A4%87%E4%BB%BD/</guid>
     <description><![CDATA[<p>自用的vimrc配置文件备份:</p>]]></description>
 </item>
 </channel>
