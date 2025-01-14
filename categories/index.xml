@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - 分类 - 易娃的个人笔记</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://oneone.life/categories/</link>
         <description>Categories - 分类 - 易娃的个人笔记</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/categories/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/" rel="self" type="application/rss+xml" /><item>
     <title>Git</title>
-    <link>http://localhost:1313/categories/git/</link>
+    <link>https://oneone.life/categories/git/</link>
     <pubDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/git/</guid>
+    <guid>https://oneone.life/categories/git/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>PinPoint</title>
-    <link>http://localhost:1313/categories/pinpoint/</link>
+    <link>https://oneone.life/categories/pinpoint/</link>
     <pubDate>Thu, 23 Nov 2023 18:05:51 &#43;0800</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/pinpoint/</guid>
+    <guid>https://oneone.life/categories/pinpoint/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Linux</title>
-    <link>http://localhost:1313/categories/linux/</link>
+    <link>https://oneone.life/categories/linux/</link>
     <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/linux/</guid>
+    <guid>https://oneone.life/categories/linux/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Mac</title>
-    <link>http://localhost:1313/categories/mac/</link>
+    <link>https://oneone.life/categories/mac/</link>
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/mac/</guid>
+    <guid>https://oneone.life/categories/mac/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>MacOS</title>
-    <link>http://localhost:1313/categories/macos/</link>
+    <link>https://oneone.life/categories/macos/</link>
     <pubDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/macos/</guid>
+    <guid>https://oneone.life/categories/macos/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Mysql</title>
-    <link>http://localhost:1313/categories/mysql/</link>
+    <link>https://oneone.life/categories/mysql/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/mysql/</guid>
+    <guid>https://oneone.life/categories/mysql/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Tcpdump</title>
-    <link>http://localhost:1313/categories/tcpdump/</link>
+    <link>https://oneone.life/categories/tcpdump/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/tcpdump/</guid>
+    <guid>https://oneone.life/categories/tcpdump/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Tools</title>
-    <link>http://localhost:1313/categories/tools/</link>
+    <link>https://oneone.life/categories/tools/</link>
     <pubDate>Tue, 08 Feb 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/tools/</guid>
+    <guid>https://oneone.life/categories/tools/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Network</title>
-    <link>http://localhost:1313/categories/network/</link>
+    <link>https://oneone.life/categories/network/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/network/</guid>
+    <guid>https://oneone.life/categories/network/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>NTP</title>
-    <link>http://localhost:1313/categories/ntp/</link>
+    <link>https://oneone.life/categories/ntp/</link>
     <pubDate>Sat, 29 Jan 2022 00:00:00 &#43;0000</pubDate>
     <author>Alex Wu</author>
-    <guid>http://localhost:1313/categories/ntp/</guid>
+    <guid>https://oneone.life/categories/ntp/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
