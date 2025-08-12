@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>PinPoint - 分类 - 易娃的个人笔记</title>
-        <link>https://oneone.life/categories/pinpoint/</link>
-        <description>PinPoint - 分类 - 易娃的个人笔记</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Thu, 23 Nov 2023 18:05:51 &#43;0800</lastBuildDate><atom:link href="https://oneone.life/categories/pinpoint/" rel="self" type="application/rss+xml" /><item>
-    <title>PinPoint安装配置</title>
-    <link>https://oneone.life/pinpoint-installation-configuration-z1gpqfn/</link>
-    <pubDate>Thu, 23 Nov 2023 18:05:51 &#43;0800</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/pinpoint-installation-configuration-z1gpqfn/</guid>
-    <description><![CDATA[PinPoint安装配置 简介 ​​ pinpoint是开源在github上的一款全链路APM监控工具，提供了无侵入式的调用链监控、方法执行详情查]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PinPoint on 易娃的个人笔记</title>
+    <link>https://blog.oneone.life/categories/pinpoint/</link>
+    <description>Recent content in PinPoint on 易娃的个人笔记</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 23 Jul 2024 10:07:38 +0800</lastBuildDate>
+    <atom:link href="https://blog.oneone.life/categories/pinpoint/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PinPoint安装配置</title>
+      <link>https://blog.oneone.life/pinpoint-installation-configuration-z1gpqfn/</link>
+      <pubDate>Thu, 23 Nov 2023 18:05:51 +0800</pubDate>
+      <guid>https://blog.oneone.life/pinpoint-installation-configuration-z1gpqfn/</guid>
+      <description>&lt;h1 id=&#34;pinpoint安装配置&#34;&gt;PinPoint安装配置&lt;/h1&gt;&#xA;&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;&#xA;&lt;p&gt;​&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;https://blog.oneone.life/svg/loading.min.svg&#34;&#xA;        data-src=&#34;https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9&#34;&#xA;        data-srcset=&#34;https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9, https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9 1.5x, https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://imgup.oneone.life/app/hide.php?key=bWFka24xS0xXQnMwSGdUMTRhem85OFFxWE5BK21QV25qQTQ9&#34;&#xA;        title=&#34;image.png&#34; /&gt;​&lt;/p&gt;&#xA;&lt;p&gt;pinpoint是开源在github上的一款全链路APM监控工具，提供了无侵入式的调用链监控、方法执行详情查看、应用状态信息监控等功能。基于GoogleDapper论文进行的实现，与另一款开源的全链路分析工具Zipkin类似，但相比Zipkin提供了无侵入式、代码维度的监控等更多的特性。 Pinpoint支持的功能比较丰富，可以支持如下几种功能：&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

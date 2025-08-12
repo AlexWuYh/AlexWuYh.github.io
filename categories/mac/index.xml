@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Mac - 分类 - 易娃的个人笔记</title>
-        <link>https://oneone.life/categories/mac/</link>
-        <description>Mac - 分类 - 易娃的个人笔记</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/categories/mac/" rel="self" type="application/rss+xml" /><item>
-    <title>解决Mac下&#34;xcrun error invalid active developer path&#34;报错的问题</title>
-    <link>https://oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-    <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[最近Mac推送了最新的系统版本Ventura，在升级到该版本之后发现，在终端中使用git、python等命令的时候会报错，报错信息如下： xcrun: error:]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on 易娃的个人笔记</title>
+    <link>https://blog.oneone.life/categories/mac/</link>
+    <description>Recent content in Mac on 易娃的个人笔记</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.oneone.life/categories/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解决Mac下&#34;xcrun error invalid active developer path&#34;报错的问题</title>
+      <link>https://blog.oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;最近Mac推送了最新的系统版本&lt;code&gt;Ventura&lt;/code&gt;，在升级到该版本之后发现，在终端中使用&lt;code&gt;git&lt;/code&gt;、&lt;code&gt;python&lt;/code&gt;等命令的时候会报错，报错信息如下：&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

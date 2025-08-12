@@ -1,53 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>科学上网 - 标签 - 易娃的个人笔记</title>
-        <link>https://oneone.life/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</link>
-        <description>科学上网 - 标签 - 易娃的个人笔记</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Sat, 07 Mar 2020 22:02:34 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="self" type="application/rss+xml" /><item>
-    <title>在Ubuntu16.04和Centos7上启用TCP-BBR</title>
-    <link>https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</link>
-    <pubDate>Sat, 07 Mar 2020 22:02:34 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</guid>
-    <description><![CDATA[<blockquote>
-<ol>
-<li>新增atrandys大佬的一键安装脚本，支持<code>centos7+</code>/<code>debian9+</code>/<code>ubuntu16+</code>:</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh
-</span></span><span class="line"><span class="cl">chmod +x tcp.sh
-</span></span><span class="line"><span class="cl">./tcp.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="2">
-<li>新增Google原版BBR一键安装脚本：</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
-</span></span><span class="line"><span class="cl">chmod +x bbr.sh
-</span></span><span class="line"><span class="cl">./bbr.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div></blockquote>
-<h2 id="bbr简介">BBR简介</h2>
-<p><code>BBR</code> 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。</p>
-<p>简单地说，开启 <code>BBR</code> 的 Linux Server 和不开启 <code>BBR</code> 的 Linux Server，在持续传输数据方面可以有非常大的不同。</p>
-<p><code>BBR</code> 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。</p>
-<h2 id="检测-bbr-是否开启">检测 BBR 是否开启</h2>
-<p>在开始之前，先看看 <code>BBR</code> 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：</p>]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>科学上网 on 易娃的个人笔记</title>
+    <link>https://blog.oneone.life/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</link>
+    <description>Recent content in 科学上网 on 易娃的个人笔记</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 07 Mar 2020 22:02:34 +0000</lastBuildDate>
+    <atom:link href="https://blog.oneone.life/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在Ubuntu16.04和Centos7上启用TCP-BBR</title>
+      <link>https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</link>
+      <pubDate>Sat, 07 Mar 2020 22:02:34 +0000</pubDate>
+      <guid>https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;新增atrandys大佬的一键安装脚本，支持&lt;code&gt;centos7+&lt;/code&gt;/&lt;code&gt;debian9+&lt;/code&gt;/&lt;code&gt;ubuntu16+&lt;/code&gt;:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x tcp.sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./tcp.sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;新增Google原版BBR一键安装脚本：&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x bbr.sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./bbr.sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;bbr简介&#34;&gt;BBR简介&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;BBR&lt;/code&gt; 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。&lt;/p&gt;&#xA;&lt;p&gt;简单地说，开启 &lt;code&gt;BBR&lt;/code&gt; 的 Linux Server 和不开启 &lt;code&gt;BBR&lt;/code&gt; 的 Linux Server，在持续传输数据方面可以有非常大的不同。&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;BBR&lt;/code&gt; 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。&lt;/p&gt;&#xA;&lt;h2 id=&#34;检测-bbr-是否开启&#34;&gt;检测 BBR 是否开启&lt;/h2&gt;&#xA;&lt;p&gt;在开始之前，先看看 &lt;code&gt;BBR&lt;/code&gt; 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

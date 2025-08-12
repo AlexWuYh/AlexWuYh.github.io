@@ -4,25 +4,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>H3C企业路由器端口映射NAT回流问题处理 - 易娃的个人笔记</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/">
+        <title>H3C企业路由器端口映射NAT回流问题处理 - 易娃的个人笔记</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/">
   <meta property="og:site_name" content="易娃的个人笔记">
   <meta property="og:title" content="H3C企业路由器端口映射NAT回流问题处理">
-  <meta property="og:description" content="H3C企业路由器端口映射NAT回流问题处理 最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好WAN口​以及nat">
+  <meta property="og:description" content="H3C企业路由器端口映射NAT回流问题处理 最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好WAN口​以及nat端口映射​后，从外部公网可以正常访问该端口映射，但是从内网主机​访问WAN口公网IP的端口​时却不能正常访问。百思不得其解…后面通过抓包和查阅资料才发现是因为NAT回流导致的。">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-07-27T22:24:41+08:00">
     <meta property="article:modified_time" content="2024-07-27T22:27:11+08:00">
-    <meta property="og:image" content="https://oneone.life/logo.png">
+    <meta property="og:image" content="https://blog.oneone.life/logo.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://oneone.life/logo.png">
+  <meta name="twitter:image" content="https://blog.oneone.life/logo.png">
   <meta name="twitter:title" content="H3C企业路由器端口映射NAT回流问题处理">
-  <meta name="twitter:description" content="H3C企业路由器端口映射NAT回流问题处理 最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好WAN口​以及nat">
+  <meta name="twitter:description" content="H3C企业路由器端口映射NAT回流问题处理 最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好WAN口​以及nat端口映射​后，从外部公网可以正常访问该端口映射，但是从内网主机​访问WAN口公网IP的端口​时却不能正常访问。百思不得其解…后面通过抓包和查阅资料才发现是因为NAT回流导致的。">
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" /><link rel="prev" href="https://oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" /><link rel="prev" href="https://blog.oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="hEcQ6nEr41mGdKm5NvLM-M13MAox_EMIqc5f6Lz2cbY" /><meta name="baidu-site-verification" content="code-xRAT9UnTv5" /><script type="application/ld+json">
     {
@@ -32,13 +32,13 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/oneone.life\/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk\/"
+            "@id": "https:\/\/blog.oneone.life\/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk\/"
         },"image": ["https:\/\/imgup.oneone.life\/app\/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"],"genre": "posts","wordcount":  873 ,
-        "url": "https:\/\/oneone.life\/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk\/","datePublished": "2024-07-27T22:24:41+08:00","dateModified": "2024-07-27T22:27:11+08:00","publisher": {
+        "url": "https:\/\/blog.oneone.life\/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk\/","datePublished": "2024-07-27T22:24:41+08:00","dateModified": "2024-07-27T22:27:11+08:00","publisher": {
             "@type": "Organization",
             "name": "WUYH","logo": "https:\/\/imgup.oneone.life\/app\/hide.php?key=R2M2UHVFbUU1Uzc3cGN3OE9ObXRlUEx5SjdlWS9uOWowY2M9"},"author": {
                 "@type": "Person",
-                "name": "Alex Wu"
+                "name": "作者"
             },"description": ""
     }
     </script></head>
@@ -120,7 +120,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">H3C企业路由器端口映射NAT回流问题处理</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://wuewa.cn" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-07-27">2024-07-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 873 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" class="leancloud_visitors" data-flag-title="H3C企业路由器端口映射NAT回流问题处理">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -203,8 +203,7 @@
 <li>因为隐私的问题，定位和配置回流后抓包截图没有放上来。大家感兴趣可以自行抓包查看。</li>
 </ul>
 <blockquote>
-<p>这里就忍不住要吐槽一下H3C这个Web界面做的真差，在配置时<strong>有一些配置并不会写到后台配置中</strong>，还需要去后台命令行再手动配置。之前配置VPN的时候就也遇到类似的问题</p>
-</blockquote>
+<p>这里就忍不住要吐槽一下H3C这个Web界面做的真差，在配置时<strong>有一些配置并不会写到后台配置中</strong>，还需要去后台命令行再手动配置。之前配置VPN的时候就也遇到类似的问题</p></blockquote>
 <p>‍</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -217,7 +216,7 @@
                             <a class="link-to-markdown" href="/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/" data-title="H3C企业路由器端口映射NAT回流问题处理"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -235,8 +234,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.132.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://wuewa.cn" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.6">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
                     <span class="icp"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2023016660号</a></span></div>
         </div>
     </footer></div>

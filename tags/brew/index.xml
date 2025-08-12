@@ -1,16 +1,19 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Brew - 标签 - 易娃的个人笔记</title>
-        <link>https://oneone.life/tags/brew/</link>
-        <description>Brew - 标签 - 易娃的个人笔记</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/brew/" rel="self" type="application/rss+xml" /><item>
-    <title>brew update时报错“fatal_ Could not resolve HEAD to a revision”解决</title>
-    <link>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</link>
-    <pubDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</guid>
-    <description><![CDATA[报错信息 在安装brew并更改为国内下载源后，执行brew update时老是报错，信息如下： 解决办法 上网查了下，找到了解决办法，参考链接 依次执]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brew on 易娃的个人笔记</title>
+    <link>https://blog.oneone.life/tags/brew/</link>
+    <description>Recent content in Brew on 易娃的个人笔记</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.oneone.life/tags/brew/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>brew update时报错“fatal_ Could not resolve HEAD to a revision”解决</title>
+      <link>https://blog.oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/brew-update%E6%97%B6%E6%8A%A5%E9%94%99fatal_-could-not-resolve-head-to-a-revision%E8%A7%A3%E5%86%B3/</guid>
+      <description>&lt;h2 id=&#34;报错信息&#34;&gt;报错信息&lt;/h2&gt;&#xA;&lt;p&gt;在安装brew并更改为国内下载源后，执行&lt;code&gt;brew update&lt;/code&gt;时老是报错，信息如下：&#xA;&lt;img&#xA;        class=&#34;lazyload&#34;&#xA;        src=&#34;https://blog.oneone.life/svg/loading.min.svg&#34;&#xA;        data-src=&#34;https://raw.githubusercontent.com/AlexWuYh/Pic-Host/master/photo/image%20%284%29.png&#34;&#xA;        data-srcset=&#34;https://raw.githubusercontent.com/AlexWuYh/Pic-Host/master/photo/image%20%284%29.png, https://raw.githubusercontent.com/AlexWuYh/Pic-Host/master/photo/image%20%284%29.png 1.5x, https://raw.githubusercontent.com/AlexWuYh/Pic-Host/master/photo/image%20%284%29.png 2x&#34;&#xA;        data-sizes=&#34;auto&#34;&#xA;        alt=&#34;https://raw.githubusercontent.com/AlexWuYh/Pic-Host/master/photo/image%20(4).png&#34;&#xA;        title=&#34;image.png&#34; /&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;解决办法&#34;&gt;解决办法&lt;/h2&gt;&#xA;&lt;p&gt;上网查了下，找到了解决办法，&lt;a href=&#34;https://www.jianshu.com/p/b2de788c3c6d&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;参考链接&lt;/a&gt;&#xA;依次执行下面的命令/步骤：&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

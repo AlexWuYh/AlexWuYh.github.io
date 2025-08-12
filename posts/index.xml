@@ -1,88 +1,141 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>所有文章 - 易娃的个人笔记</title>
-        <link>https://oneone.life/posts/</link>
+        <link>https://blog.oneone.life/posts/</link>
         <description>所有文章 | 易娃的个人笔记</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Sat, 27 Jul 2024 22:24:41 &#43;0800</lastBuildDate><atom:link href="https://oneone.life/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 27 Jul 2024 22:24:41 &#43;0800</lastBuildDate><atom:link href="https://blog.oneone.life/posts/" rel="self" type="application/rss+xml" /><item>
     <title>H3C企业路由器端口映射NAT回流问题处理</title>
-    <link>https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/</link>
+    <link>https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/</link>
     <pubDate>Sat, 27 Jul 2024 22:24:41 &#43;0800</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/</guid>
-    <description><![CDATA[H3C企业路由器端口映射NAT回流问题处理 最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好WAN口​以及nat]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/h3c-enterprise-router-portum-map-nat-return-processing-processing-5undk/</guid>
+    <description><![CDATA[<h1 id="h3c企业路由器端口映射nat回流问题处理">H3C企业路由器端口映射NAT回流问题处理</h1>
+<p>最近公司搬到新办公室了，换了H3C的MSR系列企业路由器，通过WEB页面配置好<code>WAN口</code>​以及<code>nat端口映射</code>​后，从外部公网可以正常访问该端口映射，但是从<code>内网主机</code>​访问<code>WAN口公网IP的端口</code>​时却不能正常访问。百思不得其解&hellip;后面通过抓包和查阅资料才发现是因为<strong>NAT回流</strong>导致的。</p>]]></description>
 </item>
 <item>
     <title>将ubuntu的默认编辑器从nano修改为vim</title>
-    <link>https://oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/</link>
+    <link>https://blog.oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/</link>
     <pubDate>Mon, 17 Jun 2024 19:12:42 &#43;0800</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/</guid>
-    <description><![CDATA[将ubuntu的默认编辑器从nano修改为vim 在使用ubunut时经常会遇到打开一些系统文件的时候，要么默认使用nano​打开，要么会让你]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/modify-ubuntu-s-default-editor-from-nano-to-vim-zulxqs/</guid>
+    <description><![CDATA[<h1 id="将ubuntu的默认编辑器从nano修改为vim">将ubuntu的默认编辑器从nano修改为vim</h1>
+<p>在使用ubunut时经常会遇到打开一些系统文件的时候，要么默认使用<code>nano</code>​打开，要么会让你选择编辑器，例如在执行<code>visudo</code>​命令的时候。通过下面的方法就可以把默认编辑器直接修改为<strong>vim</strong>，以后打开所有文件默认都是使用<strong>vim</strong>。</p>]]></description>
 </item>
 <item>
     <title>git 使用技巧</title>
-    <link>https://oneone.life/git-use-skills-1kyiph/</link>
+    <link>https://blog.oneone.life/git-use-skills-1kyiph/</link>
     <pubDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/git-use-skills-1kyiph/</guid>
-    <description><![CDATA[git log美化输出 1 git log --all --decorate --oneline --graph 效果如下： ​​ ‍ git 拉取指定目录或文件 目录初始化 1 git init 设置远程仓库地址 1 git remote add -f origin &lt;origin_url&gt; ​启用sparse check]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/git-use-skills-1kyiph/</guid>
+    <description><![CDATA[<h2 id="git-log美化输出">git log美化输出</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git log --all --decorate --oneline --graph
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>效果如下：</p>
+<p>​​</p>
+<p>‍</p>
+<h2 id="git-拉取指定目录或文件">git 拉取指定目录或文件</h2>
+<ul>
+<li>
+<p>目录初始化</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git init
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>设置远程仓库地址</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add -f origin &lt;origin_url&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>​启用<code>sparse checkout</code>​模式，允许克隆子目录</p>]]></description>
 </item>
 <item>
     <title>netmarker安装部署</title>
-    <link>https://oneone.life/netmarker-installation-deployment-lvbj2/</link>
+    <link>https://blog.oneone.life/netmarker-installation-deployment-lvbj2/</link>
     <pubDate>Thu, 23 Nov 2023 18:06:07 &#43;0800</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/netmarker-installation-deployment-lvbj2/</guid>
-    <description><![CDATA[Netmaker 介绍 Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/netmarker-installation-deployment-lvbj2/</guid>
+    <description><![CDATA[<h2 id="netmaker-介绍">Netmaker 介绍</h2>
+<p>Netmaker 是一个用来配置 WireGuard 全互联模式的可视化工具，它的功能非常强大，不仅支持 UDP 打洞、NAT 穿透、多租户，还可以使用 Kubernetes 配置清单来部署，客户端几乎适配了所有平台，包括 Linux, Mac 和 Windows，还可以通过 WireGuard 原生客户端连接 iPhone 和 Android。</p>]]></description>
 </item>
 <item>
     <title>PinPoint安装配置</title>
-    <link>https://oneone.life/pinpoint-installation-configuration-z1gpqfn/</link>
+    <link>https://blog.oneone.life/pinpoint-installation-configuration-z1gpqfn/</link>
     <pubDate>Thu, 23 Nov 2023 18:05:51 &#43;0800</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/pinpoint-installation-configuration-z1gpqfn/</guid>
-    <description><![CDATA[PinPoint安装配置 简介 ​​ pinpoint是开源在github上的一款全链路APM监控工具，提供了无侵入式的调用链监控、方法执行详情查]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/pinpoint-installation-configuration-z1gpqfn/</guid>
+    <description><![CDATA[<h1 id="pinpoint安装配置">PinPoint安装配置</h1>
+<h2 id="简介">简介</h2>
+<p>​​</p>
+<p>pinpoint是开源在github上的一款全链路APM监控工具，提供了无侵入式的调用链监控、方法执行详情查看、应用状态信息监控等功能。基于GoogleDapper论文进行的实现，与另一款开源的全链路分析工具Zipkin类似，但相比Zipkin提供了无侵入式、代码维度的监控等更多的特性。 Pinpoint支持的功能比较丰富，可以支持如下几种功能：</p>]]></description>
 </item>
 <item>
     <title>linux中curl调用登录接口然后用sed命令提取出token值</title>
-    <link>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</link>
+    <link>https://blog.oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</link>
     <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</guid>
-    <description><![CDATA[💡背景： 因为客户现场特殊情况不能访问管理平台Web页面，且不能远程访问服务器和其中的所有虚拟机实例，只能在机房直接操作集群对应服务器。现场技]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/linux%E4%B8%ADcurl%E8%B0%83%E7%94%A8%E7%99%BB%E5%BD%95%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E7%94%A8sed%E5%91%BD%E4%BB%A4%E6%8F%90%E5%8F%96%E5%87%BAtoken%E5%80%BC/</guid>
+    <description><![CDATA[<blockquote>
+<p>💡<strong>背景：</strong><br /><strong>因为客户现场特殊情况不能访问管理平台Web页面，且不能远程访问服务器和其中的所有虚拟机实例，只能在机房直接操作集群对应服务器。现场技支同事需要上传一个镜像文件到集群中的某一个微服务中，通常还可以通过Web页面进行操作，现在却不行。为了解决他们的这个述求，就想到直接从宿主机中调用对应服务的注册接口获取token，然后再直接调用上传的接口上传镜像文件。</strong></p>]]></description>
 </item>
 <item>
     <title>解决Mac下&#34;xcrun error invalid active developer path&#34;报错的问题</title>
-    <link>https://oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+    <link>https://blog.oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</link>
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-    <description><![CDATA[最近Mac推送了最新的系统版本Ventura，在升级到该版本之后发现，在终端中使用git、python等命令的时候会报错，报错信息如下： xcrun: error:]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/%E8%A7%A3%E5%86%B3mac%E4%B8%8Bxcrun-error-invalid-active-developer-path%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+    <description><![CDATA[<p>最近Mac推送了最新的系统版本<code>Ventura</code>，在升级到该版本之后发现，在终端中使用<code>git</code>、<code>python</code>等命令的时候会报错，报错信息如下：</p>
+<p><code>xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</code></p>]]></description>
 </item>
 <item>
     <title>使用xargs命令批量移动文件</title>
-    <link>https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</link>
+    <link>https://blog.oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</link>
     <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</guid>
-    <description><![CDATA[当遇到这样一个场景，需要批量把查找出来的多个文件或者目录移动到一个统一的目录下面，这时可以使用xargs命令与查询命令(例如find)结合使]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/%E4%BD%BF%E7%94%A8xargs%E5%91%BD%E4%BB%A4%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6/</guid>
+    <description><![CDATA[<p>当遇到这样一个场景，需要批量把查找出来的多个文件或者目录移动到一个统一的目录下面，这时可以使用<code>xargs</code>命令与查询命令(例如<code>find</code>)结合使用再批量操作<code>mv</code>命令的方式来实现。</p>]]></description>
 </item>
 <item>
     <title>find和xargs命令组合使用处理带空格文件名的文件</title>
-    <link>https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</link>
+    <link>https://blog.oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</link>
     <pubDate>Wed, 06 Jul 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</guid>
-    <description><![CDATA[当用find命令查找文件然后用xargs来批量处理文件时，当文件名中包含空格字符时，就会导致处理失败，因为xargs会认为空格前后分别是两个]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/find%E5%92%8Cxargs%E5%91%BD%E4%BB%A4%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8%E5%A4%84%E7%90%86%E5%B8%A6%E7%A9%BA%E6%A0%BC%E6%96%87%E4%BB%B6%E5%90%8D%E7%9A%84%E6%96%87%E4%BB%B6/</guid>
+    <description><![CDATA[<p>当用<code>find</code>命令查找文件然后用<code>xargs</code>来批量处理文件时，当文件名中包含空格字符时，就会导致处理失败，因为xargs会认为空格前后分别是两个不同的文件。如下图：
+</p>]]></description>
 </item>
 <item>
     <title>iterm2中管理ssh以及配置快捷登录</title>
-    <link>https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</link>
+    <link>https://blog.oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</link>
     <pubDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</guid>
-    <description><![CDATA[方案一：利用ssh的config文件来管理SSH回话以及快捷登录 在~/.ssh/目录下新建config文件，并按如下格式分别添加需要保存的S]]></description>
+    <author>作者</author>
+    <guid>https://blog.oneone.life/iterm2%E4%B8%AD%E7%AE%A1%E7%90%86ssh%E4%BB%A5%E5%8F%8A%E9%85%8D%E7%BD%AE%E5%BF%AB%E6%8D%B7%E7%99%BB%E5%BD%95/</guid>
+    <description><![CDATA[<h2 id="方案一利用ssh的config文件来管理ssh回话以及快捷登录">方案一：利用ssh的config文件来管理SSH回话以及快捷登录</h2>
+<ol>
+<li>在<code>~/.ssh/</code>目录下新建<code>config</code>文件，并按如下格式分别添加需要保存的SSH会话：</li>
+</ol>
+<p></p>
+<ol start="2">
+<li>在连接ssh时可以直接使用别名来登录，但是仍需要手动输入密码</li>
+</ol>
+<p></p>]]></description>
 </item>
 </channel>
 </rss>

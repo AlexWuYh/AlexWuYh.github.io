@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>在Ubuntu16.04和Centos7上启用TCP-BBR - 易娃的个人笔记</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/">
+        <title>在Ubuntu16.04和Centos7上启用TCP-BBR - 易娃的个人笔记</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/">
   <meta property="og:site_name" content="易娃的个人笔记">
   <meta property="og:title" content="在Ubuntu16.04和Centos7上启用TCP-BBR">
-  <meta property="og:description" content=" 新增atrandys大佬的一键安装脚本，支持centos7&#43;/debian9&#43;/ubuntu16&#43;: 1 2 3 wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh chmod &#43;x tcp.sh ./tcp.sh 新增Google原版BBR一键安装脚本： 1 2 3 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh chmod &#43;x bbr.sh ./bbr.sh BBR简介 BBR 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。
+  <meta property="og:description" content="新增atrandys大佬的一键安装脚本，支持centos7&#43;/debian9&#43;/ubuntu16&#43;: 1 2 3 wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh chmod &#43;x tcp.sh ./tcp.sh 新增Google原版BBR一键安装脚本： 1 2 3 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh chmod &#43;x bbr.sh ./bbr.sh BBR简介 BBR 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。
 简单地说，开启 BBR 的 Linux Server 和不开启 BBR 的 Linux Server，在持续传输数据方面可以有非常大的不同。
 BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。
 检测 BBR 是否开启 在开始之前，先看看 BBR 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：">
@@ -17,19 +17,19 @@ BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouT
     <meta property="article:published_time" content="2020-03-07T22:02:34+00:00">
     <meta property="article:modified_time" content="2020-03-07T22:02:34+00:00">
     <meta property="article:tag" content="科学上网">
-    <meta property="og:image" content="https://oneone.life/logo.png">
+    <meta property="og:image" content="https://blog.oneone.life/logo.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://oneone.life/logo.png">
+  <meta name="twitter:image" content="https://blog.oneone.life/logo.png">
   <meta name="twitter:title" content="在Ubuntu16.04和Centos7上启用TCP-BBR">
-  <meta name="twitter:description" content=" 新增atrandys大佬的一键安装脚本，支持centos7&#43;/debian9&#43;/ubuntu16&#43;: 1 2 3 wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh chmod &#43;x tcp.sh ./tcp.sh 新增Google原版BBR一键安装脚本： 1 2 3 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh chmod &#43;x bbr.sh ./bbr.sh BBR简介 BBR 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。
+  <meta name="twitter:description" content="新增atrandys大佬的一键安装脚本，支持centos7&#43;/debian9&#43;/ubuntu16&#43;: 1 2 3 wget --no-check-certificate https://raw.githubusercontent.com/cx9208/Linux-NetSpeed/master/tcp.sh chmod &#43;x tcp.sh ./tcp.sh 新增Google原版BBR一键安装脚本： 1 2 3 wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh chmod &#43;x bbr.sh ./bbr.sh BBR简介 BBR 是 Google 推出的一个「TCP 拥塞控制算法」，它是以 Linux 内核模块的形式加载，可以最大化 Linux Server 的网络吞吐量。
 简单地说，开启 BBR 的 Linux Server 和不开启 BBR 的 Linux Server，在持续传输数据方面可以有非常大的不同。
 BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouTube 网站上实践了很久，可以说是很成熟的一样技术了。
 检测 BBR 是否开启 在开始之前，先看看 BBR 是否已经启用了，执行这条指令可以返回当前 Linux 内核可以使用的 TCP 拥堵控制算法：">
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" /><link rel="prev" href="https://oneone.life/grep/" /><link rel="next" href="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" /><link rel="prev" href="https://blog.oneone.life/grep/" /><link rel="next" href="https://blog.oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="hEcQ6nEr41mGdKm5NvLM-M13MAox_EMIqc5f6Lz2cbY" /><meta name="baidu-site-verification" content="code-xRAT9UnTv5" /><script type="application/ld+json">
     {
@@ -39,13 +39,13 @@ BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouT
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/oneone.life\/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr\/"
+            "@id": "https:\/\/blog.oneone.life\/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr\/"
         },"image": ["https:\/\/imgup.oneone.life\/app\/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"],"genre": "posts","keywords": "科学上网","wordcount":  1403 ,
-        "url": "https:\/\/oneone.life\/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr\/","datePublished": "2020-03-07T22:02:34+00:00","dateModified": "2020-03-07T22:02:34+00:00","publisher": {
+        "url": "https:\/\/blog.oneone.life\/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr\/","datePublished": "2020-03-07T22:02:34+00:00","dateModified": "2020-03-07T22:02:34+00:00","publisher": {
             "@type": "Organization",
             "name": "WUYH","logo": "https:\/\/imgup.oneone.life\/app\/hide.php?key=R2M2UHVFbUU1Uzc3cGN3OE9ObXRlUEx5SjdlWS9uOWowY2M9"},"author": {
                 "@type": "Person",
-                "name": "Alex Wu"
+                "name": "作者"
             },"description": ""
     }
     </script></head>
@@ -127,7 +127,7 @@ BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouT
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">在Ubuntu16.04和Centos7上启用TCP-BBR</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://wuewa.cn" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-03-07">2020-03-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1403 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" class="leancloud_visitors" data-flag-title="在Ubuntu16.04和Centos7上启用TCP-BBR">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -456,7 +456,7 @@ BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouT
                             <a class="link-to-markdown" href="/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-hashtags="科学上网"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-hashtag="科学上网"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-hashtags="科学上网"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-hashtag="科学上网"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog.oneone.life/%E5%9C%A8ubuntu16.04%E5%92%8Ccentos7%E4%B8%8A%E5%90%AF%E7%94%A8tcp-bbr/" data-title="在Ubuntu16.04和Centos7上启用TCP-BBR"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -475,8 +475,8 @@ BBR 尽管还没有在主流发行版中默认开启，但 Google 已经在 YouT
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.132.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://wuewa.cn" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.6">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
                     <span class="icp"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2023016660号</a></span></div>
         </div>
     </footer></div>

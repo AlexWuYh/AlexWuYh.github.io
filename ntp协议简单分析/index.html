@@ -4,10 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>NTP协议简单分析 - 易娃的个人笔记</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/">
+        <title>NTP协议简单分析 - 易娃的个人笔记</title><meta name="Description" content="易娃的Blog"><meta property="og:url" content="https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/">
   <meta property="og:site_name" content="易娃的个人笔记">
   <meta property="og:title" content="NTP协议简单分析">
-  <meta property="og:description" content="一.概述 NTP (Network Time Protocol, 网络时间协议) 是由 RFC 5905 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同">
+  <meta property="og:description" content="一.概述 NTP (Network Time Protocol, 网络时间协议) 是由 RFC 5905 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同步时间协议, 它通常可获得毫秒级的精度. NTP 基于 UDP 报文进行传输, 使用的UDP端口号为 123. 使用 NTP 的目的是对网络内所有具有时钟的设备进行时钟同步, 使网络内所有设备的时钟保持一致, 从而使设备能够提供基于统一时间的多种应用. 对于运行 NTP 的本地系统, 既可以接收来自其他时钟源的同步, 又可以作为时钟源同步其他的时钟, 并且可以和其他设备相互同步. 二.工作原理 实现方式 无线时钟: 服务器系统可以通过串口连接一个无线时钟. 无线时钟接收 GPS 的卫星发射的信号来决定当前时间. 无线时钟是一个非常精确的时间源, 但是需要花一定的费用. 时间服务器: 还可以使用网络中 NTP 时间服务器, 通过这个服务器来同步网络中的系统的时钟. 局域网内的同步: 如果只是需要在本局域网内进行系统间的时钟同步, 那么就可以使用局域网中任何一个系统的时钟. 你需要选择局域网中的一个节点的时钟作”权威的”的时间源, 然后其它的节点就只需要与这个时间源进行时间同步即可. 使用这种方式, 所有的节点都会使用一个公共的系统时钟, 但是不需要和局域网外的系统进行时钟同步. 如果一个系统在一个局域网的内部, 同时又不能使用无线时钟, 这种方式是最好的选择. 工作流程 Device A 和 Device B 通过网络相连, 有自己独立的系统时钟, 通过 NTP 实现各自系统时钟的自动同步. Device A 和 Device B 的系统时钟同步之前, Device A 的时钟设定为 10:00:00 AM, Device B 的时钟设定为 11:00:00 AM. Device B 作为 NTP 时间服务器, 即 Device A 使自己的时钟与 Device B 时钟同步. NTP 报文在 Device A 和 Device B 之间单向传输所需要的时间为 1s.">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -16,16 +16,16 @@
     <meta property="article:tag" content="NTP">
     <meta property="article:tag" content="Network">
     <meta property="article:tag" content="Linux">
-    <meta property="og:image" content="https://oneone.life/logo.png">
+    <meta property="og:image" content="https://blog.oneone.life/logo.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://oneone.life/logo.png">
+  <meta name="twitter:image" content="https://blog.oneone.life/logo.png">
   <meta name="twitter:title" content="NTP协议简单分析">
-  <meta name="twitter:description" content="一.概述 NTP (Network Time Protocol, 网络时间协议) 是由 RFC 5905 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同">
+  <meta name="twitter:description" content="一.概述 NTP (Network Time Protocol, 网络时间协议) 是由 RFC 5905 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同步时间协议, 它通常可获得毫秒级的精度. NTP 基于 UDP 报文进行传输, 使用的UDP端口号为 123. 使用 NTP 的目的是对网络内所有具有时钟的设备进行时钟同步, 使网络内所有设备的时钟保持一致, 从而使设备能够提供基于统一时间的多种应用. 对于运行 NTP 的本地系统, 既可以接收来自其他时钟源的同步, 又可以作为时钟源同步其他的时钟, 并且可以和其他设备相互同步. 二.工作原理 实现方式 无线时钟: 服务器系统可以通过串口连接一个无线时钟. 无线时钟接收 GPS 的卫星发射的信号来决定当前时间. 无线时钟是一个非常精确的时间源, 但是需要花一定的费用. 时间服务器: 还可以使用网络中 NTP 时间服务器, 通过这个服务器来同步网络中的系统的时钟. 局域网内的同步: 如果只是需要在本局域网内进行系统间的时钟同步, 那么就可以使用局域网中任何一个系统的时钟. 你需要选择局域网中的一个节点的时钟作”权威的”的时间源, 然后其它的节点就只需要与这个时间源进行时间同步即可. 使用这种方式, 所有的节点都会使用一个公共的系统时钟, 但是不需要和局域网外的系统进行时钟同步. 如果一个系统在一个局域网的内部, 同时又不能使用无线时钟, 这种方式是最好的选择. 工作流程 Device A 和 Device B 通过网络相连, 有自己独立的系统时钟, 通过 NTP 实现各自系统时钟的自动同步. Device A 和 Device B 的系统时钟同步之前, Device A 的时钟设定为 10:00:00 AM, Device B 的时钟设定为 11:00:00 AM. Device B 作为 NTP 时间服务器, 即 Device A 使自己的时钟与 Device B 时钟同步. NTP 报文在 Device A 和 Device B 之间单向传输所需要的时间为 1s.">
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" /><link rel="prev" href="https://oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" /><link rel="next" href="https://oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" /><link rel="prev" href="https://blog.oneone.life/tcpdump%E5%91%BD%E4%BB%A4%E9%AB%98%E7%BA%A7%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F/" /><link rel="next" href="https://blog.oneone.life/linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><meta name="google-site-verification" content="hEcQ6nEr41mGdKm5NvLM-M13MAox_EMIqc5f6Lz2cbY" /><meta name="baidu-site-verification" content="code-xRAT9UnTv5" /><script type="application/ld+json">
     {
@@ -35,13 +35,13 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/oneone.life\/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90\/"
+            "@id": "https:\/\/blog.oneone.life\/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90\/"
         },"image": ["https:\/\/imgup.oneone.life\/app\/hide.php?key=MmpRY3JkQ01LUWxXMFlEZllRNGxoenRCUy9iNUVHVThCaFE9"],"genre": "posts","keywords": "NTP, Network, Linux","wordcount":  3902 ,
-        "url": "https:\/\/oneone.life\/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90\/","datePublished": "2022-01-29T00:00:00+00:00","dateModified": "2022-01-29T00:00:00+00:00","publisher": {
+        "url": "https:\/\/blog.oneone.life\/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90\/","datePublished": "2022-01-29T00:00:00+00:00","dateModified": "2022-01-29T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "WUYH","logo": "https:\/\/imgup.oneone.life\/app\/hide.php?key=R2M2UHVFbUU1Uzc3cGN3OE9ObXRlUEx5SjdlWS9uOWowY2M9"},"author": {
                 "@type": "Person",
-                "name": "Alex Wu"
+                "name": "作者"
             },"description": ""
     }
     </script></head>
@@ -123,7 +123,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">NTP协议简单分析</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://wuewa.cn" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Wu</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ntp/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>NTP</a>&nbsp;<a href="/categories/network/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Network</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>作者</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/ntp/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>NTP</a>&nbsp;<a href="/categories/network/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Network</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-01-29">2022-01-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 3902 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" class="leancloud_visitors" data-flag-title="NTP协议简单分析">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -176,8 +176,7 @@
 <blockquote>
 <p>Device A 和 Device B 的系统时钟同步之前, Device A 的时钟设定为 10:00:00 AM, Device B 的时钟设定为 11:00:00 AM.
 Device B 作为 NTP 时间服务器, 即 Device A 使自己的时钟与 Device B 时钟同步.
-NTP 报文在 Device A 和 Device B 之间单向传输所需要的时间为 1s.</p>
-</blockquote>
+NTP 报文在 Device A 和 Device B 之间单向传输所需要的时间为 1s.</p></blockquote>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -273,35 +272,35 @@ NTP 报文在 Device A 和 Device B 之间单向传输所需要的时间为 1s.<
 <li>LI (Leap Indicator): 闰秒标识器, 长度为 2 Bits, 用来预警最近一分钟插入 1s 或者删除 1s.</li>
 </ul>
 <table>
-<thead>
-<tr>
-<th style="text-align:center">LI</th>
-<th style="text-align:center">Value</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">00</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">无预告</td>
-</tr>
-<tr>
-<td style="text-align:center">01</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">醉经一分钟有 61s</td>
-</tr>
-<tr>
-<td style="text-align:center">10</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">最近一分钟有 59s</td>
-</tr>
-<tr>
-<td style="text-align:center">11</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">警告状态(时钟未同步)</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">LI</th>
+          <th style="text-align: center">Value</th>
+          <th style="text-align: center">含义</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">00</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">无预告</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">01</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">醉经一分钟有 61s</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">10</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">最近一分钟有 59s</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">11</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">警告状态(时钟未同步)</td>
+      </tr>
+  </tbody>
 </table>
 <ul>
 <li>
@@ -311,60 +310,59 @@ NTP 报文在 Device A 和 Device B 之间单向传输所需要的时间为 1s.<
 <p>Mode: 工作模式, 长度为 3 Bits.</p>
 <blockquote>
 <p>点对点模式下, 客户端请求时设置此字段为 3, 服务器应答时设置此字段为 4.
-广播模式下, 服务器应答设置此字段为 5.</p>
-</blockquote>
+广播模式下, 服务器应答设置此字段为 5.</p></blockquote>
 </li>
 </ul>
 <table>
-<thead>
-<tr>
-<th style="text-align:center">Mode</th>
-<th style="text-align:center">Value</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">000</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">保留</td>
-</tr>
-<tr>
-<td style="text-align:center">001</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">主动对称模式</td>
-</tr>
-<tr>
-<td style="text-align:center">010</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">被动对称模式</td>
-</tr>
-<tr>
-<td style="text-align:center">011</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">客户端模式</td>
-</tr>
-<tr>
-<td style="text-align:center">100</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">服务器模式</td>
-</tr>
-<tr>
-<td style="text-align:center">101</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">广播或组播模式</td>
-</tr>
-<tr>
-<td style="text-align:center">110</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">NTP控制报文</td>
-</tr>
-<tr>
-<td style="text-align:center">111</td>
-<td style="text-align:center">7</td>
-<td style="text-align:center">预留给内部使用</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">Mode</th>
+          <th style="text-align: center">Value</th>
+          <th style="text-align: center">含义</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">000</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">保留</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">001</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">主动对称模式</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">010</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">被动对称模式</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">011</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">客户端模式</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">100</td>
+          <td style="text-align: center">4</td>
+          <td style="text-align: center">服务器模式</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">101</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: center">广播或组播模式</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">110</td>
+          <td style="text-align: center">6</td>
+          <td style="text-align: center">NTP控制报文</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">111</td>
+          <td style="text-align: center">7</td>
+          <td style="text-align: center">预留给内部使用</td>
+      </tr>
+  </tbody>
 </table>
 <ul>
 <li>Stratum: 系统时钟的层数, 长度为 8 Bits, 取值范围 1~16, 定义时钟的准确度. 层数为 1 的时钟准确度最高, 准确度从 1 到 16 依次递减, 阶层的上限为15, 层数为 16的时钟处于<strong>未同步</strong>状态, 不能作为参考时钟.</li>
@@ -374,30 +372,30 @@ NTP 报文在 Device A 和 Device B 之间单向传输所需要的时间为 1s.<
 <li>时间是按 NTP 服务器的等级传播. 按照距离外部 UTC 源的远近将所有服务器归入不同的 Stratum (层) 中. Stratum-1 在顶层, 有外部 UTC 接入, 而Stratum-2 则从 Stratum-1 获取时间, Stratum-3 从 Stratum-2 获取时间, 以此类推, 但 Stratum 层的总数限制在15以内. 所有这些服务器在逻辑上形成阶梯式的架构并相互连接, 而 Stratum-1 的时间服务器是整个系统的基础.</li>
 </ul>
 <table>
-<thead>
-<tr>
-<th style="text-align:center">stratum</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">未指定或者难以获得</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">主要参考(如: 无线电时钟,校正的原子时钟)</td>
-</tr>
-<tr>
-<td style="text-align:center">2~15</td>
-<td style="text-align:center">第二参考(Via NTP)</td>
-</tr>
-<tr>
-<td style="text-align:center">16</td>
-<td style="text-align:center">未同步状态, 不能作为参考时钟</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">stratum</th>
+          <th style="text-align: center">含义</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">未指定或者难以获得</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">主要参考(如: 无线电时钟,校正的原子时钟)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2~15</td>
+          <td style="text-align: center">第二参考(Via NTP)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">16</td>
+          <td style="text-align: center">未同步状态, 不能作为参考时钟</td>
+      </tr>
+  </tbody>
 </table>
 <ul>
 <li>Poll: 轮询间隔时间, 长度为 8 Bits, 两个连续NTP报文之间的时间间隔, 用 2 的幂来表示, 比如值为 6 表示最小间隔为 2^6 = 64s.</li>
@@ -411,8 +409,7 @@ NTP 报文在 Device A 和 Device B 之间单向传输所需要的时间为 1s.<
 这种假设是理想化的, 实际的无线链路往往受到各种因素影响,
 例如 多径, 时变 而不完全对称.
 网络的拓扑结构:
-简单的点对点拓扑结构能达到较高的同步精度, 而一些复杂的网络容易受到网络延迟抖动的影响, 且精度与网络负载情况相关.</p>
-</blockquote>
+简单的点对点拓扑结构能达到较高的同步精度, 而一些复杂的网络容易受到网络延迟抖动的影响, 且精度与网络负载情况相关.</p></blockquote>
 <ul>
 <li>Reference Identifier: 参考时钟源的标识, 长度为 32 Bits.</li>
 <li>Reference Timestamp: 系统时钟最后一次被设定或更新的时间, 长度为 64 Bits, 无符号定点数, 前 32 Bits 表示整数部分, 后 32 Bits 表示小数部分, 理论分辨率 2^−32s.</li>
@@ -427,8 +424,7 @@ NTP的时间精度在 WAN 为 数十毫秒,
 转换成二进制: 0000 0011 1100 0010 0111 0101 0100 1101 XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX.
 因为只有 32 Bits 表示秒数, 所以到了 2036 年数据就会溢出.
 所以以 136 年为一个周期置 0 , 会用一些外部的方法来表示是相对于 1900 年还是 2036 年的时间.
-NTP 的未来版本可能将时间表示扩展到 128 Bits: 其中 64 Bits 表示秒, 64 Bits 表示秒的小数. 当前的 NTPv4 格式支持 “时代数字” (Era Number)和 “时代偏移” (Era Offset), 正确使用它们应该有助于解决日期翻转问题. 据Mills称: “64 Bits 秒的小数足以分辨光子以光速通过电子所需的时间. 64 Bits 的秒足以提供明确的时间表示, 直到宇宙变暗.”</p>
-</blockquote>
+NTP 的未来版本可能将时间表示扩展到 128 Bits: 其中 64 Bits 表示秒, 64 Bits 表示秒的小数. 当前的 NTPv4 格式支持 “时代数字” (Era Number)和 “时代偏移” (Era Offset), 正确使用它们应该有助于解决日期翻转问题. 据Mills称: “64 Bits 秒的小数足以分辨光子以光速通过电子所需的时间. 64 Bits 的秒足以提供明确的时间表示, 直到宇宙变暗.”</p></blockquote>
 <ul>
 <li>Originate Timestamp: NTP请求报文离开发送端时发送端的本地时间, 长度为 64 Bits.</li>
 <li>Receive Timestamp: NTP请求报文到达接收端时接收端的本地时间, 长度为 64 Bits.</li>
@@ -438,8 +434,7 @@ NTP 的未来版本可能将时间表示扩展到 128 Bits: 其中 64 Bits 表�
 <blockquote>
 <p>识别机制抗干扰和恶意破坏:
 为防止对时间服务器的恶意破坏, NTP使用了识别 (Authentication) 机制.
-检查来对时的信息是否是真正来自所宣称的服务器并检查资料的返回路径, 以提供对抗干扰的保护机制.</p>
-</blockquote>
+检查来对时的信息是否是真正来自所宣称的服务器并检查资料的返回路径, 以提供对抗干扰的保护机制.</p></blockquote>
 <h2 id="四实例分析">四.实例分析</h2>
 <ul>
 <li>时间服务器接收同步消息,应答反馈的数据如下:</li>
@@ -509,7 +504,7 @@ NTP 的未来版本可能将时间表示扩展到 128 Bits: 其中 64 Bits 表�
                             <a class="link-to-markdown" href="/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析" data-hashtags="NTP,Network,Linux"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-hashtag="NTP"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析" data-hashtags="NTP,Network,Linux"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-hashtag="NTP"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析" data-ralateuid="AlexWuYh"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析" data-description=""><i class="fab fa-blogger fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/" data-title="NTP协议简单分析"><i class="fab fa-evernote fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -528,8 +523,8 @@ NTP 的未来版本可能将时间表示扩展到 128 Bits: 其中 64 Bits 表�
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.132.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://wuewa.cn" target="_blank">Alex Wu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.147.6">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span><span class="icp-splitter">&nbsp;|&nbsp;</span><br class="icp-br"/>
                     <span class="icp"><a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2023016660号</a></span></div>
         </div>
     </footer></div>

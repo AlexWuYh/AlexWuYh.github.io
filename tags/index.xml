@@ -1,88 +1,145 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Tags - 标签 - 易娃的个人笔记</title>
-        <link>https://oneone.life/tags/</link>
-        <description>Tags - 标签 - 易娃的个人笔记</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>alex.wuyinghao@gmail.com (Alex Wu)</managingEditor>
-            <webMaster>alex.wuyinghao@gmail.com (Alex Wu)</webMaster><lastBuildDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://oneone.life/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Git</title>
-    <link>https://oneone.life/tags/git/</link>
-    <pubDate>Thu, 30 Nov 2023 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/git/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>APM</title>
-    <link>https://oneone.life/tags/apm/</link>
-    <pubDate>Thu, 23 Nov 2023 18:05:51 &#43;0800</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/apm/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>PinPoint</title>
-    <link>https://oneone.life/tags/pinpoint/</link>
-    <pubDate>Thu, 23 Nov 2023 18:05:51 &#43;0800</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/pinpoint/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Linux</title>
-    <link>https://oneone.life/tags/linux/</link>
-    <pubDate>Wed, 16 Nov 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/linux/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>MacOS</title>
-    <link>https://oneone.life/tags/macos/</link>
-    <pubDate>Tue, 01 Nov 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/macos/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Iterm2</title>
-    <link>https://oneone.life/tags/iterm2/</link>
-    <pubDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/iterm2/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Ssh免密</title>
-    <link>https://oneone.life/tags/ssh%E5%85%8D%E5%AF%86/</link>
-    <pubDate>Mon, 13 Jun 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/ssh%E5%85%8D%E5%AF%86/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Brew</title>
-    <link>https://oneone.life/tags/brew/</link>
-    <pubDate>Fri, 10 Jun 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/brew/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>ARM</title>
-    <link>https://oneone.life/tags/arm/</link>
-    <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/arm/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Docker</title>
-    <link>https://oneone.life/tags/docker/</link>
-    <pubDate>Wed, 23 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>Alex Wu</author>
-    <guid>https://oneone.life/tags/docker/</guid>
-    <description><![CDATA[]]></description>
-</item>
-</channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 易娃的个人笔记</title>
+    <link>https://blog.oneone.life/tags/</link>
+    <description>Recent content in Tags on 易娃的个人笔记</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 23 Jul 2024 10:07:38 +0800</lastBuildDate>
+    <atom:link href="https://blog.oneone.life/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://blog.oneone.life/tags/git/</link>
+      <pubDate>Thu, 30 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>APM</title>
+      <link>https://blog.oneone.life/tags/apm/</link>
+      <pubDate>Thu, 23 Nov 2023 18:05:51 +0800</pubDate>
+      <guid>https://blog.oneone.life/tags/apm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PinPoint</title>
+      <link>https://blog.oneone.life/tags/pinpoint/</link>
+      <pubDate>Thu, 23 Nov 2023 18:05:51 +0800</pubDate>
+      <guid>https://blog.oneone.life/tags/pinpoint/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://blog.oneone.life/tags/linux/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MacOS</title>
+      <link>https://blog.oneone.life/tags/macos/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/macos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Iterm2</title>
+      <link>https://blog.oneone.life/tags/iterm2/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/iterm2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ssh免密</title>
+      <link>https://blog.oneone.life/tags/ssh%E5%85%8D%E5%AF%86/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/ssh%E5%85%8D%E5%AF%86/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Brew</title>
+      <link>https://blog.oneone.life/tags/brew/</link>
+      <pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/brew/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ARM</title>
+      <link>https://blog.oneone.life/tags/arm/</link>
+      <pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/arm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://blog.oneone.life/tags/docker/</link>
+      <pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mysql</title>
+      <link>https://blog.oneone.life/tags/mysql/</link>
+      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tcpdump</title>
+      <link>https://blog.oneone.life/tags/tcpdump/</link>
+      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/tcpdump/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network</title>
+      <link>https://blog.oneone.life/tags/network/</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/network/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NTP</title>
+      <link>https://blog.oneone.life/tags/ntp/</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/ntp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>摄影</title>
+      <link>https://blog.oneone.life/tags/%E6%91%84%E5%BD%B1/</link>
+      <pubDate>Mon, 10 Jan 2022 19:31:22 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/%E6%91%84%E5%BD%B1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>科学上网</title>
+      <link>https://blog.oneone.life/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</link>
+      <pubDate>Sat, 07 Mar 2020 22:02:34 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vim</title>
+      <link>https://blog.oneone.life/tags/vim/</link>
+      <pubDate>Tue, 25 Feb 2020 14:35:25 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/vim/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jmeter</title>
+      <link>https://blog.oneone.life/tags/jmeter/</link>
+      <pubDate>Tue, 25 Feb 2020 14:32:24 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/jmeter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oh-My-Zsh</title>
+      <link>https://blog.oneone.life/tags/oh-my-zsh/</link>
+      <pubDate>Mon, 24 Feb 2020 22:46:22 +0000</pubDate>
+      <guid>https://blog.oneone.life/tags/oh-my-zsh/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>
