@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>软件测试 on 易娃的个人笔记</title>
-    <link>https://blog.oneone.life/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</link>
+    <link>https://oneone.life/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</link>
     <description>Recent content in 软件测试 on 易娃的个人笔记</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 25 Feb 2020 14:32:24 +0000</lastBuildDate>
-    <atom:link href="https://blog.oneone.life/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oneone.life/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Jmeter</title>
-      <link>https://blog.oneone.life/jmeter/</link>
+      <link>https://oneone.life/jmeter/</link>
       <pubDate>Tue, 25 Feb 2020 14:32:24 +0000</pubDate>
-      <guid>https://blog.oneone.life/jmeter/</guid>
+      <guid>https://oneone.life/jmeter/</guid>
       <description>&lt;p&gt;脚本规范：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;目录结构按系统级别区分不同的jmx文件，每个系统一个jmx文件进行管理&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;线程组作为模块级别，命名格式为模块名称&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;接口作为用例级别，命名格式类似为 ：&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on 易娃的个人笔记</title>
-    <link>https://blog.oneone.life/categories/docker/</link>
+    <link>https://oneone.life/categories/docker/</link>
     <description>Recent content in Docker on 易娃的个人笔记</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 24 Feb 2020 22:43:34 +0000</lastBuildDate>
-    <atom:link href="https://blog.oneone.life/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oneone.life/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker-常用基础命令</title>
-      <link>https://blog.oneone.life/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
+      <link>https://oneone.life/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Mon, 24 Feb 2020 22:43:34 +0000</pubDate>
-      <guid>https://blog.oneone.life/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://oneone.life/docker-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;docker 服务重启，关闭，启动及版本查看&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@localhost /&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; systemctl restart docker.service  &lt;span class=&#34;c1&#34;&gt;#重启服务&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@localhost /&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; systemctl stop docker.service     &lt;span class=&#34;c1&#34;&gt;#关闭服务&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@localhost /&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; systemctl start docker.service    &lt;span class=&#34;c1&#34;&gt;#启动服务&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;root@iZm5e3hwzuo58e05kxjiifZ /&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; docker -v &lt;span class=&#34;c1&#34;&gt;#docker版本查看&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; Docker version 18.06.1-ce, build e68fc7a&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;docker 搜索/下载/查看镜像&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>

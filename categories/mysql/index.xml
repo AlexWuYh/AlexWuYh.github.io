@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mysql on 易娃的个人笔记</title>
-    <link>https://blog.oneone.life/categories/mysql/</link>
+    <link>https://oneone.life/categories/mysql/</link>
     <description>Recent content in Mysql on 易娃的个人笔记</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.oneone.life/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oneone.life/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>数据库系统的常识</title>
-      <link>https://blog.oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/</link>
+      <link>https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/</link>
       <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
-      <guid>https://blog.oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/</guid>
+      <guid>https://oneone.life/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B8%B8%E8%AF%86/</guid>
       <description>&lt;h2 id=&#34;事务处理&#34;&gt;事务处理&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;事务来自于2个独立的需求: &lt;strong&gt;并发数据库访问&lt;/strong&gt; 和 &lt;strong&gt;系统错误恢复&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;一个事务可以被看作是 &lt;strong&gt;一个单元的一系列SQL语句的集合&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;事务特性-acid&#34;&gt;事务特性 (A.C.I.D)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;A - 原子性 (Atomacity): 事务必须是原子工作单元,对于其数据修改,要么全都执行,要么全都不执行.&lt;/p&gt;</description>
     </item>
   </channel>

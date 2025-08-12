@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NTP on 易娃的个人笔记</title>
-    <link>https://blog.oneone.life/categories/ntp/</link>
+    <link>https://oneone.life/categories/ntp/</link>
     <description>Recent content in NTP on 易娃的个人笔记</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sat, 29 Jan 2022 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.oneone.life/categories/ntp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://oneone.life/categories/ntp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NTP协议简单分析</title>
-      <link>https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</link>
+      <link>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</link>
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://blog.oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</guid>
+      <guid>https://oneone.life/ntp%E5%8D%8F%E8%AE%AE%E7%AE%80%E5%8D%95%E5%88%86%E6%9E%90/</guid>
       <description>&lt;h2 id=&#34;一概述&#34;&gt;一.概述&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;NTP&lt;/strong&gt; (Network Time Protocol, 网络时间协议) 是由 &lt;a href=&#34;https://tools.ietf.org/pdf/rfc5905.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer &#34;&gt;&lt;strong&gt;RFC 5905&lt;/strong&gt;&lt;/a&gt; 定义的时间同步协议, 用来在分布式时间服务器和客户端之间进行时间同步, 是一个跨越广域网或局域网的复杂的同步时间协议, 它通常可获得毫秒级的精度.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;NTP&lt;/strong&gt; 基于 &lt;strong&gt;UDP&lt;/strong&gt; 报文进行传输, 使用的UDP端口号为 &lt;strong&gt;123&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;使用 NTP 的目的是对网络内所有具有时钟的设备进行时钟同步, 使网络内所有设备的时钟保持一致, 从而使设备能够提供基于统一时间的多种应用.&lt;/li&gt;&#xA;&lt;li&gt;对于运行 NTP 的本地系统, 既可以接收来自其他时钟源的同步, 又可以作为时钟源同步其他的时钟, 并且可以和其他设备相互同步.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;二工作原理&#34;&gt;二.工作原理&lt;/h2&gt;&#xA;&lt;h3 id=&#34;实现方式&#34;&gt;实现方式&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;无线时钟: 服务器系统可以通过串口连接一个无线时钟. 无线时钟接收 GPS 的卫星发射的信号来决定当前时间. 无线时钟是一个非常精确的时间源, 但是需要花一定的费用.&lt;/li&gt;&#xA;&lt;li&gt;时间服务器: 还可以使用网络中 NTP 时间服务器, 通过这个服务器来同步网络中的系统的时钟.&lt;/li&gt;&#xA;&lt;li&gt;局域网内的同步: 如果只是需要在本局域网内进行系统间的时钟同步, 那么就可以使用局域网中任何一个系统的时钟. 你需要选择局域网中的一个节点的时钟作”权威的”的时间源, 然后其它的节点就只需要与这个时间源进行时间同步即可. 使用这种方式, 所有的节点都会使用一个公共的系统时钟, 但是不需要和局域网外的系统进行时钟同步. 如果一个系统在一个局域网的内部, 同时又不能使用无线时钟, 这种方式是最好的选择.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;工作流程&#34;&gt;工作流程&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Device A 和 Device B 通过网络相连, 有自己独立的系统时钟, 通过 NTP 实现各自系统时钟的自动同步.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Device A 和 Device B 的系统时钟同步之前, Device A 的时钟设定为 10:00:00 AM, Device B 的时钟设定为 11:00:00 AM.&#xA;Device B 作为 NTP 时间服务器, 即 Device A 使自己的时钟与 Device B 时钟同步.&#xA;NTP 报文在 Device A 和 Device B 之间单向传输所需要的时间为 1s.&lt;/p&gt;</description>
     </item>
   </channel>
